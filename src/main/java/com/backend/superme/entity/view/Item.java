@@ -2,8 +2,10 @@ package com.backend.superme.entity.view;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.backend.superme.constant.item.StockStatus;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Builder
@@ -24,7 +26,7 @@ public class Item {
     @Column(name="main_img")
     private String mainImg;
 
-    @Column(name = "descrption")
+    @Column(name = "description")
     private String description;
 
     @Column(name="color_option")
@@ -51,15 +53,12 @@ public class Item {
     private Category category;
 
     @Column(name = "registration_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date registrationDate;
+    private LocalDateTime registrationDate;
 
     @Column(name="termination_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date terminationDate;
+    private LocalDateTime terminationDate;
 
-    public enum StockStatus {
-        IN_STOCK, OUT_OF_STOCK, BACK_ORDER
+    public void removeStock(int count) {
+        //Todo 수량 변경 로직 필요
     }
-
 }

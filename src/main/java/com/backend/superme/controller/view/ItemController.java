@@ -1,6 +1,7 @@
 package com.backend.superme.controller.view;
 
 import ch.qos.logback.core.model.Model;
+import com.backend.superme.dto.view.ItemFormDto;
 import com.backend.superme.service.view.ItemService;
 
 
@@ -15,6 +16,7 @@ public class ItemController {
     private final ItemService itemService;
 
     //상품 등록페이지 (GET)
+
 
     //상품 등록 (POST)
 

@@ -3,6 +3,8 @@ package com.backend.superme.entity.view;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.apache.catalina.User;
+
 
 import java.util.Date;
 
@@ -12,8 +14,9 @@ import java.util.Date;
 @Setter
 @Getter
 @Entity
+@ToString
 @Table(name="carts")
-public class Cart {
+public class Cart   {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,4 +31,14 @@ public class Cart {
 
     @Column(name = "updated_at")
     private Date updatedAt;
+
+      /* Todo 유저 연결 필요
+    public static Cart createCart(User user){
+        Cart cart = new Cart();
+        cart.setUser(user);
+        return cart;
+        }
+     */
+
+
 }

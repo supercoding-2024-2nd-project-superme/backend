@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.util.Date;
 
+import static com.querydsl.core.types.dsl.Wildcard.count;
+
 @Getter
 @Setter
 @Entity
@@ -32,5 +34,17 @@ public class CartItem {
 
     @Column(name="ordered_size")
     private Date addedAt;
+
+    public static CartItem createCartItem(Cart cart, Item item, int ordered_qty){
+        CartItem cartItem = new CartItem();
+        cartItem.setCartId(cart.getId());
+        cartItem.setItemId(item.getId());
+        cartItem.setOrdered_qty(ordered_qty);
+        cartItem.setAddedAt(new Date()); // 추가된 시간 설정
+        return cartItem;
+    }
+    public void addCount(int count){
+        this.ordered_qty += ordered_qty;
+    }
 
 }
