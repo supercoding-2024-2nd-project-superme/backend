@@ -4,32 +4,28 @@ package com.backend.superme.controller.user;
 import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/api")
-@ResponseBody
+@Controller
 public class UserController {
 
-    private final UserService userService;
-
     @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    private UserService userService;
 
-    @PostMapping("/login")
-    public String login(){
-        return "login";
+    @GetMapping("/")
+    public String index() {
+        return "index";
     }
 
     @GetMapping("/join")
-    public String join(){
+    public String join() {
         return "join";
     }
 
     @PostMapping("/signup")
-    public String signup(@RequestBody UserDto userDto){
+    @ResponseBody
+    public String signup(@RequestBody UserDto userDto) {
         userService.signupUser(userDto);
         return "ok";
     }

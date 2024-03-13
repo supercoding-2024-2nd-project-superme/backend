@@ -3,14 +3,16 @@ package com.backend.superme.entity.user;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CurrentTimestamp;
 
 import java.sql.Date;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
-//@Table(name = "account")
+@Table(name = "account")
 public class UserEntity {
 
     @Id

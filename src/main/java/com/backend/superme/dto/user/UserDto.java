@@ -1,16 +1,12 @@
 package com.backend.superme.dto.user;
 
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
+import lombok.Data;
 
 import java.sql.Date;
 
-@Getter
-@Setter
-@ToString
+@Data
 public class UserDto {
 
     private Long id;
