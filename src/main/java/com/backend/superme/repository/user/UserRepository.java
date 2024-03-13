@@ -1,4 +1,4 @@
-package com.backend.superme.repository.login;
+package com.backend.superme.repository.user;
 
 import com.backend.superme.entity.user.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

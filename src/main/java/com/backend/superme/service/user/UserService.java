@@ -1,11 +1,10 @@
 package com.backend.superme.service.user;
 
-import com.backend.superme.dto.login.LoginDto;
+import com.backend.superme.dto.user.UserDto;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface LoginService {
-    void signupUser(LoginDto loginDto);
-
+public interface UserService {
+    void signupUser(UserDto userDto);
 
 }

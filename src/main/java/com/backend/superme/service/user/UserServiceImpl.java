@@ -1,39 +1,43 @@
 package com.backend.superme.service.user;
 
-import com.backend.superme.dto.login.LoginDto;
-import com.backend.superme.entity.user.LoginEntity;
-import com.backend.superme.repository.login.LoginRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.backend.superme.dto.user.UserDto;
+import com.backend.superme.entity.user.UserEntity;
+import com.backend.superme.repository.user.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoginServiceImpl implements LoginService {
+public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private LoginRepository loginRepository;
 
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final UserRepository userRepository;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @Override
-    public void signupUser(LoginDto loginDto) {
-        String email = loginDto.getEmail();
-        String password = loginDto.getPassword();
+    public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.userRepository = userRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
 
-        // 이메일 중복 체크 로직 추가
-        if(loginRepository.existsByEmail(email)) {
+
+    public void signupUser(UserDto userDto) {
+        String email = userDto.getEmail();
+        // 이메일 중복 체크
+        if (userRepository.existsByEmail(email)) {
             throw new IllegalArgumentException("이미 등록된 이메일입니다.");
         }
 
-        String encryptedPassword = bCryptPasswordEncoder.encode(password);
+        // 비밀번호 암호화
+        String encryptedPassword = bCryptPasswordEncoder.encode(userDto.getPassword());
 
-        // LoginDto를 LoginEntity로 변환
-        LoginEntity loginEntity = new LoginEntity();
-        loginEntity.setEmail(email);
-        loginEntity.setPassword(encryptedPassword);
+        // UserDto / UserEntity로 변환
+        UserEntity userEntity = new UserEntity();
+        userEntity.setEmail(email);
+        userEntity.setPassword(encryptedPassword);
+        userEntity.setRole("USER");
 
-        loginRepository.save(loginEntity);
+        userRepository.save(userEntity);
     }
+
+
 
 }

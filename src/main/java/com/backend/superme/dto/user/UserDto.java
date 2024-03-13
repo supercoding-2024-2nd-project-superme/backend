@@ -1,13 +1,17 @@
-package com.backend.superme.dto.login;
+package com.backend.superme.dto.user;
 
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-import lombok.Data;
 
 import java.sql.Date;
 
-@Data
-public class LoginDto {
+@Getter
+@Setter
+@ToString
+public class UserDto {
 
     private Long id;
     private String email;

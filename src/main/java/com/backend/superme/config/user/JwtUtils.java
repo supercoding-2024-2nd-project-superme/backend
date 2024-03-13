@@ -1,36 +1,29 @@
 package com.backend.superme.config.user;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
-import javax.crypto.SecretKey;
 import java.util.Date;
 
-public class JwtUtil {
+public class JwtUtils {
 
-    private final SecretKey secretKey;
+    private static final String SECRET_KEY = "secret";
 
-    public JwtUtil(SecretKey secretKey) {
-        this.secretKey = secretKey;
-    }
-
-    public String createToken(String subject, long ttlMillis) {
-        Date now = new Date();
-        Date expiryDate = new Date(now.getTime() + ttlMillis);
+    public static String generateToken(String username) {
         return Jwts.builder()
-                .setSubject(subject)
-                .setIssuedAt(now)
-                .setExpiration(expiryDate)
-                .signWith(secretKey, SignatureAlgorithm.HS256)
+                .setSubject(username)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
+                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
     }
 
-    public Jws<Claims> parseToken(String token) {
+    public static String getUsernameFromToken(String token) {
         return Jwts.parser()
-                .setSigningKey(secretKey)
+                .setSigningKey(SECRET_KEY)
                 .build()
-                .parseClaimsJws(token);
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
     }
 }

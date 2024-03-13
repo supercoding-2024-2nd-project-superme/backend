@@ -3,22 +3,23 @@ package com.backend.superme.entity.user;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import org.hibernate.annotations.CurrentTimestamp;
 
 import java.sql.Date;
 
 @Entity
 @Getter
-@Setter
 @NoArgsConstructor
-@Table(name = "account")
-public class LoginEntity {
+//@Table(name = "account")
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String email;
+
     private String password;
     private String username;
     private String nickname;
@@ -29,8 +30,11 @@ public class LoginEntity {
     @Column(length = 10)
     private Gender gender = Gender.OTHER;
     private String role;
+    @Column(unique = true)
     private String kakaoLogin;
+    @Column(unique = true)
     private String naverLogin;
+    @CurrentTimestamp
     private Date signupDate;
 
     public enum Gender {

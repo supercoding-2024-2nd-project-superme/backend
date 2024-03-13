@@ -1,4 +1,4 @@
-package com.backend.superme.constant.영규님;
+package com.backend.superme.constant.login;
 
 public class java {
 }
