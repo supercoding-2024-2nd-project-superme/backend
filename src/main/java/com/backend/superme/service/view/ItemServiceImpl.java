@@ -22,6 +22,11 @@ public class ItemServiceImpl implements ItemService {
         return itemRepository.findAll();
     }// Todo
 
+    @Override
+    public Item itemView(Long id) {
+        return null;
+    }
+
 
     @Override
     public Item findItemById(Long id) {
