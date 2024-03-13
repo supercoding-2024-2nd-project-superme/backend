@@ -12,10 +12,12 @@ import java.util.Date;
 @Setter
 @Getter
 @Entity
+@Table(name = "Items")
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column(name ="item_name", nullable=false)
     private String itemName;
 
@@ -38,17 +40,16 @@ public class Item {
     @Column(name = "price", precision = 10, scale = 2)
     private BigDecimal price;
 
-    /*Todo :유저 연결
+    /*Todo :유저 연결후에 추가
     @ManyToOne
     @JoinColumn(name = "seller",referencedColumnName = "id")
     private User seller;
     */
 
-   /* Todo : 카테고리 연결
     @ManyToOne
-        @JoinColumn(name = "category", referencedColumnName = "id")
+    @JoinColumn(name = "category", referencedColumnName = "id")
     private Category category;
-    */
+
     @Column(name = "registration_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date registrationDate;

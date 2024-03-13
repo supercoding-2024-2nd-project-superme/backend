@@ -1,5 +1,5 @@
 
--- users 테이블 생성
+-- 사용자 정보를 저장하는 테이블
 CREATE TABLE users (
                        id INT AUTO_INCREMENT PRIMARY KEY,
                        email VARCHAR(255) UNIQUE NOT NULL,
@@ -7,15 +7,18 @@ CREATE TABLE users (
                        username VARCHAR(255) NOT NULL,
                        nickname VARCHAR(255),
                        profile VARCHAR(255),
-                       address VARCHAR(255),
+                       address_main VARCHAR(255),
+                       address_sub VARCHAR(255) ,
                        gender ENUM('male', 'female', 'other'),
                        kakao_login VARCHAR(255),
                        naver_login VARCHAR(255),
                        signup_date DATETIME,
+                       pay_money INT,
+                       user_condition ENUM('active', 'deleted'),
                        role ENUM('admin', 'user')
 );
 
--- items 테이블 생성
+-- 상품 정보를 저장하는 테이블
 CREATE TABLE items (
                        id INT AUTO_INCREMENT PRIMARY KEY,
                        item_name VARCHAR(255) NOT NULL,
@@ -33,7 +36,7 @@ CREATE TABLE items (
                        FOREIGN KEY (category) REFERENCES categories(id)
 );
 
--- item_stock 테이블 생성
+-- 상품 재고를 관리하는 테이블
 CREATE TABLE item_stock (
                             id INT AUTO_INCREMENT PRIMARY KEY,
                             item_id INT,
@@ -43,7 +46,7 @@ CREATE TABLE item_stock (
                             FOREIGN KEY (item_id) REFERENCES items(id)
 );
 
--- categories 테이블 생성
+-- 카테고리 정보를 저장하는 테이블
 CREATE TABLE categories (
                             id INT AUTO_INCREMENT PRIMARY KEY,
                             name VARCHAR(255),
@@ -51,12 +54,36 @@ CREATE TABLE categories (
                             INDEX idx_categories_parent_category_id (parent_category_id)
 );
 
--- orders 테이블 생성
+-- 사용자의 장바구니 정보를 저장하는 테이블
+CREATE TABLE carts (
+                       id INT AUTO_INCREMENT PRIMARY KEY,
+                       user_id INT NOT NULL,
+                       created_at DATETIME,
+                       updated_at DATETIME,
+                       FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- 장바구니 내 상품 정보를 저장하는 테이블
+CREATE TABLE cart_items (
+                            id INT AUTO_INCREMENT PRIMARY KEY,
+                            item_id INT NOT NULL,
+                            cart_id INT NOT NULL,
+                            ordered_qty INT NOT NULL,
+                            ordered_color VARCHAR(255),
+                            ordered_size VARCHAR(255),
+                            added_at DATETIME,
+                            FOREIGN KEY (item_id) REFERENCES items(id),
+                            FOREIGN KEY (cart_id) REFERENCES carts(id)
+);
+
+-- 주문 정보를 저장하는 테이블
 CREATE TABLE orders (
                         id INT AUTO_INCREMENT PRIMARY KEY,
                         user_id INT UNIQUE,
                         order_item INT,
                         total_price DECIMAL(10, 2),
+                        delivery_address_main VARCHAR(255) NOT NULL,
+                        delivery_address_sub VARCHAR(255) NOT NULL,
                         order_date DATETIME,
                         status VARCHAR(255),
                         FOREIGN KEY (user_id) REFERENCES users(id),

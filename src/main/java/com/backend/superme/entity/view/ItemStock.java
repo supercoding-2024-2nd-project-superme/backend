@@ -16,6 +16,10 @@ public class ItemStock {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "item_id", referencedColumnName = "id")
+    private Item item; // 'Long itemId' 대신 'Item item'으로 변경
+
     @Column(name = "color")
     private String color;
 
@@ -25,7 +29,5 @@ public class ItemStock {
     @Column(name = "stock_qty")
     private int stockQty;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id", referencedColumnName = "id")
-    private Item item;
+
 }
