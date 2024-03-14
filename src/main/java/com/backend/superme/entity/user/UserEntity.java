@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.CurrentTimestamp;
 
 import java.sql.Date;
@@ -37,7 +38,7 @@ public class UserEntity {
     private String kakaoLogin;
     @Column(unique = true)
     private String naverLogin;
-    @CurrentTimestamp
+    @CreationTimestamp
     private Date signupDate;
 
 
