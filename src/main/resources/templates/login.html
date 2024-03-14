@@ -29,27 +29,20 @@
         event.preventDefault();
         fetch("/login", {
             method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
                 email: document.getElementById("email").value,
                 password: document.getElementById("password").value
-            }),
-            headers: {
-                "Content-Type": "application/json"
-            }
+            })
         })
-            .then(response => {
-                if (response.ok) {
-                    return response.text();
-                }
-                throw new Error("Network response was not ok.");
+            .then(response => response.json()) // 응답을 JSON으로 변환
+            .then(data => {
+                localStorage.setItem("token", data.token); // 추출한 토큰을 로컬 스토리지에 저장
+                window.location.href = "/"; // 홈페이지로 리다이렉션
             })
-            .then(token => {
-                localStorage.setItem("token", token);
-                window.location.href = "/index"; // 로그인 성공 후 이동할 페이지
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
+            .catch(error => console.error("Authentication failed:", error));
     });
 </script>
 
