@@ -1,7 +1,13 @@
 package com.backend.superme.repository.view;
 
+<<<<<<< HEAD
 import com.backend.superme.constant.item.StockStatus;
+=======
+
+>>>>>>> develop
 import com.backend.superme.entity.view.Item;
+import com.backend.superme.entity.view.ItemStock;
+import com.backend.superme.constant.item.StockStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
