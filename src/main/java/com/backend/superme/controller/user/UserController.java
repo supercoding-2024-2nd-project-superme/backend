@@ -4,12 +4,10 @@ package com.backend.superme.controller.user;
 import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -24,18 +22,29 @@ public class UserController {
         return "index";
     }
 
+
+    @GetMapping("/login")
+    public String showLoginPage() {
+        return "login";
+    }
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody UserDto userDto) {
         String token = userService.authenticateUser(userDto);
-        return ResponseEntity.ok(token);
+        // 세션에 토큰 저장 또는 쿠키에 토큰을 담는 등의 작업이 필요
+        if (token != null) {
+            HttpHeaders headers = new HttpHeaders();
+            headers.add("Authorization", "Bearer " + token); // 토큰을 Authorization 헤더에 추가
+            headers.add("Location", "/"); // 리다이렉트할 URL을 설정
+            return ResponseEntity.ok().headers(headers).body(null);
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
     }
 
 
     @GetMapping("/signup")
-    public String showSignupPage(@RequestParam(required = false) String error, Model model) {
-        if ("duplicate_email".equals(error)) {
-            model.addAttribute("error", "duplicate_email");
-        }
+    public String showSignupPage() {
         return "signup";
     }
 
