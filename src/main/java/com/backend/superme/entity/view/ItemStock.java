@@ -77,5 +77,12 @@ public class ItemStock {
                 return "알 수 없는 상태";
         }
     }
+    //재고 지우기
+    public void removeStock(int quantity) throws Exception {
+        if (this.stockQty < quantity) {
+            throw new Exception("재고 수량이 부족합니다.");
+        }
+        this.stockQty -= quantity;
+    }
 
 }
