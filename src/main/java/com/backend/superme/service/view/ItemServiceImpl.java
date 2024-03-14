@@ -16,6 +16,10 @@ public class ItemServiceImpl implements ItemService {
         this.itemRepository = itemRepository;
     }
 
+    @Override
+    public void processOrder(Long itemId, int quantity) {
+        // 구현 내용...
+    }
 
     @Override
     public List<Item> findAllItems() {
@@ -23,26 +27,30 @@ public class ItemServiceImpl implements ItemService {
     }// Todo
 
     @Override
-    public Item itemView(Long id) {
-        return null;
-    }
-
-
-    @Override
     public Item findItemById(Long id) {
-        // 메소드 구현
-        return null; // Todo
+        // 구현 내용...
+        return null;
     }
 
     @Override
     public Item saveItem(Item item) {
-        // 메소드 구현
-        return null; // Todo
+        // 구현 내용...
+        return null;
     }
 
-     /* @Override
      public void deleteItem(Long id) {
-      메소드 구현 Todo
+      //메소드 구현 Todo
      }
-     */
+
+    // Todo 삭제 추후 구현 예정...
+
+
+    public Item itemView(Long id) {
+
+        return null;
+    }
+
+
+
+
 }

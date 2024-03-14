@@ -1,6 +1,7 @@
 package com.backend.superme.controller.view;
 
 import com.backend.superme.dto.view.CartItemDto;
+import com.backend.superme.service.view.CartService;
 import com.backend.superme.service.view.CartItemService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -19,10 +20,10 @@ import java.util.List;
 
 
 @RestController
-@RequiredArgsConstructor // Lombok이 final 필드를 인자로 받는 생성자를 자동 생성
+@RequiredArgsConstructor
 @RequestMapping("/cart")
 public class CartController {
-    private final CartItemService cartItemService;
+    private final CartService cartService;
 
     @PostMapping(value = "/cart")
     public @ResponseBody
@@ -40,7 +41,7 @@ public class CartController {
         Long cartItemId;
 
         try {
-            cartItemId = cartItemService.addCart.addCart(cartItemDto, email);
+            cartItemId = cartService.addCart(cartItemDto, email);
         } catch (Exception e) {
             return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
