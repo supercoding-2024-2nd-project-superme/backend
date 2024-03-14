@@ -60,4 +60,6 @@ public class Item {
     private LocalDateTime terminationDate;
 
 
+    public void removeStock(int count) {
+    }
 }

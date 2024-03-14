@@ -1,6 +1,7 @@
 package com.backend.superme.entity.view;
 
 
+import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.apache.catalina.User;
@@ -21,10 +22,11 @@ public class Cart   {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /* ToDo 유저 엔터티 추가후 연결
-    @Column(name =user_id)
-    private Long userId;
-     */
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
+
 
     @Column(name = "created_at")
     private Date createdAt;
@@ -32,13 +34,14 @@ public class Cart   {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-      /* Todo 유저 연결 필요
-    public static Cart createCart(User user){
+
+    // UserEntity를 매개변수로 받아 새로운 Cart 인스턴스를 생성하고 반환하는 메소드
+    public static Cart createCart(UserEntity user) {
         Cart cart = new Cart();
-        cart.setUser(user);
+        cart.setUser(user); // Cart와 UserEntity를 연결
+        // 필요한 추가적인 초기화 작업 수행
         return cart;
-        }
-     */
+    }
 
 
 }

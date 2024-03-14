@@ -17,11 +17,13 @@ public class CartItem {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="item_id", nullable = false)
-    private Long itemId;
+    @ManyToOne
+    @JoinColumn(name="item_id", nullable = false)
+    private Item item; // Item 엔티티 참조
 
-    @Column(name="cart_id", nullable = false)
-    private Long cartId;
+    @ManyToOne
+    @JoinColumn(name="cart_id", nullable = false)
+    private Cart cart; // Cart 엔티티 참조
 
     @Column(name="ordered_qty", nullable = false)
     private int ordered_qty;
@@ -29,16 +31,16 @@ public class CartItem {
     @Column(name="ordered_color")
     private String orderedColor;
 
-    @Column(name="ordered_color")
+    @Column(name="ordered_size")
     private String orderedSize;
 
-    @Column(name="ordered_size")
+    @Column(name="add_at")
     private Date addedAt;
 
     public static CartItem createCartItem(Cart cart, Item item, int ordered_qty){
         CartItem cartItem = new CartItem();
-        cartItem.setCartId(cart.getId());
-        cartItem.setItemId(item.getId());
+        cartItem.setCart(cart); // Cart 엔티티 설정
+        cartItem.setItem(item); // Item 엔티티 설정
         cartItem.setOrdered_qty(ordered_qty);
         cartItem.setAddedAt(new Date()); // 추가된 시간 설정
         return cartItem;
