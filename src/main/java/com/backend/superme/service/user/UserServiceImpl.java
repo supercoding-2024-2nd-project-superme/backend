@@ -6,7 +6,6 @@ import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.repository.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -37,6 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void signupUser(UserDto userDto) {
+        System.out.println(userDto.toString());
         String email = userDto.getEmail();
         String password = userDto.getPassword();
 
@@ -61,6 +61,7 @@ public class UserServiceImpl implements UserService {
         userEntity.setRole("USER");
 
         userRepository.save(userEntity);
+
     }
 
     @Override

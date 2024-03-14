@@ -8,10 +8,10 @@
 
 <h2>Login</h2>
 
-<form action="/login" method="post">
+<form id="loginForm">
     <div>
-        <label for="email">email:</label>
-        <input type="text" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
     </div>
     <div>
         <label for="password">Password:</label>
@@ -23,6 +23,35 @@
 </form>
 
 <p>Not a member yet? <a href="/signup">Sign up</a>.</p>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        fetch("/login", {
+            method: "POST",
+            body: JSON.stringify({
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                }
+                throw new Error("Network response was not ok.");
+            })
+            .then(token => {
+                localStorage.setItem("token", token);
+                window.location.href = "/index"; // 로그인 성공 후 이동할 페이지
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    });
+</script>
 
 </body>
 </html>
