@@ -2,27 +2,16 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Login Page</title>
+    <title>게시판 홈페이지</title>
 </head>
 <body>
+<h1>환영합니다!</h1>
+<p>이곳은 우리의 쇼핑몰입니다. 로그인하거나 회원가입하여 참여해보세요.</p>
 
-<h2>Login</h2>
+<!-- 로그인 버튼 -->
+<a th:href="@{/login}" href="/login">로그인</a>
 
-<form action="/login" method="post">
-    <div>
-        <label for="email">email:</label>
-        <input type="text" id="email" name="email" required>
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
-
-<p>Not a member yet? <a href="/signup">Sign up</a>.</p>
-
+<!-- 회원가입 버튼 -->
+<a th:href="@{/signup}" href="/signup">회원가입</a>
 </body>
 </html>

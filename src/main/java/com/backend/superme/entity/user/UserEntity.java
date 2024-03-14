@@ -1,5 +1,6 @@
 package com.backend.superme.entity.user;
 
+import com.backend.superme.constant.user.GenderEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,6 +16,7 @@ import java.sql.Date;
 @Table(name = "account")
 public class UserEntity {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,8 +31,7 @@ public class UserEntity {
     private String address;
     private String phone;
     @Enumerated(EnumType.STRING)
-    @Column(length = 10)
-    private Gender gender = Gender.OTHER;
+    private GenderEnum gender = GenderEnum.OTHER;
     private String role;
     @Column(unique = true)
     private String kakaoLogin;
@@ -39,9 +40,7 @@ public class UserEntity {
     @CurrentTimestamp
     private Date signupDate;
 
-    public enum Gender {
-        FEMALE, MALE, OTHER
-    }
+
 }
 
 
