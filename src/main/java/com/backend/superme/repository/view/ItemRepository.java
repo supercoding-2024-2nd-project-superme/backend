@@ -1,6 +1,9 @@
 package com.backend.superme.repository.view;
 
+
 import com.backend.superme.entity.view.Item;
+import com.backend.superme.entity.view.ItemStock;
+import com.backend.superme.constant.item.StockStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -23,7 +26,7 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     List<Item> findBySizeOption(String sizeOption);
 
     // 재고 상태로 상품 검색
-    List<Item> findByStockStatus(Item.StockStatus stockStatus);
+    List<Item> findByStockStatus(StockStatus stockStatus);
 
     // 가격 범위로 상품 검색
     List<Item> findByPriceBetween(BigDecimal minPrice, BigDecimal maxPrice);

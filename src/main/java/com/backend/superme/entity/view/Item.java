@@ -2,6 +2,7 @@ package com.backend.superme.entity.view;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.constant.item.StockStatus;
 
 import java.math.BigDecimal;
@@ -42,11 +43,11 @@ public class Item {
     @Column(name = "price", precision = 10, scale = 2)
     private BigDecimal price;
 
-    /*Todo :유저 연결후에 추가
+
     @ManyToOne
     @JoinColumn(name = "seller",referencedColumnName = "id")
-    private User seller;
-    */
+    private UserEntity seller;
+
 
     @ManyToOne
     @JoinColumn(name = "category", referencedColumnName = "id")
@@ -58,7 +59,5 @@ public class Item {
     @Column(name="termination_date")
     private LocalDateTime terminationDate;
 
-    public void removeStock(int count) {
-        //Todo 수량 변경 로직 필요
-    }
+
 }
