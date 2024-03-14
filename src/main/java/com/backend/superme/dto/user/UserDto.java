@@ -1,9 +1,7 @@
 package com.backend.superme.dto.user;
 
 
-
 import com.backend.superme.constant.user.GenderEnum;
-import com.backend.superme.entity.user.UserEntity;
 import lombok.Data;
 
 import java.sql.Date;

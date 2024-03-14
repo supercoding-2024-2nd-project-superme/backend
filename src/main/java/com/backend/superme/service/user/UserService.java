@@ -1,7 +1,6 @@
 package com.backend.superme.service.user;
 
 import com.backend.superme.dto.user.UserDto;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 @Service
