@@ -7,33 +7,38 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.lang.Nullable;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class ItemRequest {
 
-    private Long categoryId;
+public record ItemRequest(
 
-    @NotBlank(message = "상품 이름 입력")
-    private String itemName; // 상품 이름
+        Long categoryId,
 
-    @NotBlank(message = "상품 설명 입력")
-    private String description; // 설명
+        @NotBlank(message = "상품 이름 입력")
+        String itemName, // 상품 이름
+        @NotNull(message = "가격을 입력")
+        BigDecimal price, // 가격
+        @NotBlank(message = "상품 설명 입력")
+        String description, // 설명
 
-    @NotBlank(message = "사이즈 입력")
-    private String sizeOption; // S, M, L 등
+        @NotBlank(message = "사이즈 입력")
+        String sizeOption, // S, M, L 등
+        String colorOption, // S, M, L 등
 
-    @NotNull(message = "가격을 입력")
-    private BigDecimal price; // 가격
+        @Nullable
+//        @Schema(description = "상품 옵션", example = "{색상: WHITE}")
+        List<Option> optionValue
 
-    private Category category; // 카테고리
 
-    private String mainImgUrl; // 이미지 URL
 
-    private LocalDateTime terminationDate; // 판매 종료 일자
+) {
+
+        public record Option (
+                String key,
+                String value) {
+        }
 }

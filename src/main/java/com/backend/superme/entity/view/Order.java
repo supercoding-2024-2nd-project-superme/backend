@@ -22,14 +22,14 @@ public class Order {
     private User user;
     */
 
-    @ManyToOne(fetch= FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_item")
     private Item orderItem;
 
-    @Column(name="total_price", nullable = false, precision = 10, scale =2)
-   private BigDecimal totalPrice;
+    @Column(name = "total_price", nullable = false, precision = 10, scale = 2)
+    private BigDecimal totalPrice;
 
-   private String deliveryAddress;
+    private String deliveryAddress;
 
     private Date orderDate;
 

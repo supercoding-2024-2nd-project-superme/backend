@@ -22,11 +22,9 @@ public class Cart   {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserEntity user;
-
 
     @Column(name = "created_at")
     private Date createdAt;

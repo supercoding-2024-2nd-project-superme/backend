@@ -18,6 +18,7 @@ import java.util.function.Function;
 public interface CartItemRepository extends JpaRepository<CartItem, Long> {
 
    @Query("SELECT ci FROM CartItem ci WHERE ci.cart.id = :cartId AND ci.item.id = :itemId")
+
    CartItem findCartIdAndItemId(Long cartId, Long itemId);
 
    CartItem findByCartIdAndItemId(Long cartId, Long itemId);
