@@ -21,6 +21,7 @@ public class UserDto {
     private String role;
     private String kakaoLogin;
     private String naverLogin;
+    private String status;
     private Date signupDate;
 
 

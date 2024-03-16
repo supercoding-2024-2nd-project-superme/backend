@@ -1,6 +1,7 @@
 package com.backend.superme.entity.user;
 
 import com.backend.superme.constant.user.GenderEnum;
+import com.backend.superme.constant.user.StatusEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,6 +39,8 @@ public class UserEntity {
     private String kakaoLogin;
     @Column(unique = true)
     private String naverLogin;
+    @Enumerated(EnumType.STRING)
+    private StatusEnum status = StatusEnum.ACTIVE;
     @CreationTimestamp
     private Date signupDate;
 

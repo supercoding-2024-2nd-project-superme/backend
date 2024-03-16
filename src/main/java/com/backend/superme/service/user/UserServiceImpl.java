@@ -2,6 +2,7 @@ package com.backend.superme.service.user;
 
 import com.backend.superme.config.user.JwtTokenProvider;
 import com.backend.superme.config.user.UserPrincipal;
+import com.backend.superme.constant.user.StatusEnum;
 import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.repository.user.UserRepository;
@@ -77,6 +78,11 @@ public class UserServiceImpl implements UserService {
 
         UserEntity userEntity = userEntityOptional.get();
 
+        // 회원 상태 확인
+        if (userEntity.getStatus().equals("delete")) {
+            throw new RuntimeException("탈퇴한 회원입니다.");
+        }
+
         if (!passwordEncoder.matches(password, userEntity.getPassword())) {
             throw new RuntimeException("비밀번호가 일치하지 않습니다.");
         }
@@ -95,5 +101,16 @@ public class UserServiceImpl implements UserService {
         }
 
         return jwtTokenProvider.getEmailFromToken(token);
+    }
+
+    public void withdrawUser(String email) {
+        Optional<UserEntity> userOptional = userRepository.findByEmail(email);
+        if (userOptional.isPresent()) {
+            UserEntity user = userOptional.get();
+            user.setStatus(StatusEnum.DELETED);
+            userRepository.save(user);
+        } else {
+            throw new RuntimeException("해당 이메일을 가진 사용자를 찾을 수 없습니다.");
+        }
     }
 }

@@ -88,7 +88,31 @@ public class UserController {
             tokenBlacklistService.blacklistToken(token);
             return ResponseEntity.ok().build();
         }
-        return ResponseEntity.badRequest().body("Missing or invalid Authorization header."); // 단순히 성공 응답 반환
+        return ResponseEntity.badRequest().body("인증 토큰이 없거나 올바르지 않습니다"); // 단순히 성공 응답 반환
     }
+
+    @DeleteMapping("/user/withdraw")
+    public ResponseEntity<?> withdrawUser(HttpServletRequest request) {
+        // 헤더에서 인증 토큰을 추출
+        String authToken = request.getHeader("Authorization");
+        if (authToken == null || !authToken.startsWith("Bearer ")) {
+            return ResponseEntity.badRequest().body("인증 토큰이 없거나 올바르지 않습니다"); // 단순히 성공 응답 반환
+        }
+        authToken = authToken.substring(7); //"Bearer " 부분 제외하고 토큰만 추출
+
+        // 토큰을 통해 이메일 추출
+        String userEmail = userService.emailFromToken(authToken);
+
+        // 이메일을 통해 사용자 상태를 'ACTIVE'에서 'DELETED'로 변경
+        try {
+            userService.withdrawUser(userEmail);
+            return ResponseEntity.ok().build(); // 성공적으로 탈퇴됨을 응답
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("사용자 탈퇴 중 오류가 발생했습니다."); // 탈퇴 실패 시 오류 응답
+        }
+    }
+
+
+
 }
 
