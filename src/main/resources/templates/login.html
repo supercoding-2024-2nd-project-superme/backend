@@ -22,12 +22,12 @@
     </div>
 </form>
 
-<p>Not a member yet? <a href="/signup">Sign up</a>.</p>
+<p>Not a member yet? <a href="/user/signup">Sign up</a>.</p>
 
 <script>
     document.getElementById("loginForm").addEventListener("submit", function(event) {
         event.preventDefault();
-        fetch("/login", {
+        fetch("/user/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

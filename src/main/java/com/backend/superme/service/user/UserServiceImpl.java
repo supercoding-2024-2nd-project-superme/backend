@@ -87,4 +87,13 @@ public class UserServiceImpl implements UserService {
         return token;
 
     }
+
+    public String emailFromToken (String token) {
+        //토큰 검증
+        if(!jwtTokenProvider.validateJwtToken(token)) {
+            throw new RuntimeException("Token is not valid");
+        }
+
+        return jwtTokenProvider.getEmailFromToken(token);
+    }
 }
