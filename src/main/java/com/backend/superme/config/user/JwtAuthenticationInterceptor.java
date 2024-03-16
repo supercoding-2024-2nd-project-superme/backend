@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-// JwtAuthenticationInterceptor는 스프링의 HandlerInterceptor 인터페이스를 구현한 컴포넌트입니다.
-// 이 클래스는 HTTP 요청이 컨트롤러에 도달하기 전에 요청을 인터셉트하고, 추가적인 처리를 수행합니다.
+
 @Component
 // JwtAuthenticationInterceptor는 스프링의 HandlerInterceptor 인터페이스를 구현한 컴포넌트입니다.
 // 이 클래스는 HTTP 요청이 컨트롤러에 도달하기 전에 요청을 인터셉트하고, 추가적인 처리를 수행합니다.

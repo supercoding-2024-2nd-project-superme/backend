@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>회원가입</h1>
-<form id="signupForm" action="/signup" method="post" onsubmit="return signup()">
+<form id="signupForm" action="/user/signup" method="post" onsubmit="return signup()">
     <div>
         <label for="email">이메일:</label>
         <input type="email" id="email" name="email" required>
@@ -54,7 +54,7 @@
     async function checkDuplicate() {
         let email = document.getElementById("email").value; // 입력된 이메일 가져오기
         try {
-            const response = await fetch("/signup/check/" + email); // 서버로 요청 보내고 응답 받기
+            const response = await fetch("/user/signup/check/" + email); // 서버로 요청 보내고 응답 받기
             if (response.ok) {
                 const data = await response.text(); // 응답 데이터 가져오기
                 document.getElementById("emailMessage").innerText = data; // 응답 메시지 출력

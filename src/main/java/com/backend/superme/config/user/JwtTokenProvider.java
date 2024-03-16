@@ -54,7 +54,13 @@ public class JwtTokenProvider {
         }
         return null;
     }
+
+    public String getEmailFromToken(String token) {
+        return Jwts.parser().setSigningKey(jwtSecret).build().parseClaimsJws(token).getBody().getSubject();
+    }
 }
+
+
 
 
 //JwtTokenProvider 클래스는 JWT 토큰 생성, 유효성 검증, 그리고 HTTP 요청으로부터 JWT 토큰을 추출하는 기능을 담당합니다.

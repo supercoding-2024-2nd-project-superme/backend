@@ -23,6 +23,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         String token = jwtTokenProvider.resolveToken(request);
         // HTTP 요청에서 JWT 토큰을 추출합니다. 토큰은 보통 'Authorization' 헤더에 'Bearer [토큰]' 형식으로 포함됩니다.
 
+
         if (token != null && jwtTokenProvider.validateJwtToken(token)) {
             // 추출한 토큰이 null이 아니며 유효한 경우의 처리를 합니다.
             // 유효한 토큰인 경우, 추가적인 인증 처리나 사용자 정보 설정 등을 수행할 수 있습니다.

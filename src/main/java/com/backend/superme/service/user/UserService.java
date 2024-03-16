@@ -11,6 +11,7 @@ public interface UserService {
 
     String authenticateUser(UserDto userDto);
 
+    String emailFromToken(String token);
 
 }
 
