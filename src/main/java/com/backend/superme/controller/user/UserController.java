@@ -46,6 +46,16 @@ public class UserController {
         }
     }
 
+    @GetMapping("/login")
+    public String login1() {
+        return "index";
+    }
+    @GetMapping("/check")
+    public String checkAuthentication(){
+        return "인증 성공!";
+    }
+
+
     @GetMapping("/signup")
     public String showSignupPage(@RequestParam(required = false) String error, Model model) {
         if ("duplicate_email".equals(error)) {

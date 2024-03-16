@@ -25,7 +25,7 @@ public record ItemRequest(
         @NotBlank(message = "상품 설명 입력")
         String description, // 설명
 
-        @NotBlank(message = "사이즈 입력")
+//        @NotBlank(message = "사이즈 입력")
         String sizeOption, // S, M, L 등
         String colorOption, // S, M, L 등
 

@@ -1,11 +1,13 @@
 package com.backend.superme.service.adminService;
 
+import com.backend.superme.config.user.UserPrincipal;
 import com.backend.superme.dto.adminItemDto.*;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.security.Principal;
 import java.util.List;
 
 @Service

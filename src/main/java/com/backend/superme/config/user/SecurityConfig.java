@@ -25,9 +25,10 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((auth) -> auth
 
-                                .requestMatchers("/api/sales/items", "/", "/h2-console/**", "/login", "/signup/**", "/index").permitAll()
+                                .requestMatchers("/","/api/sales/get-current-member", "/h2-console/**", "/login", "/signup/**", "/index","api/sales/items", "/api/sales/get-current-member").permitAll()
 //                        .requestMatchers("/admin").hasRole("ADMIN")
 //                        .requestMatchers("/my/**").hasAnyRole("ADMIN", "USER")
+
                                 .anyRequest().authenticated()
                 );
         http.addFilterBefore(new JwtTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
