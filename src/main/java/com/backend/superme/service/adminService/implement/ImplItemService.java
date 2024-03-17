@@ -1,11 +1,9 @@
 package com.backend.superme.service.adminService.implement;
 
-import com.backend.superme.config.exception.BusinessException;
-import com.backend.superme.config.user.UserPrincipal;
+import com.backend.superme.config.global.BusinessException;
 import com.backend.superme.dto.adminItemDto.*;
 import com.backend.superme.entity.ItemImgEntity.AdminItemImageEntity;
 import com.backend.superme.entity.user.UserEntity;
-import com.backend.superme.entity.view.Category;
 import com.backend.superme.entity.view.Item;
 import com.backend.superme.repository.adminRepository.AdminItemCategoryRepository;
 import com.backend.superme.repository.adminRepository.AdminItemImageRepository;
@@ -19,12 +17,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.security.Principal;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import static com.backend.superme.config.exception.ErrorCode.*;
+import static com.backend.superme.config.global.ErrorCode.*;
 
 @Service
 @RequiredArgsConstructor
@@ -57,7 +54,7 @@ public class ImplItemService implements adminItemService {
 //                () -> new BusinessException(NOT_FOUND_CATEGORY));
 
         Item item = Item.builder()
-                .itemName(itemRequest.itemName())
+                .name(itemRequest.itemName())
                 .price(itemRequest.price())
                 .description(itemRequest.description())
 //                .category(category)
@@ -98,7 +95,7 @@ public class ImplItemService implements adminItemService {
     private CreateItemResponse getCreateItemResponse(Item item, List<String> imageUrls, List<Long> itemImgIds) {
         return new CreateItemResponse(
                 item.getId(),
-                item.getItemName(),
+                item.getName(),
 //                item.getCategory().getCategoryId(),
                 item.getColorOption(),
                 item.getSizeOption(),

@@ -30,11 +30,11 @@ public class QItem extends EntityPathBase<Item> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final StringPath itemName = createString("itemName");
+    public final StringPath imgId = createString("imgId");
 
     public final QItemStock itemStock;
 
-    public final StringPath mainImg = createString("mainImg");
+    public final StringPath name = createString("name");
 
     public final NumberPath<java.math.BigDecimal> price = createNumber("price", java.math.BigDecimal.class);
 

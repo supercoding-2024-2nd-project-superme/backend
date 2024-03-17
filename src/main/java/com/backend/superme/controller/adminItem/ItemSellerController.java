@@ -1,11 +1,7 @@
 package com.backend.superme.controller.adminItem;
 
-import com.backend.superme.config.exception.BusinessException;
-import com.backend.superme.config.exception.ErrorCode;
 import com.backend.superme.dto.adminItemDto.CreateItemResponse;
 import com.backend.superme.dto.adminItemDto.ItemRequest;
-import com.backend.superme.dto.user.UserDto;
-import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.service.adminService.implement.ImplItemService;
 import com.backend.superme.service.adminService.implement.S3Service;
 import com.backend.superme.service.user.UserService;
@@ -13,16 +9,10 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.security.Principal;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
