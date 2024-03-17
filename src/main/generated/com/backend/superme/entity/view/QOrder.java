@@ -34,6 +34,8 @@ public class QOrder extends EntityPathBase<Order> {
 
     public final NumberPath<java.math.BigDecimal> totalPrice = createNumber("totalPrice", java.math.BigDecimal.class);
 
+    public final com.backend.superme.entity.user.QUserEntity user;
+
     public QOrder(String variable) {
         this(Order.class, forVariable(variable), INITS);
     }
@@ -53,6 +55,7 @@ public class QOrder extends EntityPathBase<Order> {
     public QOrder(Class<? extends Order> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.orderItem = inits.isInitialized("orderItem") ? new QItem(forProperty("orderItem"), inits.get("orderItem")) : null;
+        this.user = inits.isInitialized("user") ? new com.backend.superme.entity.user.QUserEntity(forProperty("user")) : null;
     }
 
 }
