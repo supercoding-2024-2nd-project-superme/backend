@@ -14,7 +14,7 @@ import java.util.Optional;
 public interface AdminItemRepository extends JpaRepository<Item, Long> {
 
     //아이템 이름 조회
-    Optional<Item> findByItemName(String itemName);
+    Optional<Item> findByName(String name);
 
 //    //특정 회원이 등록한 아이템을 페이지네이션된 형태로 조회합니다.
 //    Page<Item> findByMember(Pageable pageable, UserEntity member);

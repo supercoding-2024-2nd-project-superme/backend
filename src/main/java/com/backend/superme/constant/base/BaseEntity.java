@@ -8,10 +8,11 @@ import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
-@EntityListeners(AutoCloseable.class) //이벤트를 처리하는 리스너 생명주기 이벤트(예: 생성, 수정, 삭제)
+@EntityListeners(AuditingEntityListener.class) //이벤트를 처리하는 리스너 생명주기 이벤트(예: 생성, 수정, 삭제)
 @MappedSuperclass //공통 매핑정보를 제공하기 위해 사용되는 JPA 애노테이션, 부모 클래스에 매핑정보를 정의, 이를 하위 클래스에서 상속받아 재사용
 @Getter
 public class BaseEntity {

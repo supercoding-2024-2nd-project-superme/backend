@@ -1,4 +1,4 @@
-package com.backend.superme.config.exception;
+package com.backend.superme.config.global;
 
 
 import lombok.Getter;
