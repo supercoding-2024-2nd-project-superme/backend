@@ -48,11 +48,11 @@
 //    // 이름 또는 카테고리를 기준으로 상품 검색
 //    public List<ItemDto> searchItems(String name, String category) {
 //        if (name != null && category != null) {
-//            return itemRepository.findByNameContainingOrCategoryContaining(name, category).stream()
+//            return itemRepository.findByItemNameContainingOrCategoryContaining(name, category).stream()
 //                    .map(entity -> new ItemDto(entity.getId(), entity.getName(), entity.getPrice()))
 //                    .collect(Collectors.toList());
 //        } else if (name != null) {
-//            return itemRepository.findByNameContaining(name).stream()
+//            return itemRepository.findByItemNameContaining(name).stream()
 //                    .map(entity -> new ItemDto(entity.getId(), entity.getName(), entity.getPrice()))
 //                    .collect(Collectors.toList());
 //        } else if (category != null) {
