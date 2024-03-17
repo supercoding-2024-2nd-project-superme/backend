@@ -1,51 +1,55 @@
 package com.backend.superme.entity.view;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-import com.backend.superme.entity.view.ItemStock;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
+@Table(name = "order_items")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_item_id") //확인 필요
+    @Column(name = "order_item_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="item_id")//확인 필요
+    @JoinColumn(name="item_id")
     private Item item;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="order_id")//확인 필요
-    private Order order;
+    @JoinColumn(name="order_id")
+    private Order order; //주문 정보
 
     private BigDecimal orderPrice;
     private int count;
-    private Date regTime;
-    private Date updateTime;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date regTime; //주문 항목 생성 시점
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updateTime; //주문 항목 업데이트 시점
 
 
-    //주문 항목 생성
+    // 주문 항목을 생성하는 정적 메서드
     public static OrderItem createOrderItem(Item item, int count){
-        OrderItem orderItem = new OrderItem();
-        orderItem.setItem(item); // 인스턴스를 사용하여 비정적 메서드 호출
-        orderItem.setCount(count);// 인스턴스를 사용하여 비정적 메서드 호출
-        // 주문 가격 설정
-        orderItem.setOrderPrice(item.getPrice());
+        OrderItem orderItem = OrderItem.builder()
+                .item(item) // 주문 아이템 설정
+                .count(count) // 주문 수량 설정
+                .orderPrice(item.getPrice()) // 주문 가격
+                .regTime(new Date()) //현재 시점으로 등록 시점 설정
+                .updateTime(new Date()) //현재 시점으로 업데이트 시점 설정
+                .build();
 
-        // 재고 감소 처리, item.removeStock()이 재고를 감소시키는 메서드라고 가정
         try {
-            item.removeStock(count); // 재고 감소 처리
+            item.removeStock(count); // 주문 수량만큼 재고 감소
         } catch (Exception e) {
-            // 예외 처리 로직, 예를 들어 로그를 남기고 사용자 정의 예외를 던질 수 있습니다.
-            // 예외 발생 시 특정 액션을 취할 수 있도록 설계할 수 있습니다.
             throw new RuntimeException("재고 수량이 부족하여 주문을 처리할 수 없습니다.", e);
         }
 

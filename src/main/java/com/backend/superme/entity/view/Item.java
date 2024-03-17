@@ -9,30 +9,32 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Setter
 @Getter
 @Entity
-@RequiredArgsConstructor
 @Table(name = "Items")
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "item_name", nullable = false)
-    private String itemName;
+    @Column(name ="item_name", nullable=false)
+    private String name;
 
-    @Column(name = "main_img")
-    private String mainImg;
+    //  @OneToMany(mappedBy = //Todo)
+    @JoinColumn(name="img_id")
+    private String imgId;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "color_option")
+    @Column(name="color_option")
     private String colorOption;
 
-    @Column(name = "size_option")
+    @Column(name="size_option")
     private String sizeOption;
 
     @Enumerated(EnumType.STRING)
@@ -47,42 +49,18 @@ public class Item {
     @JoinColumn(name = "seller", referencedColumnName = "id")
     private UserEntity seller;
 
+
     @ManyToOne
     @JoinColumn(name = "category", referencedColumnName = "id")
     private Category category;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "item_stock", referencedColumnName = "id")
-    private ItemStock itemStock;
-
     @Column(name = "registration_date")
     private LocalDateTime registrationDate;
 
-    @Column(name = "termination_date")
+    @Column(name="termination_date")
     private LocalDateTime terminationDate;
 
 
     public void removeStock(int count) {
     }
-    @Builder
-    public Item(String itemName, BigDecimal price, String description, Category category, UserEntity seller,
-                String sizeOption, String colorOption) {
-        this.itemName = itemName;
-        this.price = price;
-        this.description = description;
-        this.category = category;
-        this.seller = seller;
-        this.sizeOption = sizeOption;
-        this.colorOption = colorOption;
-    }
-
-
-    public void updateItem(String itemName, BigDecimal itemPrice, String description, Category category, StockStatus stockStatus){
-        this.itemName = itemName;
-        this.price = itemPrice;
-        this.description = description;
-        this.category = category;
-        this.stockStatus = stockStatus;
-    }
-
 }

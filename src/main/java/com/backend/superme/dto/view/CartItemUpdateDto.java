@@ -7,6 +7,6 @@ import lombok.Setter;
 @Setter
 public class CartItemUpdateDto {
     private Long id;
-    private int qty;
-
+    private int quantity;
+    //장바구니 내역 수정시 사용되는 데이터
 }
