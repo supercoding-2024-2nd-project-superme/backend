@@ -22,10 +22,11 @@ public class Item {
     private long id;
 
     @Column(name ="item_name", nullable=false)
-    private String itemName;
+    private String name;
 
-    @Column(name="main_img")
-    private String mainImg;
+//  @OneToMany(mappedBy = //Todo)
+    @JoinColumn(name="img_id")
+    private String imgId;
 
     @Column(name = "description")
     private String description;
@@ -45,7 +46,7 @@ public class Item {
 
 
     @ManyToOne
-    @JoinColumn(name = "seller",referencedColumnName = "id")
+    @JoinColumn(name = "seller", referencedColumnName = "id")
     private UserEntity seller;
 
 
