@@ -21,16 +21,15 @@ public class AdminItemImageEntity extends BaseEntity {
     @Column(name = "admin_item_url", nullable = false)
     private String imageUrl;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item", referencedColumnName = "id", nullable = false)
     private Item item;
-
 
     @Builder
     public AdminItemImageEntity(String imageUrl, Item item) {
         this.imageUrl = imageUrl;
         this.item = item;
     }
-
 
 }

@@ -21,6 +21,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import static com.backend.superme.config.exception.ErrorCode.*;
 
@@ -38,9 +40,11 @@ public class ImplItemService implements adminItemService {
 
     @Override
     @Transactional
-    public CreateItemResponse create(ItemRequest itemRequest, List<MultipartFile> multipartFiles, User user) {
+    public CreateItemResponse create(ItemRequest itemRequest, List<MultipartFile> multipartFiles, String user) {
         //유저 찾기
-        UserEntity member = getMember(user);
+        Optional<UserEntity> memberOptional = memberRepository.findByEmail(user);
+        UserEntity member = memberOptional.orElseThrow(() -> new NoSuchElementException("User not found with email: " + user));
+
 //        System.out.println("사용자 정보 {} " + member);
 //
 //        //같은 이름의 상품이 있으면 예외처리, 같은 이름의 상품을 등록할 수 없음
@@ -76,7 +80,10 @@ public class ImplItemService implements adminItemService {
 
         // 이미지 DB 저장
         List<AdminItemImageEntity> imageList = imageUrls.stream()
-                .map(url -> AdminItemImageEntity.builder().imageUrl(url).item(savedItem).build())
+                .map(url -> AdminItemImageEntity.builder()
+                        .imageUrl(url)
+                        .item(savedItem) // savedItem 객체를 바로 넘김
+                        .build())
                 .toList();
 
         itemImageRepository.saveAll(imageList);

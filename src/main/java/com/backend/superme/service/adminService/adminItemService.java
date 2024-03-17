@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public interface adminItemService {
     // 상품을 생성하고 생성된 상품의 정보를 반환합니다.
-    CreateItemResponse create(ItemRequest itemRequest, List<MultipartFile> multipartFiles, User user);
+    CreateItemResponse create(ItemRequest itemRequest, List<MultipartFile> multipartFiles, String user);
 
     // 주어진 상품 ID 에 해당하는 상품을 업데이트하고 업데이트 된 상품의 정보를 반환합니다.
     UpdateItemResponse update(Long itemId, UpdateItemRequest itemRequest, List<MultipartFile> multipartFiles, User user);

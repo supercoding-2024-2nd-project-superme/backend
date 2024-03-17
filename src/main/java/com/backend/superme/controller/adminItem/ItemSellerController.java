@@ -8,6 +8,7 @@ import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.service.adminService.implement.ImplItemService;
 import com.backend.superme.service.adminService.implement.S3Service;
+import com.backend.superme.service.user.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -31,6 +32,7 @@ public class ItemSellerController {
 
     private final ImplItemService itemService;
     private final S3Service s3Service;
+    private final UserService userService;
 
 
     //(판매자) 상품 등록 + 이미지 추가 ( 필수 ) + 옵션 설정
@@ -39,15 +41,14 @@ public class ItemSellerController {
 //    @Operation(summary = "상품 등록 api", description = "상품을 등록하는 api 입니다.")
     public CreateItemResponse addItem(@Valid @RequestPart ItemRequest itemRequest,
                                       @RequestPart(value = "file", required = false) List<MultipartFile> multipartFiles,
-                                      @AuthenticationPrincipal User user) {
+                                      @RequestHeader("Authorization") String user) {
 
-        return itemService.create(itemRequest, multipartFiles, user);
+
+        String userEmail = userService.emailFromToken(user);
+
+        return itemService.create(itemRequest, multipartFiles, userEmail);
     }
 
-    @GetMapping("/get-current-member")
-    public String getCurrentMember(Principal principal) {
-        String currentMemberName = principal.getName();
-        return "Current member name: " + currentMemberName;
-    }
+
 }
 
