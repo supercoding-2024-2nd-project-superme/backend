@@ -19,7 +19,7 @@ public record CreateItemResponse(
         String price,
 
         //    @Schema(description = "상품 옵션", example = "{색상: WHITE}")
-        String optionValue,
+        Long id, String optionValue,
 
         //    @Schema(description = "상품 상세 설명", example = "가볍고 화질이 선명해요.")
         String description,

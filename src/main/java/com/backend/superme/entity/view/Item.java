@@ -10,10 +10,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @Table(name = "Items")
 public class Item {
@@ -21,11 +22,11 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name ="item_name", nullable=false)
+    @Column(name = "item_name", nullable = false)
     private String name;
 
-//  @OneToMany(mappedBy = //Todo)
-    @JoinColumn(name="img_id")
+    //  @OneToMany(mappedBy = //Todo)
+    @JoinColumn(name = "img_id")
     private String imgId;
 
     @Column(name = "description")
@@ -35,30 +36,25 @@ public class Item {
     @ElementCollection
     @CollectionTable(name = "item_color_options")
     @Column(name = "color_option")
-    @Builder.Default
     private List<String> colorOption = new ArrayList<>();
+
 
     @ElementCollection
     @CollectionTable(name = "item_size_options")
     @Column(name = "size_option")
-    @Builder.Default
-    private List<String> sizeOption = new ArrayList<>();
+    private List<String> sizeOptions = new ArrayList<>();
+
+    @OneToMany(mappedBy="item", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    private List<ItemStock> itemStocks;
+
+
 
     @Enumerated(EnumType.STRING)
     @Column(name = "stock_status", nullable=false)
     private StockStatus stockStatus;
 
-    //JS ver
-    @OneToMany(mappedBy="item", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-    private List<ItemStock> itemStocks;
-    //YJ ver
-//    @ManyToOne
-//    @JoinColumn(name = "item_stock", referencedColumnName ="id")
-//    private ItemStock itemStock;
-
     @Column(name = "price", precision = 10, scale = 2)
     private BigDecimal price;
-
 
     @ManyToOne
     @JoinColumn(name = "seller", referencedColumnName = "id")
@@ -76,7 +72,31 @@ public class Item {
     private LocalDateTime terminationDate;
 
 
+    public void removeStock(int count) {
+        //재고 감소 로직 Todo
 
+    }
+
+    @Builder
+    public Item(String name, BigDecimal price, String description, Category category, UserEntity seller,
+               List<String> colorOptions, List<String> sizeOptions) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.category = category;
+        this.seller = seller;
+        this.colorOptions = colorOptions;
+        this.sizeOptions = sizeOptions;
+    }
+
+
+    public void updateItem(String name, BigDecimal itemPrice, String description, Category category, StockStatus stockStatus) {
+        this.name = name;
+        this.price = itemPrice;
+        this.description = description;
+        this.category = category;
+        this.stockStatus = stockStatus;
+    }
 
     public void removeStock(int count) {
     }
