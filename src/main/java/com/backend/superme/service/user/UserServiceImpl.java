@@ -79,7 +79,7 @@ public class UserServiceImpl implements UserService {
         UserEntity userEntity = userEntityOptional.get();
 
         // 회원 상태 확인
-        if (userEntity.getStatus().equals("delete")) {
+        if (userEntity.getStatus() == StatusEnum.DELETED) {
             throw new RuntimeException("탈퇴한 회원입니다.");
         }
 
