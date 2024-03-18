@@ -36,13 +36,13 @@ public class Item {
     @CollectionTable(name = "item_color_options")
     @Column(name = "color_option")
     @Builder.Default
-    private List<String> colorOptions = new ArrayList<>();
+    private List<String> colorOption = new ArrayList<>();
 
     @ElementCollection
     @CollectionTable(name = "item_size_options")
     @Column(name = "size_option")
     @Builder.Default
-    private List<String> sizeOptions = new ArrayList<>();
+    private List<String> sizeOption = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     @Column(name = "stock_status", nullable=false)

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.modelmapper.ModelMapper;
 
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,7 @@ public class CartItemService {
     private final ModelMapper modelMapper;
 
     @Autowired
-    public CartItemService(CartItemRepository cartItemRepository, ModelMapper modelMapper){
+    public CartItemService(CartItemRepository cartItemRepository,ModelMapper modelMapper) {
         this.cartItemRepository = cartItemRepository;
         this.modelMapper = modelMapper;
     }
@@ -49,6 +50,6 @@ public class CartItemService {
        // Entity를 DTO로 변환하는 메서드
        private CartItemDto convertToDto(CartItem cartItem) {
            // CartItemEntity를 CartItemDto로 변환하는 로직
-           return new CartItemDto(cartItem.getId());
+           return modelMapper.map(cartItem, CartItemDto.class);
        }
 }

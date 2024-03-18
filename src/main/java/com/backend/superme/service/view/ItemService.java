@@ -21,13 +21,7 @@ public interface ItemService {
     List<ItemDto> getItemsByCategory(String category);
     ItemDetailDto findItemDetailById(Long id);
     List<ItemDto> searchItems(String name, String category);
+    List<ItemDto> sortItems(String sortBy);
 
-    // sortBy 파라미터에 따라 정렬 방식을 선택하여 조회
-    List<ItemDto> sortItemsByNameAscending();
-    List<ItemDto> sortItemsByNameDescending();
-    List<ItemDto> sortItemsByPriceAscending();
-    List<ItemDto> sortItemsByPriceDescending();
-    List<ItemDto> sortItemsByRegistrationDateAscending();
-    List<ItemDto> sortItemsByRegistrationDateDescending();
 }
 
