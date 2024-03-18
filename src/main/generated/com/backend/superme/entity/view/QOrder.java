@@ -28,7 +28,7 @@ public class QOrder extends EntityPathBase<Order> {
 
     public final DateTimePath<java.util.Date> orderDate = createDateTime("orderDate", java.util.Date.class);
 
-    public final NumberPath<OrderStatus> status = createNumber("status", OrderStatus.class);
+    public final EnumPath<com.backend.superme.constant.base.OrderStatus> status = createEnum("status", com.backend.superme.constant.base.OrderStatus.class);
 
     public final NumberPath<java.math.BigDecimal> totalPrice = createNumber("totalPrice", java.math.BigDecimal.class);
 

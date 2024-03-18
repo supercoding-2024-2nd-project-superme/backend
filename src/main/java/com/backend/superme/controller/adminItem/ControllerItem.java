@@ -6,13 +6,12 @@ import com.backend.superme.service.adminService.implement.ImplItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import org.springframework.data.domain.Pageable;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-public class ItemController {
+public class ControllerItem {
     private final ImplItemService itemService;
 
 
