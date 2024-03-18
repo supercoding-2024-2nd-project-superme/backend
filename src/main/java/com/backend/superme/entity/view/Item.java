@@ -1,5 +1,6 @@
 package com.backend.superme.entity.view;
 
+import com.backend.superme.dto.view.ItemDto;
 import jakarta.persistence.*;
 import lombok.*;
 import com.backend.superme.entity.user.UserEntity;
@@ -106,6 +107,14 @@ public class Item {
         this.description = description;
         this.category = category;
         this.stockStatus = stockStatus;
+    }
+
+    public ItemDto toDto(){
+        return ItemDto.builder()
+                .id(this.id)
+                .name(this.name)
+                .price(this.price)
+                .build();
     }
 
 }

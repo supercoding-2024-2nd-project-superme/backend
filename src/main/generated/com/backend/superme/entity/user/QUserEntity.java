@@ -43,6 +43,8 @@ public class QUserEntity extends EntityPathBase<UserEntity> {
 
     public final DatePath<java.sql.Date> signupDate = createDate("signupDate", java.sql.Date.class);
 
+    public final EnumPath<com.backend.superme.constant.user.StatusEnum> status = createEnum("status", com.backend.superme.constant.user.StatusEnum.class);
+
     public final StringPath username = createString("username");
 
     public QUserEntity(String variable) {

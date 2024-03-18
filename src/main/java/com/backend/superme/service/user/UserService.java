@@ -13,6 +13,8 @@ public interface UserService {
 
     String emailFromToken(String token);
 
+    void withdrawUser(String email);
+
 }
 
 //UserService 인터페이스는 사용자 관련 서비스를 정의하고 있습니다.

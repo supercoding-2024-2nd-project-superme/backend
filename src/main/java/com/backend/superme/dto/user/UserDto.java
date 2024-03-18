@@ -23,6 +23,7 @@ public class UserDto {
     private String role;
     private String kakaoLogin;
     private String naverLogin;
+    private String status;
     private Date signupDate;
 
     // 이메일을 받아들이는 생성자

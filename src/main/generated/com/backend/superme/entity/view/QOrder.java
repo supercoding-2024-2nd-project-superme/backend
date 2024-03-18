@@ -28,9 +28,7 @@ public class QOrder extends EntityPathBase<Order> {
 
     public final DateTimePath<java.util.Date> orderDate = createDateTime("orderDate", java.util.Date.class);
 
-    public final QItem orderItem;
-
-    public final StringPath status = createString("status");
+    public final NumberPath<OrderStatus> status = createNumber("status", OrderStatus.class);
 
     public final NumberPath<java.math.BigDecimal> totalPrice = createNumber("totalPrice", java.math.BigDecimal.class);
 
@@ -54,7 +52,6 @@ public class QOrder extends EntityPathBase<Order> {
 
     public QOrder(Class<? extends Order> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.orderItem = inits.isInitialized("orderItem") ? new QItem(forProperty("orderItem"), inits.get("orderItem")) : null;
         this.user = inits.isInitialized("user") ? new com.backend.superme.entity.user.QUserEntity(forProperty("user")) : null;
     }
 

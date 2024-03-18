@@ -33,6 +33,7 @@ public class OrderItem {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date regTime; //주문 항목 생성 시점
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime; //주문 항목 업데이트 시점
 
