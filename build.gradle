@@ -36,6 +36,8 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '3.2.3'
 
 
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.2.0' //modle mapper 추가 YJ
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
 
