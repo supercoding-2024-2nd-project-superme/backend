@@ -1,6 +1,7 @@
 package com.backend.superme.dto.adminItemDto;
 
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public record ItemPageResponse(
@@ -28,7 +29,7 @@ public record ItemPageResponse(
             String itemName,
 
 //            @Schema(description = "상품 가격", example = "897000")
-            int price
+            BigDecimal price
     ) {
     }
 }
