@@ -1,13 +1,11 @@
 package com.backend.superme.entity.view;
 
-
 import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
-
-
+import java.util.List;
 
 
 @Data
@@ -25,7 +23,6 @@ public class Cart   {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-
     //ToDo: 반복된 부분 extends 작업 확인
     @Column(name = "created_at", updatable = false) // 수정 불가능한 필드로 설정
     @Temporal(TemporalType.TIMESTAMP)
@@ -35,6 +32,6 @@ public class Cart   {
     //ToDo: 반복된 부분 extends 작업 확인
     @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
+    @Builder.Default
     private Date updatedAt = new Date(); // 생성 시 현재 시간으로 초기화
-
 }

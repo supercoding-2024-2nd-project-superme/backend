@@ -25,20 +25,15 @@ public class ItemSellerController {
     private final UserService userService;
 
 
-    //(판매자) 상품 등록 + 이미지 추가 ( 필수 ) + 옵션 설정
+    // (판매자) 상품 등록 + 이미지 추가 ( 필수 ) + 옵션 설정
+    //@Operation(summary = "상품 등록 api", description = "상품을 등록하는 api 입니다.")
     @ResponseStatus(HttpStatus.CREATED) //= 응답코드
     @PostMapping(value = "/items", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-//    @Operation(summary = "상품 등록 api", description = "상품을 등록하는 api 입니다.")
     public CreateItemResponse addItem(@Valid @RequestPart ItemRequest itemRequest,
                                       @RequestPart(value = "file", required = false) List<MultipartFile> multipartFiles,
                                       @RequestHeader("Authorization") String user) {
-
-
         String userEmail = userService.emailFromToken(user);
-
         return itemService.create(itemRequest, multipartFiles, userEmail);
     }
-
-
 }
 
