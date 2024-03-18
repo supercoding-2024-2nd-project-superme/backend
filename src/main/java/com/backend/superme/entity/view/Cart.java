@@ -4,44 +4,37 @@ package com.backend.superme.entity.view;
 import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
-import org.apache.catalina.User;
-
 
 import java.util.Date;
 
+
+
+
+@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
-@Getter
 @Entity
-@ToString
 @Table(name="carts")
 public class Cart   {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
 
-    @Column(name = "created_at")
-    private Date createdAt;
+    //ToDo: 반복된 부분 extends 작업 확인
+    @Column(name = "created_at", updatable = false) // 수정 불가능한 필드로 설정
+    @Temporal(TemporalType.TIMESTAMP)
+    @Builder.Default // 롬복 빌더 기본값 설정
+    private Date createdAt = new Date(); // 생성 시 현재 시간으로 초기화
 
+    //ToDo: 반복된 부분 extends 작업 확인
     @Column(name = "updated_at")
-    private Date updatedAt;
-
-
-    // UserEntity를 매개변수로 받아 새로운 Cart 인스턴스를 생성하고 반환하는 메소드
-    public static Cart createCart(UserEntity user) {
-        Cart cart = new Cart();
-        cart.setUser(user); // Cart와 UserEntity를 연결
-        // 필요한 추가적인 초기화 작업 수행
-        return cart;
-    }
-
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updatedAt = new Date(); // 생성 시 현재 시간으로 초기화
 
 }

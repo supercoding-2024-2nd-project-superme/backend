@@ -15,6 +15,7 @@ import java.util.List;
 @Entity
 @Table(name="item_stock")
 public class ItemStock {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

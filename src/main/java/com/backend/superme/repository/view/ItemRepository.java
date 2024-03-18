@@ -1,16 +1,14 @@
 package com.backend.superme.repository.view;
 
 
-import com.backend.superme.constant.item.StockStatus;
-
 import com.backend.superme.entity.view.Item;
-import com.backend.superme.entity.view.ItemStock;
-import com.backend.superme.constant.item.StockStatus;
+import com.backend.superme.service.view.ItemService;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 import java.util.List;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Repository
@@ -18,30 +16,42 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     // 모든 상품 조회
     List<Item> findAll();
 
-    // 상품명으로 상품 검색
-    List<Item> findByItemNameContaining(String itemName);
+//    // 상품명 또는 카테고리를 포함하는 상품 검색
+//    List<Item> findByItemNameContainingOrCategoryContaining(String itemName, String category);
+//
+//    // 상품명으로 상품 검색
+//    List<Item> findByItemNameContaining(String itemName);
+//
+//    // 카테고리별로 검색
+//    List<Item> findByCategory(String categoryName);
+//
+//    //정렬관련 사항
+//    // 이름으로 정렬된 상품 조회 (A to Z)
+//    List<Item> findAllByOrderByNameAsc();
+//
+//    // 이름으로 정렬된 상품 조회 (Z to A)
+//    List<Item> findAllByOrderByNameDesc();
+//
+//    // 가격 높은 순으로 정렬된 상품 조회
+//    List<Item> findAllByOrderByPriceDesc();
+//
+//    // 가격 낮은 순으로 정렬된 상품 조회
+//    List<Item> findAllByOrderByPriceAsc();
+//
+//    // 판매 날짜 최신순으로 정렬된 상품 조회
+//    List<Item> findByOrderByRegistrationDateDesc();
+//
+//    // 판매 날짜 오래된 순으로 정렬된 상품 조회
+//    List<Item> findByOrderByRegistrationDateAsc();
+//
+//    // 상품의 유효 기간이 남은 상품만 조회
+//    List<Item> findByTerminationDateAfter(Date currentDate);
+//
+//    // 아이템 ID로 검색
+//    List<Item> findByItemId(String itemId);
+//
+//    // 아이템 이름으로 검색
+//    List<Item> findByName(String name);
 
-    // 색상 옵션으로 상품 검색
-    List<Item> findByColorOption(String colorOption);
 
-    // 사이즈 옵션으로 상품 검색
-    List<Item> findBySizeOption(String sizeOption);
-
-    // 재고 상태로 상품 검색
-    List<Item> findByStockStatus(StockStatus stockStatus);
-
-    // 가격 범위로 상품 검색
-    List<Item> findByPriceBetween(BigDecimal minPrice, BigDecimal maxPrice);
-
-    // 등록 날짜 기반으로 최신 상품 조회
-    List<Item> findByOrderByRegistrationDateDesc();
-
-    // 상품의 유효 기간이 남은 상품만 조회
-    List<Item> findByTerminationDateAfter(Date currentDate);
-
-    // Todo: 유저(판매자)별 상품 조회
-    // List<Item> findBySeller(User seller);
-
-    // Todo: 카테고리별 상품 조회
-    // List<Item> findByCategory(Category category);
 }

@@ -32,7 +32,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((auth) -> auth
-                                .requestMatchers("/", "/h2-console/**", "/user/login", "/user/signup/**", "/user/index").permitAll()
+                                .requestMatchers("/api/admin/categories", "/api/sales/items", "/", "/h2-console/**", "/user/login", "/user/signup/**", "/user/index", "/get-current-member", "/api/user").permitAll()
                                 // 특정 경로에 대한 접근을 모든 사용자에게 허용합니다. 예를 들어, 홈페이지, 로그인 페이지, 회원가입 페이지 등이 여기에 해당됩니다.
                                 .anyRequest().authenticated()
                         // 위에서 정의한 경로를 제외한 모든 경로에 대해서는 인증된 사용자만 접근할 수 있도록 합니다.

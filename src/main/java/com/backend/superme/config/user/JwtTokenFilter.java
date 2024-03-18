@@ -49,7 +49,3 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 //유효하지 않거나 만료된 토큰을 가진 요청은 추가 처리 없이 필터 체인을 통과시켜 최종적으로 접근을 제한할 수 있습니다.
 //이 커스텀 필터를 스프링 시큐리티 필터 체인에 등록하기 위해서는
 // SecurityConfig에서 addFilterBefore 또는 addFilterAfter 메서드를 사용하여 적절한 위치에 필터를 추가해야 합니다.
-
-
-
-
