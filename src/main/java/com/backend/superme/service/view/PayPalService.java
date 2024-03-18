@@ -9,7 +9,13 @@ public class PayPalService {
     // 페이팔 결제 처리 메서드
     public boolean processPayment(Order order, PaymentInfoDto paymentInfoDto) {
         // 페이팔 결제 처리 로직 구현
-        // 단순히 성공 여부를 반환하도록 가정
+
+        // 페이팔 결제는 항상 성공한다고 가정합니다.
+
+        // 1. paymentInfoDto의 결제정보가 유효한 것으로 간주합니다.
+
+        // 2. 결제성공을 반환합니다.
+
         return true;
 
     }

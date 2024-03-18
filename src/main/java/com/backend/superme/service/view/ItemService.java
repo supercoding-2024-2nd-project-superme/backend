@@ -14,21 +14,50 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 
+import java.util.Date;
 import java.util.Optional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
 @Transactional
 public interface ItemService {
+
     void processOrder(Long itemId, int quantity);
     List<ItemDto> findAllItems();
     Optional<Item> findItemById(Long id);
     Item saveItem(Item item);
     void deleteItem(Long id);
-//
-//
-//    //모든 상품 조회
+
+    ItemDetailDto findItemDetailById(Long id);
+
+    List<ItemDto> searchItems(String name, String category);
+
+    List<ItemDto> getItemsByCategory(String category);
+
+
+    List<ItemDto> sortItemsByNameAscending();
+
+    // 이름으로 정렬된 상품 조회 (Z to A)
+    List<ItemDto> sortItemsByNameDescending();
+
+    // 가격 높은 순으로 정렬된 상품 조회
+    List<ItemDto> sortItemsByPriceAscending();
+
+    // 가격 낮은 순으로 정렬된 상품 조회
+    List<ItemDto> sortItemsByPriceDescending();
+
+    // 판매 날짜 최신순으로 정렬된 상품 조회
+    List<ItemDto> sortItemsByRegistrationDateAscending();
+
+    // 판매 날짜 오래된 순으로 정렬된 상품 조회
+    List<ItemDto> sortItemsByRegistrationDateDescending();
+
+
+////
+////
+////    //모든 상품 조회
 //    public List<ItemDto> findAllItems() {
 //        return itemRepository.findAll().stream()
 //                .map(entity ->  new ItemDto(entity.getId(), entity.getName(), entity.getPrice()))

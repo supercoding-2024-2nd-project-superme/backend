@@ -13,5 +13,4 @@ public class PaymentInfoDto {
     private String cardNumber; // 카드 번호
     private String expiryDate; // 만료일
     private String cvv; // CVV 등 기타 결제 수단 관련 정보
-
 }

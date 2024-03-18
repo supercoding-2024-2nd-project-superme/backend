@@ -32,27 +32,27 @@ public class S3Service {
     // 서비스를 사용하기 위한 클라잉너트 객체를 의미, 이 객체는 AWS S3 와 통신하여 파일업로드, 다운로드, 삭제 등의 작업을 수행가능합니다.
     private final AmazonS3 s3Client;
 
-    //AWS 액세스 키
+    // AWS 액세스 키
     @Value("${cloud.aws.credentials.access-key}")
     private String accessKey;
 
-    //AWS 시크릿키
+    // AWS 시크릿키
     @Value("${cloud.aws.credentials.secret-key}")
     private String secretKey;
 
-    //AWS S3 버킷 이름
+    // AWS S3 버킷 이름
     @Value("${cloud.aws.s3.bucket}")
     private String bucket;
 
-    //AWS 실행되는 지역
+    // AWS 실행되는 지역
     @Value("${cloud.aws.region.static}")
     private String region;
 
 
-    //빈이 생성된 후에 호출되는 메서드임을 나타내는 어노테이션
+    // 빈이 생성된 후에 호출되는 메서드임을 나타내는 어노테이션
     @PostConstruct
     public AmazonS3Client amazonS3Client() {
-        //액세스 키와 시크릿 키를 사용하여 AWS 자격 증명 객체를 생성
+        // 액세스 키와 시크릿 키를 사용하여 AWS 자격 증명 객체를 생성
         BasicAWSCredentials awsCreds = new BasicAWSCredentials(accessKey, secretKey);
 
         // Amazon S3 클라이언트를 생성하는 빌더 객체를 생성
