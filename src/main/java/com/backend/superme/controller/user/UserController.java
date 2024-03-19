@@ -41,9 +41,12 @@ public class UserController {
         String token = userService.authenticateUser(userDto);
         if (token != null) {
             // 토큰을 JSON 객체로 반환
-            return ResponseEntity.ok().body(token);
+            Map<String, Object> response = new HashMap<>();
+            response.put("token", token);
+            response.put("message", "로그인 성공");
+            return ResponseEntity.ok().body(response);
         } else {
-            return ResponseEntity.status(ErrorCode.CHECK_LOGIN_ID_OR_PASSWORD.getStatus()).body(ErrorCode.CHECK_LOGIN_ID_OR_PASSWORD.getMessage());
+            return ResponseEntity.status(ErrorCode.CHECK_LOGIN_ID_OR_PASSWORD.getStatus()).body(ErrorCode.CHECK_LOGIN_ID_OR_PASSWORD);
         }
     }
 
@@ -54,12 +57,12 @@ public class UserController {
 
     @GetMapping("/user/signup/check/{email}")
     @ResponseBody
-    public String checkEmail(@PathVariable String email) {
+    public ResponseEntity<?> checkEmail(@PathVariable String email) {
         boolean result = userService.checkEmail(email);
         if (result) {
-            return ErrorCode.DUPLICATED_EMAIL.getMessage();
+            return ResponseEntity.badRequest().body(ErrorCode.DUPLICATED_EMAIL);
         } else {
-            return "사용 가능한 이메일입니다.";
+            return ResponseEntity.ok().body("사용 가능한 이메일입니다.");
         }
     }
 
@@ -84,9 +87,9 @@ public class UserController {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             String token = authHeader.substring(7);
             tokenBlacklistService.blacklistToken(token);
-            return ResponseEntity.ok().build();
+            return ResponseEntity.ok().body("로그아웃 성공");
         }
-        return ResponseEntity.badRequest().body(ErrorCode.USER_AUTH_ERROR.getMessage()); // 단순히 성공 응답 반환
+        return ResponseEntity.badRequest().body(ErrorCode.USER_AUTH_ERROR);
     }
 
 
@@ -95,10 +98,9 @@ public class UserController {
         // 헤더에서 인증 토큰을 추출
         String authToken = request.getHeader("Authorization");
         if (authToken == null || !authToken.startsWith("Bearer ")) {
-            return ResponseEntity.badRequest().body(ErrorCode.USER_AUTH_ERROR.getMessage()); // 단순히 성공 응답 반환
+            return ResponseEntity.badRequest().body(ErrorCode.USER_AUTH_ERROR);
         }
         authToken = authToken.substring(7); //"Bearer " 부분 제외하고 토큰만 추출
-
 
         // 토큰을 통해 이메일 추출
         String userEmail = userService.emailFromToken(authToken);
@@ -106,13 +108,14 @@ public class UserController {
         // 이메일을 통해 사용자 상태를 'ACTIVE'에서 'DELETED'로 변경
         try {
             userService.withdrawUser(userEmail);
-            return ResponseEntity.ok().build(); // 성공적으로 탈퇴됨을 응답
+            return ResponseEntity.ok().body("탈퇴 성공");
         } catch (RuntimeException e) {
-            return ResponseEntity.status(ErrorCode.SERVER_ERROR.getStatus()).body(ErrorCode.SERVER_ERROR.getMessage()); // 탈퇴 실패 시 오류 응답
+            return ResponseEntity.status(ErrorCode.SERVER_ERROR.getStatus()).body(ErrorCode.SERVER_ERROR);
         }
     }
-
 }
+
+
 
 
 
