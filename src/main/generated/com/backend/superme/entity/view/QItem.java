@@ -24,7 +24,7 @@ public class QItem extends EntityPathBase<Item> {
 
     public final QCategory category;
 
-    public final StringPath colorOption = createString("colorOption");
+    public final ListPath<String, StringPath> colorOptions = this.<String, StringPath>createList("colorOptions", String.class, StringPath.class, PathInits.DIRECT2);
 
     public final StringPath description = createString("description");
 
@@ -32,7 +32,7 @@ public class QItem extends EntityPathBase<Item> {
 
     public final StringPath imgId = createString("imgId");
 
-    public final QItemStock itemStock;
+    public final ListPath<ItemStock, QItemStock> itemStocks = this.<ItemStock, QItemStock>createList("itemStocks", ItemStock.class, QItemStock.class, PathInits.DIRECT2);
 
     public final StringPath name = createString("name");
 
@@ -42,7 +42,7 @@ public class QItem extends EntityPathBase<Item> {
 
     public final com.backend.superme.entity.user.QUserEntity seller;
 
-    public final StringPath sizeOption = createString("sizeOption");
+    public final ListPath<String, StringPath> sizeOptions = this.<String, StringPath>createList("sizeOptions", String.class, StringPath.class, PathInits.DIRECT2);
 
     public final EnumPath<com.backend.superme.constant.item.StockStatus> stockStatus = createEnum("stockStatus", com.backend.superme.constant.item.StockStatus.class);
 
@@ -67,7 +67,6 @@ public class QItem extends EntityPathBase<Item> {
     public QItem(Class<? extends Item> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.category = inits.isInitialized("category") ? new QCategory(forProperty("category")) : null;
-        this.itemStock = inits.isInitialized("itemStock") ? new QItemStock(forProperty("itemStock"), inits.get("itemStock")) : null;
         this.seller = inits.isInitialized("seller") ? new com.backend.superme.entity.user.QUserEntity(forProperty("seller")) : null;
     }
 

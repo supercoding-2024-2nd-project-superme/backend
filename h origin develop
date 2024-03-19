@@ -1,0 +1,483 @@
+[33mcommit 8f7a473655450c6e849024192204a0f22fa445cd[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/devlop[m[33m, [m[1;31morigin/develop[m[33m, [m[1;32mfeature/ItemRegistration[m[33m)[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 19 01:15:24 2024 +0900
+
+    Committing changes before branch switch
+
+[33mcommit a9b78ac6efab0b8622df3a6fd9b5aeac1153041a[m
+Merge: 73f7a75 32d3971
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 19 01:13:38 2024 +0900
+
+    Commit message
+
+[33mcommit 73f7a750e4284edec7ef6f96e6c6f7504165fa68[m[33m ([m[1;31morigin/feature/ItemRegistration[m[33m)[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 19 01:05:00 2024 +0900
+
+    gg
+
+[33mcommit 32d3971eb3429f981e159f9ea5b10c76ae379483[m
+Merge: 9daece2 bcd9e63
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 19 00:57:48 2024 +0900
+
+    Merge pull request #17 from supercoding-2024-2nd-project-superme/feature/mypage
+    
+    Feature/mypage
+
+[33mcommit bcd9e63922ea759949b55c10f6271c7929b8e1f1[m[33m ([m[1;31morigin/feature/mypage[m[33m)[m
+Author: ZZinu <wjdwpals0125@naver.com>
+Date:   Mon Mar 18 23:41:56 2024 +0900
+
+    버그 픽스 / payment controller 및 payment 기능 추가
+
+[33mcommit 9daece23f4dce975bd28bc521680fb433023a5f3[m
+Merge: f4e7f38 560428b
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Mon Mar 18 15:02:54 2024 +0900
+
+    Merge pull request #16 from supercoding-2024-2nd-project-superme/feature/login
+    
+    Feature/login
+
+[33mcommit 560428bb53c8e746971e954f0d7d10b61061b9de[m
+Merge: 70789c7 f4e7f38
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Mon Mar 18 14:23:13 2024 +0900
+
+    Merge branch 'develop' into feature/login
+
+[33mcommit 70789c7f9b1ca75065e62f6e9a51a31995ebde3a[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Mon Mar 18 14:17:20 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+    FEATURE / USER
+    SIGNUP / LOGIN / LOGOUT
+    
+    탈퇴 추가했습니다.
+    => User 테이블에 Status 필요
+    => Entity / DTO에 Status 필드 추가
+    => Status용 Enum Class 추가
+    
+    + WebConfig (GPT를 통해 넣어둔 프론트 서버와의 연동 시에 필요할 거 같은 설정) 주석 처리
+
+[33mcommit 90dd80c4bcb74d86f5c3e0b2f40af6dbc0552b2c[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Sat Mar 16 14:57:58 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+    FEATURE / USER
+    SIGNUP / LOGIN / LOGOUT
+    => UserService 주입해서 emailFromToken 으로 이메일(아이디) 주소 얻을 수 있습니다
+
+[33mcommit f4e7f38615417e843302ed95320266a18094473a[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 13:43:38 2024 +0900
+
+    s3
+
+[33mcommit f4667189569e01548fe6a40d3e64ce05445ecd73[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 13:40:23 2024 +0900
+
+    baseEntity
+
+[33mcommit 82b62bf816d1da1a35eaf11f21bade429416e9d1[m
+Merge: 19b7245 ca7f248
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 13:27:37 2024 +0900
+
+    Merge branch 'feature/ItemRegistration' of https://github.com/supercoding-2024-2nd-project-superme/backend into feature/ItemRegistration
+
+[33mcommit 19b724570966565a5401a626ddc743d816920fb0[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 13:25:16 2024 +0900
+
+    Your commit message
+
+[33mcommit ca7f248904bf9507834a0e3b29c6a3695a7527b0[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 13:21:04 2024 +0900
+
+    BaseENtity
+
+[33mcommit ae17c35b07250ef4e4a4ef12a5c580a8343b60bf[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 13:18:31 2024 +0900
+
+    registration
+
+[33mcommit df0764220c323680b785983144c0d324fd86ccc3[m
+Merge: faa7aef a97071f
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 10:46:24 2024 +0900
+
+    Resolve merge conflict
+
+[33mcommit a97071fa37ef31417740da5447ace75c32918de4[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 10:07:20 2024 +0900
+
+    Delete C:/Users/tonel directory
+    
+    dirDelete
+
+[33mcommit 50a9e88164975f559ade677dc4819add84855b96[m
+Merge: 014d222 ca85ca5
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 09:57:22 2024 +0900
+
+    Merge pull request #13 from supercoding-2024-2nd-project-superme/feature/cart
+    
+    결제 처리 관련 구조 추가
+
+[33mcommit faa7aef1bb8ebe69c2aca9ca4ecf9c27bb5a3506[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sun Mar 17 09:54:42 2024 +0900
+
+    sec
+
+[33mcommit ca85ca5415d8ff35c211e4cc6d7f0ded9d5cf736[m
+Author: yoonipark <yoonipark09@gmail.com>
+Date:   Sun Mar 17 02:47:56 2024 +0900
+
+    결제 처리 관련 구조 추가
+    
+    결제 처리 관련 구조 추가
+
+[33mcommit df797db83fc89abc6244782a75deddd1ea095bd3[m
+Merge: a0a0799 014d222
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sat Mar 16 16:01:35 2024 +0900
+
+    -
+
+[33mcommit a0a079991d91f6b672dbbc0ac1534658595fb1e2[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sat Mar 16 15:58:49 2024 +0900
+
+    Committing changes before merging with develop
+
+[33mcommit 014d22203c5ad8aeb16ac869d286b7c04bfb1ee0[m
+Merge: afb2115 ecbe519
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sat Mar 16 15:57:33 2024 +0900
+
+    Merge pull request #12 from supercoding-2024-2nd-project-superme/feature/login
+    
+    Feature/login
+
+[33mcommit ecbe5195384ae90f46f553762baf951cc4bd72f4[m[33m ([m[1;31morigin/feature/login[m[33m)[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Sat Mar 16 14:57:58 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+    FEATURE / USER
+    SIGNUP / LOGIN / LOGOUT
+    => UserService 주입해서 emailFromToken 으로 이메일(아이디) 주소 얻을 수 있습니다
+
+[33mcommit 4d5bf4d35a92f4452084b68698d9da7d6cd47273[m
+Merge: b4c7bc7 afb2115
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sat Mar 16 11:34:01 2024 +0900
+
+    Resolve merge conflict
+
+[33mcommit b4c7bc761461e5f6332bbb21d01024a5dee5cf61[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Sat Mar 16 11:31:08 2024 +0900
+
+    Add feature for item registration
+
+[33mcommit a34fb010102d2d09ae9d1a65c6356e7d8e60847a[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Fri Mar 15 01:46:23 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+    FEATURE / USER
+    SIGNUP / LOGIN / LOGOUT
+    => 메소드 및 주석 추가 (GPT)
+
+[33mcommit bc7b34a22b093c4958c430e10b9b3f08b26e7915[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Fri Mar 15 01:46:23 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+    FEATURE / USER
+    SIGNUP / LOGIN / LOGOUT
+    => 메소드 및 주석 추가 (GPT)
+
+[33mcommit afb21151820494bbffdfe50d2c904afc91e3e2d5[m[33m ([m[1;31morigin/feature/carts[m[33m)[m
+Merge: 3a007cb 505fc32
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Fri Mar 15 00:58:30 2024 +0900
+
+    Merge pull request #11 from supercoding-2024-2nd-project-superme/feature/login
+    
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+
+[33mcommit 505fc32a1f1c06c2d149e16c1e9f2d8490cb56b8[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Fri Mar 15 00:55:47 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+    FEATURE / USER
+    SIGNUP / LOGIN / LOGOUT
+
+[33mcommit 3a007cb8d2050846bf47c6dad828dc5103f527a3[m
+Merge: a30c21b c86f7fb
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 23:52:53 2024 +0900
+
+    Merge pull request #10 from supercoding-2024-2nd-project-superme/feature/ItemRegistration
+    
+    Feature/item registration
+
+[33mcommit c86f7fb978194a013921a3377c51c97f3f575914[m
+Merge: 8031ca4 a30c21b
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 23:52:01 2024 +0900
+
+    Resolve merge conflict in application.properties
+
+[33mcommit a30c21b4ba8ce8746fff45abf97350e8a69f2479[m
+Merge: f61ff9b a3b394b
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 23:49:12 2024 +0900
+
+    Merge pull request #9 from supercoding-2024-2nd-project-superme/feature/login
+    
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+
+[33mcommit a3b394b5d5a84c92899441fd21088886ab80e9c5[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Thu Mar 14 23:47:32 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+    FEATURE / USER
+    계속되는 시큐리티와 토큰의 사투
+
+[33mcommit 8031ca43dc684b8ffecc3be1f9c9a8b1c96911b5[m
+Merge: 5e76b3b f61ff9b
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 23:27:42 2024 +0900
+
+    Merge branch 'develop' of https://github.com/supercoding-2024-2nd-project-superme/backend into feature/ItemRegistration
+
+[33mcommit 5e76b3b0f7611ac05a551c88b350550825ca899f[m
+Merge: e4c2446 adcba12
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 23:25:21 2024 +0900
+
+    충돌
+
+[33mcommit f61ff9b1cea8f17df6d0962c29199b8e809e0e0b[m
+Merge: adcba12 5b89743
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 23:24:08 2024 +0900
+
+    Merge pull request #8 from supercoding-2024-2nd-project-superme/feature/cart
+    
+    5th 오류 수정
+
+[33mcommit 5b89743db7a36590fa6af43810bced8f0d160167[m
+Author: yoonipark <yoonipark09@gmail.com>
+Date:   Thu Mar 14 23:20:46 2024 +0900
+
+    5th 오류 수정
+
+[33mcommit e4c244608f8737ddf0bae5d87e7f54a274e11771[m
+Merge: 2315516 56018e1
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 20:55:21 2024 +0900
+
+    error2
+
+[33mcommit 2315516a14cb07cd97a8dfaaa61c8acfb7849ab4[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 20:53:50 2024 +0900
+
+    error
+
+[33mcommit 91139524d863cd21166d7775071c3a26b2fd7a57[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 20:38:01 2024 +0900
+
+    registration
+
+[33mcommit adcba125593d934e1e13fa297f7fc3487669ef27[m
+Merge: 56018e1 9b5a7b7
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 20:22:55 2024 +0900
+
+    Merge pull request #7 from supercoding-2024-2nd-project-superme/feature/login
+    
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+
+[33mcommit 9b5a7b74214aaa1c4d6313511b02c57c29d44b9f[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Thu Mar 14 20:17:25 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + Thymeleaf
+    FEATURE / USER
+
+[33mcommit 56018e14801029f3f2507e05ce1a8a37c7c09475[m
+Merge: 3dbab05 64025d1
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 20:09:39 2024 +0900
+
+    Merge pull request #6 from supercoding-2024-2nd-project-superme/feature/product-view
+    
+    5th StockStatus enum 타입 경로 변경
+
+[33mcommit 64025d1d5b1e35546a04c2adf9a73068a3ef4d74[m[33m ([m[1;31morigin/feature/product-view[m[33m)[m
+Author: yoonipark <yoonipark09@gmail.com>
+Date:   Thu Mar 14 13:03:29 2024 +0900
+
+    5th StockStatus enum 타입 경로 변경
+    
+    5th StockStatus enum 타입 경로 변경 관련 수정 및 업데이트
+
+[33mcommit 3dbab05108981a8ec37ada46848e8ea2ca8d4508[m
+Merge: f2da248 846d081
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 03:04:17 2024 +0900
+
+    Merge pull request #5 from supercoding-2024-2nd-project-superme/feature/login
+    
+    Feature/login
+
+[33mcommit 846d0819b1b02cf3dfd48bcd92d6093cdd01351e[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Thu Mar 14 03:02:08 2024 +0900
+
+    Spring Boot + Spring Security + JPA + JJWT + JSP
+    FEATURE / USER
+
+[33mcommit f2da2483997f6238162657d2787b913ec414dc99[m
+Merge: f954dba 2dae1a1
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Thu Mar 14 02:39:55 2024 +0900
+
+    Merge pull request #4 from supercoding-2024-2nd-project-superme/feature/product-view
+    
+    Feature/product view
+
+[33mcommit 2dae1a188801f32e6660d6bdb1208ee2e98e7eca[m
+Author: yoonipark <yoonipark09@gmail.com>
+Date:   Thu Mar 14 02:37:57 2024 +0900
+
+    4th 기본 구조 업데이트 및 오류 수정
+
+[33mcommit 41f734381c73634aca5d3d9b5e2b7afdc4c5a900[m
+Author: yoonipark <yoonipark09@gmail.com>
+Date:   Wed Mar 13 22:36:19 2024 +0900
+
+    3rd : 엔티티 수정(Cart 추가) 및 sql 삭제
+
+[33mcommit 359e2adab47235933268226401439d417722634a[m
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Wed Mar 13 17:29:52 2024 +0900
+
+    끊임없이 수정 중
+
+[33mcommit c0839a953e3ee8da12ad7742ea5d7c523265ab25[m
+Merge: b791b79 cc196aa
+Author: qnelldo <131656049+qnelldo@users.noreply.github.com>
+Date:   Wed Mar 13 17:29:00 2024 +0900
+
+    Merge remote-tracking branch 'origin/feature/login' into feature/login
+
+[33mcommit b791b7904f26d0d06d6c5e890a98944aa0b0bd36[m
+Merge: c955ef8 504010d
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 12 14:04:44 2024 +0900
+
+    끊임없이 수정 중
+
+[33mcommit f25f3adb7ff849cb77ce0ecfd29b970614b92fed[m
+Author: yoonipark <yoonipark09@gmail.com>
+Date:   Wed Mar 13 01:37:57 2024 +0900
+
+    2nd Dto, Cart, Order, Item 외 기본 형태
+
+[33mcommit f954dba41007956aad6e9d32befe33d25dff3459[m
+Merge: cc196aa 9300bc4
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 12 23:28:19 2024 +0900
+
+    Merge pull request #3 from supercoding-2024-2nd-project-superme/feature/product-view
+    
+    1st 물품 조회 관련 엔티티
+
+[33mcommit 9300bc4bf5c2fddeb2606bb492891fb8d7887858[m
+Author: yoonipark <yoonipark09@gmail.com>
+Date:   Tue Mar 12 23:27:10 2024 +0900
+
+    1st 엔티티 추가
+    Item & ItemStock 엔티티 외 SQL 포함
+
+[33mcommit e2391ac3d488bf1310b513e3d2f4a8d5587decc4[m
+Author: yoonipark <yoonipark09@gmail.com>
+Date:   Tue Mar 12 21:48:05 2024 +0900
+
+    1st 엔티티 추가
+    Item & ItemStock 엔티티
+
+[33mcommit cc196aa201f27faf751ab470ac561936a92b2a44[m
+Merge: c955ef8 504010d
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 12 14:04:44 2024 +0900
+
+    lombok
+
+[33mcommit c955ef83eedb6f5583737a64fea3850432c87c28[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 12 13:59:45 2024 +0900
+
+    ㅎㅎ...
+
+[33mcommit 504010d772f7d78b46adfb640c82ce91e617a1d9[m
+Merge: 7accbf2 91b6182
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 12 04:19:38 2024 +0900
+
+    Merge branch 'develop' of https://github.com/supercoding-2024-2nd-project-superme/backend into develop
+
+[33mcommit 7accbf267ffac964cf4b9c48706eb640cba40e1a[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 12 04:19:13 2024 +0900
+
+    lobok err
+
+[33mcommit 5317b36c30b575b20e3bf3b6b92ebda1a7b8ccc4[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Tue Mar 12 04:14:44 2024 +0900
+
+    lombok error
+
+[33mcommit 91b6182fb11df01f541cbb89042f1a23ee5e3d77[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Mon Mar 11 22:43:38 2024 +0900
+
+    first commit
+
+[33mcommit 44e771c062448fc380ab09529cd25e65507a0ed9[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Mon Mar 11 22:37:48 2024 +0900
+
+    빈ì설정
+
+[33mcommit dd60c8c5ccfc3463ccf7713cc3cc27f64c7a9b6d[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Mon Mar 11 22:24:17 2024 +0900
+
+    qw
+
+[33mcommit 88efea1c6621d6553503731710e0625c3207d15e[m
+Author: Joojinsung <dev.jinsung1017@gmail.com>
+Date:   Mon Mar 11 22:17:16 2024 +0900
+
+    기본설정

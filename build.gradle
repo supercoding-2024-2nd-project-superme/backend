@@ -37,9 +37,11 @@ dependencies {
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.2.0'
 
 
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.2.0' //modle mapper 추가 YJ
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     runtimeOnly 'com.h2database:h2'
@@ -59,4 +61,8 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+tasks.named('bootJar'){
+    mainClass='com.backend.superme.SupermeApplication'
 }

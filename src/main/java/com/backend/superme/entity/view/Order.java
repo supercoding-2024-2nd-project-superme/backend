@@ -1,6 +1,7 @@
 package com.backend.superme.entity.view;
 
-import com.backend.superme.constant.order.OrderStatus;
+
+import com.backend.superme.constant.base.OrderStatus;
 import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;

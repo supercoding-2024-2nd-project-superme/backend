@@ -20,7 +20,7 @@ public record ItemResponse(
 //        @Schema(description = "상품 옵션", example = "{색상: WHITE}")
         List<Option> optionValue,
 //        @Schema(description = "상품 이미지 url 리스트", example = "[\"https://dachaebucket.s3.ap-northeast-2.amazonaws.com/123.jpg\"]")
-        List<String> imgUrls
+        String description, List<String> imgUrls
 
 
 ) {

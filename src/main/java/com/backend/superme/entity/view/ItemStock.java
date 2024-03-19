@@ -22,7 +22,7 @@ public class ItemStock {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id", referencedColumnName = "id")
-    private Item item; // 'Long itemId' 대신 'Item item'으로 변경
+    private Item item;
 
     @Column(name = "color")
     private String color;

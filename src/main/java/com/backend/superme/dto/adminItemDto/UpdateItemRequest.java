@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public record UpdateItemRequest(
-        @NotBlank
+
 //        @Schema(description = "상품 이름", example = "노트북")
 //        @Size(min = 2, max = 50)
         String itemName,
@@ -21,7 +21,7 @@ public record UpdateItemRequest(
 //        @Schema(description = "상품 가격", example = "879000")
         BigDecimal price,
 
-        @Nullable
+
 //        @Schema(description = "상품 상세 설명", example = "가볍고 화질이 선명해요.")
         String description,
 
