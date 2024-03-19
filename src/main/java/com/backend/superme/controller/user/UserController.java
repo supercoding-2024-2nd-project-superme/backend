@@ -1,6 +1,7 @@
 package com.backend.superme.controller.user;
 
 
+import com.backend.superme.config.global.ErrorCode;
 import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.service.user.TokenBlacklistService;
 import com.backend.superme.service.user.UserService;
@@ -40,11 +41,9 @@ public class UserController {
         String token = userService.authenticateUser(userDto);
         if (token != null) {
             // 토큰을 JSON 객체로 반환
-            Map<String, String> tokenWrapper = new HashMap<>();
-            tokenWrapper.put("token", token);
-            return ResponseEntity.ok(tokenWrapper); // JSON 형태로 토큰 반환
+            return ResponseEntity.ok().body(token);
         } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            return ResponseEntity.status(ErrorCode.CHECK_LOGIN_ID_OR_PASSWORD.getStatus()).body(ErrorCode.CHECK_LOGIN_ID_OR_PASSWORD.getMessage());
         }
     }
 
@@ -58,11 +57,10 @@ public class UserController {
     public String checkEmail(@PathVariable String email) {
         boolean result = userService.checkEmail(email);
         if (result) {
-            return "중복된 이메일입니다.";
+            return ErrorCode.DUPLICATED_EMAIL.getMessage();
         } else {
             return "사용 가능한 이메일입니다.";
         }
-        //그냥 값만 주고 표현은 그쪽에서 하도록 해도 될듯
     }
 
     @PostMapping("/user/signup")
@@ -72,7 +70,7 @@ public class UserController {
             return "redirect:/user/login"; // 회원가입 성공 시 로그인 페이지로 이동
         } catch (RuntimeException e) {
             // 중복된 이메일이 있음을 나타내는 파라미터를 URL에 추가하여 회원가입 페이지로 리디렉션
-            redirectAttributes.addAttribute("error", "duplicate_email");
+            redirectAttributes.addAttribute("error", ErrorCode.DUPLICATED_EMAIL.name());
             return "redirect:/user/signup";
         }
     }
@@ -88,17 +86,19 @@ public class UserController {
             tokenBlacklistService.blacklistToken(token);
             return ResponseEntity.ok().build();
         }
-        return ResponseEntity.badRequest().body("인증 토큰이 없거나 올바르지 않습니다"); // 단순히 성공 응답 반환
+        return ResponseEntity.badRequest().body(ErrorCode.USER_AUTH_ERROR.getMessage()); // 단순히 성공 응답 반환
     }
+
 
     @DeleteMapping("/user/withdraw")
     public ResponseEntity<?> withdrawUser(HttpServletRequest request) {
         // 헤더에서 인증 토큰을 추출
         String authToken = request.getHeader("Authorization");
         if (authToken == null || !authToken.startsWith("Bearer ")) {
-            return ResponseEntity.badRequest().body("인증 토큰이 없거나 올바르지 않습니다"); // 단순히 성공 응답 반환
+            return ResponseEntity.badRequest().body(ErrorCode.USER_AUTH_ERROR.getMessage()); // 단순히 성공 응답 반환
         }
         authToken = authToken.substring(7); //"Bearer " 부분 제외하고 토큰만 추출
+
 
         // 토큰을 통해 이메일 추출
         String userEmail = userService.emailFromToken(authToken);
@@ -108,7 +108,7 @@ public class UserController {
             userService.withdrawUser(userEmail);
             return ResponseEntity.ok().build(); // 성공적으로 탈퇴됨을 응답
         } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("사용자 탈퇴 중 오류가 발생했습니다."); // 탈퇴 실패 시 오류 응답
+            return ResponseEntity.status(ErrorCode.SERVER_ERROR.getStatus()).body(ErrorCode.SERVER_ERROR.getMessage()); // 탈퇴 실패 시 오류 응답
         }
     }
 
