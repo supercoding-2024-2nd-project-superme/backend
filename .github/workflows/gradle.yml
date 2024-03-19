@@ -19,7 +19,7 @@ jobs: # 병렬로 실행되는 작업 단위, 여러 step으로 이루어짐
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
-        java-version: '177'
+        java-version: '17'
         distribution: 'temurin'
     
     # ./gradlw 실행 권한 부여
