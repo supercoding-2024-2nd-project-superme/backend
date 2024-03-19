@@ -14,7 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
@@ -23,7 +22,16 @@ public class UserController {
     @Autowired
     private TokenBlacklistService tokenBlacklistService;
 
-    @PostMapping("/login")
+    @GetMapping("/")
+    public ResponseEntity<?> index() {
+        return ResponseEntity.ok().body("인덱스 페이지");
+    }
+    @GetMapping("/user/login")
+    public ResponseEntity<?> showLoginPage() {
+        return ResponseEntity.ok().body("로그인 페이지");
+    }
+
+    @PostMapping("/user/login")
     public ResponseEntity<?> login(@RequestBody UserDto userDto) {
         String token = userService.authenticateUser(userDto);
         if (token != null) {
@@ -38,7 +46,23 @@ public class UserController {
         }
     }
 
-    @PostMapping("/signup")
+    @GetMapping("/user/signup")
+    public ResponseEntity<?> showSignupPage() {
+        return ResponseEntity.ok().body("회원가입 페이지");
+    }
+
+    @GetMapping("/user/signup/check/{email}")
+    public ResponseEntity<?> checkEmail(@PathVariable String email) {
+        boolean result = userService.checkEmail(email);
+        if (result) {
+            Map<String, Object> errorResponse = new HashMap<>();
+            errorResponse.put("errorMessage", ErrorCode.DUPLICATED_EMAIL.getMessage());
+            return ResponseEntity.status(ErrorCode.DUPLICATED_EMAIL.getStatus()).body(errorResponse);
+        } else {
+            return ResponseEntity.ok().body("사용 가능한 이메일입니다.");
+        }
+    }
+    @PostMapping("/user/signup")
     public ResponseEntity<?> signup(@RequestBody UserDto userDto) {
         try {
             userService.signupUser(userDto);
@@ -52,7 +76,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/logout")
+    @PostMapping("/user/logout")
     public ResponseEntity<?> logout(HttpServletRequest request) {
         String authHeader = request.getHeader("Authorization");
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
@@ -65,7 +89,7 @@ public class UserController {
         return ResponseEntity.status(ErrorCode.USER_AUTH_ERROR.getStatus()).body(errorResponse);
     }
 
-    @DeleteMapping("/withdraw")
+    @DeleteMapping("/user/withdraw")
     public ResponseEntity<?> withdrawUser(HttpServletRequest request) {
         String authToken = request.getHeader("Authorization");
         if (authToken == null || !authToken.startsWith("Bearer ")) {
