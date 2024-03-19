@@ -23,6 +23,9 @@ public class Cart   {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CartItem> cartItems;
+
     //ToDo: 반복된 부분 extends 작업 확인
     @Column(name = "created_at", updatable = false) // 수정 불가능한 필드로 설정
     @Temporal(TemporalType.TIMESTAMP)
