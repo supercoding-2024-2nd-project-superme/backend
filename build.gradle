@@ -61,3 +61,7 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.named('bootJar'){
+    mainClass='com.backend.superme.SupermeApplication'
+}
