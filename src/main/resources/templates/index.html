@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 홈페이지</title>
+</head>
+<body>
+<h1>환영합니다!</h1>
+<p>이곳은 우리의 쇼핑몰입니다. 로그인하거나 회원가입하여 참여해보세요.</p>
+
+<!-- 로그인/회원가입 또는 로그아웃 버튼이 동적으로 삽입될 위치 -->
+<div id="auth-container"></div>
+
+<script>
+    // 로그인 상태를 확인하고 UI를 업데이트하는 함수
+    function updateAuthUI() {
+        const authContainer = document.getElementById('auth-container');
+        const token = localStorage.getItem('token');
+
+        if (token) {
+            // 로그인 상태일 때 로그아웃 버튼 표시
+            authContainer.innerHTML = `
+                <p>로그인 상태입니다. 로그아웃을 진행하세요.</p>
+                <button onclick="logout()">로그아웃</button>
+            `;
+        } else {
+            // 비로그인 상태일 때 로그인 및 회원가입 버튼 표시
+            authContainer.innerHTML = `
+                <a href="/user/login">로그인</a>
+                <a href="/user/signup">회원가입</a>
+            `;
+        }
+    }
+
+    function logout() {
+        localStorage.removeItem('token'); // 로컬 스토리지에서 JWT 토큰 삭제
+        window.location.href = '/'; // 메인 페이지
+    }
+
+    // 페이지 로드 시 UI 업데이트
+    updateAuthUI();
+</script>
+</body>
+</html>

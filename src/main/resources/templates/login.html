@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+
+<h2>Login</h2>
+
+<form id="loginForm">
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+<p>Not a member yet? <a href="/user/signup">Sign up</a>.</p>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        fetch("/user/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            })
+        })
+            .then(response => response.json()) // 응답을 JSON으로 변환
+            .then(data => {
+                localStorage.setItem("token", data.token); // 추출한 토큰을 로컬 스토리지에 저장
+                window.location.href = "/"; // 홈페이지로 리다이렉션
+            })
+            .catch(error => console.error("Authentication failed:", error));
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+</head>
+<body>
+<h1>회원가입</h1>
+<form id="signupForm" action="/user/signup" method="post" onsubmit="return signup()">
+    <div>
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="button" onclick="checkDuplicate()">중복확인</button>
+        <span id="emailMessage"></span> <!-- 이메일 중복 메시지를 표시할 곳 -->
+    </div>
+    <div>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <label for="profile">프로필 사진 파일 이름:</label>
+        <input type="text" id="profile" name="profile">
+    </div>
+    <div>
+        <label for="address">집 주소:</label>
+        <input type="text" id="address" name="address">
+    </div>
+    <div>
+        <label for="phone">휴대전화 번호:</label>
+        <input type="tel" id="phone" name="phone">
+    </div>
+    <div>
+        <label for="username">사용자 이름:</label>
+        <input type="text" id="username" name="username">
+    </div>
+    <div>
+        <label for="nickname">닉네임:</label>
+        <input type="text" id="nickname" name="nickname">
+    </div>
+    <div>
+        <label>성별:</label>
+        <input type="radio" id="male" name="gender" value="MALE">
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="FEMALE">
+        <label for="female">여성</label>
+        <input type="radio" id="other" name="gender" value="OTHER">
+        <label for="other">기타</label>
+    </div>
+    <button type="submit">가입하기</button>
+</form>
+
+<!-- 중복확인 버튼을 눌렀을 때 실행할 JavaScript 함수 -->
+<script>
+    async function checkDuplicate() {
+        let email = document.getElementById("email").value; // 입력된 이메일 가져오기
+        try {
+            const response = await fetch("/user/signup/check/" + email); // 서버로 요청 보내고 응답 받기
+            if (response.ok) {
+                const data = await response.text(); // 응답 데이터 가져오기
+                document.getElementById("emailMessage").innerText = data; // 응답 메시지 출력
+            } else {
+                throw new Error('Network response was not ok.'); // 네트워크 오류 처리
+            }
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error); // 오류 처리
+        }
+    }
+
+    function signup() {
+        let emailMessage = document.getElementById("emailMessage").innerText;
+        if (emailMessage !== "사용 가능한 이메일입니다.") {
+            alert("이메일 중복을 확인해주세요.");
+            return false; // 회원가입을 중지하고 페이지를 새로고침하지 않음
+        }
+        // 회원가입 처리 로직 추가
+        return true; // 폼을 제출하고 페이지를 새로고침
+    }
+</script>
+</body>
+</html>
