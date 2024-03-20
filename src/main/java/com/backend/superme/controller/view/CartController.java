@@ -5,13 +5,13 @@ import com.backend.superme.entity.view.CartItem;
 import com.backend.superme.service.user.UserService;
 import com.backend.superme.service.view.CartService;
 import com.backend.superme.service.view.CartItemService;
-<<<<<<<HEAD
+<<<<<<< HEAD
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 =======
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
->>>>>>>develop
+>>>>>>> develop
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +45,7 @@ public class CartController {
         return objectMapper.writeValueAsString(object);
     }
 
-    @Autowired
+     @Autowired
     public CartController(CartService cartService, CartItemService cartItemService) {
         this.cartService = cartService;
         this.cartItemService = cartItemService;
@@ -72,7 +72,7 @@ public class CartController {
         }
     }
 
-    //     장바구니 조회 API
+//     장바구니 조회 API
     @GetMapping("/items")
     @Operation(summary = "장바구니를 조회하는 API 입니다.", description = "장바구니를 조회할 수 있습니다.")
     public ResponseEntity<List<CartItemDto>> getCartItems(Principal principal) {
@@ -83,8 +83,8 @@ public class CartController {
     }
 
     // 상품 수정 API
-    @PutMapping("/items/{cartItemId}")
-    public ResponseEntity<String> updateCartItem(@PathVariable Long cartItemId, @Valid @RequestBody CartItemDto cartItemDto, BindingResult bindingResult, Principal principal) {
+
+    public ResponseEntity<String> updateCartItem(@PathVariable Long cartItemId, @Valid @RequestBody CartItemDto cartItemDto, BindingResult bindingResult,Principal principal) {
         if (bindingResult.hasErrors()) {
             StringBuilder sb = new StringBuilder();
             List<FieldError> fieldErrors = bindingResult.getFieldErrors();
@@ -95,14 +95,14 @@ public class CartController {
         }
         try {
             String email = principal.getName(); // 현재 사용자의 이메일 주소 가져오기
-            cartItemService.updateCartItem(cartItemId, cartItemDto, email); // 장바구니 아이템 수정
+            cartItemService.updateCartItem(cartItemId, cartItemDto,email); // 장바구니 아이템 수정
             return ResponseEntity.ok("Cart item updated successfully"); // 수정 성공 메시지 반환
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage()); // 수정 실패 시 에러 메시지 반환
         }
     }
 
-    //     상품 제거 API
+//     상품 제거 API
     @DeleteMapping("/items/{cartItemId}")
     @Operation(summary = "상품을 제거하는 API 입니다.", description = "상품을 제거할 수 있습니다.")
     public ResponseEntity<String> removeCartItem(@PathVariable Long cartItemId) {
@@ -126,12 +126,12 @@ public class CartController {
             return ResponseEntity.badRequest().body(e.getMessage()); // 주문 실패 시 에러 메시지 반환
         }
     }
-
     @GetMapping("/cart/{userId}")
     public ResponseEntity<List<CartItem>> getCartItems(@PathVariable Long userId) {
         List<CartItem> cartItems = cartService.getCartItemsByUserId(userId);
         return ResponseEntity.ok(cartItems);
     }
+
 
 
 }
