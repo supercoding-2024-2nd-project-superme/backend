@@ -22,6 +22,8 @@ public class QItem extends EntityPathBase<Item> {
 
     public static final QItem item = new QItem("item");
 
+    public final QCart cart;
+
     public final QCategory category;
 
     public final ListPath<String, StringPath> colorOptions = this.<String, StringPath>createList("colorOptions", String.class, StringPath.class, PathInits.DIRECT2);
@@ -66,6 +68,7 @@ public class QItem extends EntityPathBase<Item> {
 
     public QItem(Class<? extends Item> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
+        this.cart = inits.isInitialized("cart") ? new QCart(forProperty("cart"), inits.get("cart")) : null;
         this.category = inits.isInitialized("category") ? new QCategory(forProperty("category")) : null;
         this.seller = inits.isInitialized("seller") ? new com.backend.superme.entity.user.QUserEntity(forProperty("seller")) : null;
     }

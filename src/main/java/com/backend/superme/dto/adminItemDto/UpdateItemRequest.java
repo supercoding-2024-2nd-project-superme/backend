@@ -1,8 +1,6 @@
 package com.backend.superme.dto.adminItemDto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.validation.constraints.NotBlank;
-import org.springframework.lang.Nullable;
 
 import java.math.BigDecimal;
 import java.util.List;

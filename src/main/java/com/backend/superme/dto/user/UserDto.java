@@ -1,7 +1,6 @@
 package com.backend.superme.dto.user;
 
 
-import com.backend.superme.constant.user.GenderEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,10 +18,9 @@ public class UserDto {
     private String profile;
     private String address;
     private String phone;
-    private GenderEnum gender;
+    private String gender;
     private String role;
-    private String kakaoLogin;
-    private String naverLogin;
+    private String provider;
     private String status;
     private Date signupDate;
 
