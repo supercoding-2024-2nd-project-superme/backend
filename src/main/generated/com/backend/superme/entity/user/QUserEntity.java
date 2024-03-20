@@ -27,10 +27,6 @@ public class QUserEntity extends EntityPathBase<UserEntity> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final StringPath kakaoLogin = createString("kakaoLogin");
-
-    public final StringPath naverLogin = createString("naverLogin");
-
     public final StringPath nickname = createString("nickname");
 
     public final StringPath password = createString("password");
@@ -39,7 +35,9 @@ public class QUserEntity extends EntityPathBase<UserEntity> {
 
     public final StringPath profile = createString("profile");
 
-    public final StringPath role = createString("role");
+    public final StringPath provider = createString("provider");
+
+    public final EnumPath<com.backend.superme.constant.user.RoleEnum> role = createEnum("role", com.backend.superme.constant.user.RoleEnum.class);
 
     public final DatePath<java.sql.Date> signupDate = createDate("signupDate", java.sql.Date.class);
 
