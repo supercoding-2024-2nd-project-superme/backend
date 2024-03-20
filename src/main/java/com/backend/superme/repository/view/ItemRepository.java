@@ -3,7 +3,6 @@ package com.backend.superme.repository.view;
 
 import com.backend.superme.entity.view.Category;
 import com.backend.superme.entity.view.Item;
-import com.backend.superme.service.view.ItemService;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -17,8 +16,13 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     // 모든 상품 조회
     List<Item> findAll();
 
+    //재고 ID를 기반으로 아이템을 조회
+    List<Item> findByItemStocks_Id(Long stockId);
+
+
     // 상품명 또는 카테고리를 포함하는 상품 검색
     List<Item> findByNameContainingOrCategory(String name, Category category);
+
 
     // 상품명으로 상품 검색
     List<Item> findByNameContaining(String name);
@@ -45,14 +49,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     // 판매 날짜 오래된 순으로 정렬된 상품 조회
     List<Item> findByOrderByRegistrationDateAsc();
 
-//    // 상품의 유효 기간이 남은 상품만 조회
-//    List<Item> findByTerminationDateAfter(Date currentDate);
-//
-//    // 아이템 ID로 검색
-//    List<Item> findByItemId(String itemId);
-//
-//    // 아이템 이름으로 검색
-//    List<Item> findByName(String name);
 
 
 }

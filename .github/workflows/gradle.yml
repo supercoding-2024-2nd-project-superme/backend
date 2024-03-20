@@ -1,5 +1,5 @@
 name: Java CI with Gradle
-
+# 설정
 on:
   release:
     types: [push]
