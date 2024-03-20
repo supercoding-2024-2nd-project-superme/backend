@@ -56,4 +56,8 @@ public class OrderItem {
 
         return orderItem;
     }
+
+    public void setOrderedQty(int orderedQty) {
+        this.count = orderedQty;
+    }
 }
