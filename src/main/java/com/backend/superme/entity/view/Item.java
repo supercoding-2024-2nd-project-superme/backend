@@ -82,6 +82,9 @@ public class Item {
     @Column(name = "termination_date")
     private LocalDateTime terminationDate;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
 
     public void removeStock(int count) {
         //재고 감소 로직 Todo
