@@ -1,19 +1,22 @@
 package com.backend.superme.entity.user;
 
 import com.backend.superme.constant.user.GenderEnum;
+import com.backend.superme.constant.user.RoleEnum;
 import com.backend.superme.constant.user.StatusEnum;
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Date;
 
 @Entity
-@Getter
-@Setter
+@Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "account")
 public class UserEntity {
 
@@ -33,11 +36,11 @@ public class UserEntity {
     private String phone;
     @Enumerated(EnumType.STRING)
     private GenderEnum gender = GenderEnum.OTHER;
-    private String role;
-    @Column(unique = true)
-    private String kakaoLogin;
-    @Column(unique = true)
-    private String naverLogin;
+
+    @Enumerated(EnumType.STRING)
+    private RoleEnum role = RoleEnum.USER;
+
+    private String provider;
     @Enumerated(EnumType.STRING)
     private StatusEnum status = StatusEnum.ACTIVE;
     @CreationTimestamp

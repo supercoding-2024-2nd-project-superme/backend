@@ -1,17 +1,15 @@
 package com.backend.superme.service.view;
 
 import com.backend.superme.dto.view.CartItemDto;
-import com.backend.superme.entity.view.*;
 import com.backend.superme.entity.user.UserEntity;
+import com.backend.superme.entity.view.*;
 import com.backend.superme.repository.user.UserRepository;
 import com.backend.superme.repository.view.CartItemRepository;
 import com.backend.superme.repository.view.CartRepository;
 import com.backend.superme.repository.view.ItemRepository;
-
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
