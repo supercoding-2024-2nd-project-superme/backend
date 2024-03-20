@@ -28,6 +28,9 @@ public class Order {
     @JoinColumn(name="user_id", unique=true)
     private UserEntity user;
 
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<OrderItem> orderItems; // 주문 항목 리스트 추가
+
     @Column(name="total_price", nullable = false, precision = 10, scale =2)
     private BigDecimal totalPrice;
 

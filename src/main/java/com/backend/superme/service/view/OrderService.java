@@ -38,7 +38,7 @@ public class OrderService {
         List<CartItem> cartItems = cartItemRepository.findByCart(cart);
         // 2. 카트 기반으로 주문 생성
         BigDecimal totalPrice = cartItems.stream()
-                .map(cartItem -> cartItem.getItem().getPrice().multiply(BigDecimal.valueOf(cartItem.getOrdered_qty())))
+                .map(cartItem -> cartItem.getItem().getPrice().multiply(BigDecimal.valueOf(cartItem.getOrderedQty())))
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         Order order = Order.builder()
@@ -53,7 +53,7 @@ public class OrderService {
             return OrderItem.builder()
                     .item(item)
                     .order(order)
-                    .count(cartItem.getOrdered_qty())
+                    .count(cartItem.getOrderedQty())
                     .regTime(new Date())
                     .updateTime(new Date())
                     .build();
@@ -92,5 +92,8 @@ public class OrderService {
         // 주문 상태 변경 및 저장
         order.setStatus(OrderStatus.CONFIRMED);
         orderRepository.save(order);
+    }
+
+    public void saveOrder(Order order) {
     }
 }
