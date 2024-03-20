@@ -2,7 +2,10 @@ package com.backend.superme.entity.view;
 
 import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;

@@ -1,6 +1,5 @@
 package com.backend.superme.repository.view;
 
-import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.entity.view.Cart;
 import com.backend.superme.entity.view.CartItem;
 import org.springframework.data.jpa.repository.JpaRepository;
