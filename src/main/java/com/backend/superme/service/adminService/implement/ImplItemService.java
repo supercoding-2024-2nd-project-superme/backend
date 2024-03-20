@@ -22,10 +22,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static com.backend.superme.config.global.ErrorCode.*;
@@ -45,17 +44,17 @@ public class ImplItemService implements adminItemService {
 
     @Override
     @Transactional
-    public CreateItemResponse create(ItemRequest itemRequest, List<MultipartFile> multipartFiles, String user) {
+    public CreateItemResponse create(ItemRequest itemRequest, List<MultipartFile> multipartFiles) {
         //유저 찾기
-        Optional<UserEntity> memberOptional = memberRepository.findByEmail(user);
-        UserEntity member = memberOptional.orElseThrow(() -> new NoSuchElementException("User not found with email: " + user));
+//        Optional<UserEntity> memberOptional = memberRepository.findByEmail(user);
+//        UserEntity member = memberOptional.orElseThrow(() -> new NoSuchElementException("User not found with email: " + user));
 
-        System.out.println("사용자 정보 {} " + member);
+//        System.out.println("사용자 정보 {} " + member);
 
         //---------------
 
         //카테고리 존재 확인
-        Category category = categoryRepository.findById(itemRequest.categoryId()).orElseThrow(
+        Category category = categoryRepository.findByName(itemRequest.categoryName()).orElseThrow(
                 () -> new BusinessException(NOT_FOUND_CATEGORY));
 
         // Make an item and save
@@ -63,13 +62,10 @@ public class ImplItemService implements adminItemService {
         item.setName(itemRequest.itemName());
         item.setPrice(itemRequest.price());
         item.setDescription(itemRequest.description());
-        item.setCategory(categoryRepository.findById(itemRequest.categoryId())
-                .orElseThrow(() -> new BusinessException(NOT_FOUND_CATEGORY)));
-        item.setSeller(member);
-
+        item.setCategory(category);
+//        item.setSeller(member);
 
         Item savedItem = itemRepository.save(item);
-
 
         // ItemStocks 설정
         List<ItemStock> itemStocks = new ArrayList<>();
@@ -89,23 +85,19 @@ public class ImplItemService implements adminItemService {
 
 // itemStocks를 DB에 저장
         itemOptionRepository.saveAll(itemStocks);
-
         savedItem.setItemStocks(itemStocks); // 설정된 Item 객체의 ItemStocks 설정
         Item finalSavedItem = itemRepository.save(savedItem); // 다시 Item 저장
 
         //-----------------
 
-
         // S3 저장
         System.out.println("S3 이미지 업로드");
         List<String> imageUrls = s3Service.upload(multipartFiles);
-
         //이미지 1장 이상 등록안했을 때 에러처리
         if (imageUrls.isEmpty()) {
             throw new BusinessException(REQUIRED_IMAGE, "이미지는 필수로 등록해야합니다");
         }
         System.out.println("업로드된 이미지 URL : {}" + imageUrls);
-
         // 이미지 DB 저장
         List<AdminItemImageEntity> imageList = imageUrls.stream()
                 .map(url -> AdminItemImageEntity.builder()
@@ -113,9 +105,7 @@ public class ImplItemService implements adminItemService {
                         .item(savedItem) // savedItem 객체를 바로 넘김
                         .build())
                 .toList();
-
         itemImageRepository.saveAll(imageList);
-
         List<Long> itemImgIds = imageList.stream().map(AdminItemImageEntity::getItemImageId).toList();
 
         return getCreateItemResponse(savedItem, imageUrls, itemImgIds);
@@ -139,7 +129,7 @@ public class ImplItemService implements adminItemService {
         return new CreateItemResponse(
                 item.getId(),
                 item.getName(),
-                item.getCategory().getId(),
+                item.getCategory().getName(),
                 colorOptions.toString(),
                 sizeOptions.toString(),
                 item.getDescription(),
@@ -171,16 +161,17 @@ public class ImplItemService implements adminItemService {
         //해당 상품이 없을 경우
         Item item = itemRepository.findById(itemId)
                 .orElseThrow(() -> new BusinessException(NOT_FOUND_ITEM, " 존재하는 상품이 아닙니다"));
-
         // 이미지 URL 조회
         List<String> imgUrls = itemImageRepository.findByItem(item).stream()
                 .map(AdminItemImageEntity::getImageUrl)
                 .toList();
-
-        // 옵션 생성
-        List<ItemResponse.Option> options = new ArrayList<>();
-        item.getColorOptions().forEach(color -> options.add(new ItemResponse.Option("color", color)));
-        item.getSizeOptions().forEach(size -> options.add(new ItemResponse.Option("size", size)));
+        //색상 및 옵션 생성
+        List<ItemResponse.Option> options = item.getItemStocks().stream().map(itemStock -> new ItemResponse.Option(
+                itemStock.getColor(),
+                itemStock.getSize(),
+                itemStock.getStockQty(),
+                item.getDescription()
+        )).collect(Collectors.toList());
 
         return new ItemResponse(
                 item.getId(),
@@ -193,14 +184,13 @@ public class ImplItemService implements adminItemService {
         );
     }
 
+
     @Override
-    public ItemPageResponse getAll(Pageable pageable, Long categoryId) {
-        Category category = categoryRepository.findById(categoryId)
+    public ItemPageResponse categoryNameAll(Pageable pageable, String categoryName) {
+        Category category = categoryRepository.findByName(categoryName)
                 .orElseThrow(() -> new BusinessException(NOT_FOUND_CATEGORY));
-
-        PageRequest pageRequest = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(), pageable.getSort());
+        PageRequest pageRequest = PageRequest.of(pageable.getPageNumber(), 16, pageable.getSort());
         Page<Item> items = itemRepository.findByCategory(pageRequest, category);
-
         if (items.isEmpty()) {
             throw new BusinessException(NOT_FOUND_ITEM, "해당 카테고리에 속한 상품이 없습니다");
         }
@@ -210,14 +200,16 @@ public class ImplItemService implements adminItemService {
                         item.getId()
                         , item.getName()
                         , item.getPrice()
+                        , item.getDescription()
                 )).toList();
 
+        long totalCount = items.getTotalElements();
 
         return new ItemPageResponse(items.getTotalPages(),
-                items.getTotalPages(),
-                items.getNumber()
-                , items.getSize()
-                , itemLists);
+                totalCount,
+                items.getNumber(),
+                items.getSize(),
+                itemLists);
     }
 
 

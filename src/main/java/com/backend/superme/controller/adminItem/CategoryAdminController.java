@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/admin")
-@Tag(name = "(관리자 권한) 카테고리 관련 api", description = "관리자만 접근 가능한 카테고리 관련 api입니다.")
+@Tag(name = "(관리자 권한) 카테고리 등록하는 API 입니다.", description = "관리자만 접근 가능한 카테고리 관련 API 입니다.")
 @Slf4j
 public class CategoryAdminController {
 
