@@ -21,10 +21,10 @@ public record ItemResponse(
         BigDecimal price,
         @Schema(description = "상품 옵션", example = "size,color,stock")
         List<Option> optionValue,
-        @Schema(description = "상품 상세 설명", example = "가볍고 화질이 선명해요.")
-        String description,
-        @Schema(description = "상품 이미지 url 리스트", example = "[\"https://dachaebucket.s3.ap-northeast-2.amazonaws.com/123.jpg\"]")
-        List<String> imgUrls
+//        @Schema(description = "상품 상세 설명", example = "가볍고 화질이 선명해요.")
+//        String description,
+
+        String description, List<String> imgUrls
 ) {
     @Data
     @AllArgsConstructor
@@ -33,6 +33,5 @@ public record ItemResponse(
         private String color;
         private String size;
         private int stockQty;
-        private String Description;
     }
 }

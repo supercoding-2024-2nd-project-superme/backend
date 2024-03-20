@@ -77,7 +77,7 @@ public class CartController {
     }
 
     // 상품 수정 API
-    @PutMapping("/items/{cartItemId}")
+
     public ResponseEntity<String> updateCartItem(@PathVariable Long cartItemId, @Valid @RequestBody CartItemDto cartItemDto, BindingResult bindingResult, Principal principal) {
         if (bindingResult.hasErrors()) {
             StringBuilder sb = new StringBuilder();
@@ -126,5 +126,4 @@ public class CartController {
         List<CartItem> cartItems = cartService.getCartItemsByUserId(userId);
         return ResponseEntity.ok(cartItems);
     }
-
 }

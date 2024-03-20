@@ -12218,3 +12218,915 @@ This generated password is for development use only. Your security configuration
 
 >>>>>>> 4f63aa70b7bb25a418755c0adc938243645905dd
 >>>>>>> develop
+2024-03-20 19:31:22.676 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-20 19:31:22.726 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 24028 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-20 19:31:22.728 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-20 19:31:23.849 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-20 19:31:23.915 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 61 ms. Found 15 JPA repository interfaces.
+2024-03-20 19:31:24.281 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-20 19:31:24.287 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-20 19:31:24.288 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-20 19:31:24.288 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-20 19:31:24.393 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-20 19:31:24.395 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-20 19:31:24.396 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1610 ms
+2024-03-20 19:31:24.502 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-20 19:31:24.548 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-20 19:31:24.570 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-20 19:31:24.729 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-20 19:31:24.748 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-20 19:31:24.893 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@1fb71788
+2024-03-20 19:31:24.894 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-20 19:31:24.922 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-20 19:31:25.364 [HikariPool-1 connection adder] [31mWARN [0;39m [36mo.m.jdbc.message.server.ErrorPacket[0;39m - Error: 1040-08004: Too many connections
+2024-03-20 19:31:25.415 [HikariPool-1 connection adder] [31mWARN [0;39m [36mo.m.jdbc.message.server.ErrorPacket[0;39m - Error: 1040-08004: Too many connections
+2024-03-20 19:31:25.486 [HikariPool-1 connection adder] [31mWARN [0;39m [36mo.m.jdbc.message.server.ErrorPacket[0;39m - Error: 1040-08004: Too many connections
+2024-03-20 19:31:25.602 [HikariPool-1 connection adder] [31mWARN [0;39m [36mo.m.jdbc.message.server.ErrorPacket[0;39m - Error: 1040-08004: Too many connections
+2024-03-20 19:31:25.758 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-20 19:31:25.789 [HikariPool-1 connection adder] [31mWARN [0;39m [36mo.m.jdbc.message.server.ErrorPacket[0;39m - Error: 1040-08004: Too many connections
+2024-03-20 19:31:26.160 [HikariPool-1 connection adder] [31mWARN [0;39m [36mo.m.jdbc.message.server.ErrorPacket[0;39m - Error: 1040-08004: Too many connections
+2024-03-20 19:31:26.524 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20 19:31:26.833 [HikariPool-1 connection adder] [31mWARN [0;39m [36mo.m.jdbc.message.server.ErrorPacket[0;39m - Error: 1040-08004: Too many connections
+2024-03-20 19:31:27.516 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-20 19:31:27.538 [main] [31mWARN [0;39m [36mo.s.b.a.s.s.UserDetailsServiceAutoConfiguration[0;39m - 
+
+Using generated security password: 86c5531f-b1c6-4ec4-9ccf-965b6f7e4cd3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-03-20 19:31:27.630 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-20 19:31:28.289 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@a59324f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@427c8f6, org.springframework.security.web.context.SecurityContextHolderFilter@5a318745, org.springframework.security.web.header.HeaderWriterFilter@76603c44, org.springframework.web.filter.CorsFilter@226346d4, org.springframework.security.web.authentication.logout.LogoutFilter@26652743, com.backend.superme.config.user.JwtTokenFilter@7aeb5402, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fb8cfa7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4015c65b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39e3da5a, org.springframework.security.web.access.ExceptionTranslationFilter@11261fc9, org.springframework.security.web.access.intercept.AuthorizationFilter@70efc3f9]
+2024-03-20 19:31:28.518 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-20 19:31:28.540 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-20 19:31:28.547 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 6.302 seconds (process running for 6.831)
+2024-03-20 19:34:59.610 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20 19:34:59.611 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-20 19:34:59.667 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-20 19:39:05.969 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-20 19:39:06.004 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 25816 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-20 19:39:06.006 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-20 19:39:06.702 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-20 19:39:06.761 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 55 ms. Found 15 JPA repository interfaces.
+2024-03-20 19:39:07.114 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-20 19:39:07.120 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-20 19:39:07.121 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-20 19:39:07.121 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-20 19:39:07.228 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-20 19:39:07.231 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-20 19:39:07.232 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1193 ms
+2024-03-20 19:39:07.334 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-20 19:39:07.386 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-20 19:39:07.407 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-20 19:39:07.562 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-20 19:39:07.580 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-20 19:39:07.714 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@51508029
+2024-03-20 19:39:07.715 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-20 19:39:07.743 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-20 19:39:08.605 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-20 19:39:09.368 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20 19:39:10.283 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-20 19:39:10.296 [main] [31mWARN [0;39m [36mo.s.b.a.s.s.UserDetailsServiceAutoConfiguration[0;39m - 
+
+Using generated security password: ebdbaa6e-125b-49aa-ab14-a74213f1aae3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-03-20 19:39:10.354 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-20 19:39:10.987 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6d7e2c53, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62ae5180, org.springframework.security.web.context.SecurityContextHolderFilter@701c092c, org.springframework.security.web.header.HeaderWriterFilter@71443983, org.springframework.web.filter.CorsFilter@4136638d, org.springframework.security.web.authentication.logout.LogoutFilter@2978d342, com.backend.superme.config.user.JwtTokenFilter@2bac4423, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@590182a6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6af6a3b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37acf9b1, org.springframework.security.web.access.ExceptionTranslationFilter@169f4152, org.springframework.security.web.access.intercept.AuthorizationFilter@26652743]
+2024-03-20 19:39:11.259 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-20 19:39:11.281 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-20 19:39:11.289 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 5.626 seconds (process running for 6.092)
+2024-03-20 19:39:21.774 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-20 19:39:21.774 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-20 19:39:21.775 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 1 ms
+2024-03-20 19:39:22.307 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.s.api.AbstractOpenApiResource[0;39m - Init duration for springdoc-openapi is: 279 ms
+2024-03-20 19:40:02.296 [http-nio-8080-exec-2] [31mWARN [0;39m [36mo.s.w.s.m.s.DefaultHandlerExceptionResolver[0;39m - Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content-Type 'application/octet-stream' is not supported]
+2024-03-20 19:47:42.840 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20 19:47:42.841 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-20 19:47:42.923 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-20 19:49:02.314 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-20 19:49:02.345 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 21640 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-20 19:49:02.347 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-20 19:49:03.012 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-20 19:49:03.074 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 56 ms. Found 15 JPA repository interfaces.
+2024-03-20 19:49:03.542 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-20 19:49:03.549 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-20 19:49:03.552 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-20 19:49:03.552 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-20 19:49:03.659 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-20 19:49:03.661 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-20 19:49:03.663 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1281 ms
+2024-03-20 19:49:03.775 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-20 19:49:03.821 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-20 19:49:03.842 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-20 19:49:04.024 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-20 19:49:04.046 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-20 19:49:04.193 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@7ee2423
+2024-03-20 19:49:04.194 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-20 19:49:04.226 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-20 19:49:05.054 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-20 19:49:05.802 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20 19:49:06.683 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-20 19:49:06.695 [main] [31mWARN [0;39m [36mo.s.b.a.s.s.UserDetailsServiceAutoConfiguration[0;39m - 
+
+Using generated security password: fb32c274-eca8-4240-8dd2-b860bcbfcfb4
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-03-20 19:49:06.755 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-20 19:49:07.422 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5546a9e0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c027237, org.springframework.security.web.context.SecurityContextHolderFilter@461e0652, org.springframework.security.web.header.HeaderWriterFilter@6af6a3b, org.springframework.web.filter.CorsFilter@4cb37177, org.springframework.security.web.authentication.logout.LogoutFilter@488bf7cd, com.backend.superme.config.user.JwtTokenFilter@1f9a3640, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f8614ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@11261fc9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ff395fa, org.springframework.security.web.access.ExceptionTranslationFilter@20c4be8d, org.springframework.security.web.access.intercept.AuthorizationFilter@2bac4423]
+2024-03-20 19:49:07.741 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-20 19:49:07.765 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-20 19:49:07.773 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 5.753 seconds (process running for 6.162)
+2024-03-20 19:54:21.592 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20 19:54:21.595 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-20 19:54:21.675 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-20 22:20:58.432 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-20 22:20:58.465 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 18484 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-20 22:20:58.467 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-20 22:20:59.244 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-20 22:20:59.307 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 57 ms. Found 15 JPA repository interfaces.
+2024-03-20 22:20:59.695 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-20 22:20:59.702 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-20 22:20:59.703 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-20 22:20:59.703 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-20 22:20:59.817 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-20 22:20:59.820 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-20 22:20:59.821 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1320 ms
+2024-03-20 22:20:59.950 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-20 22:21:00.039 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-20 22:21:00.074 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-20 22:21:00.289 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-20 22:21:00.308 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-20 22:21:00.437 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2a075e70
+2024-03-20 22:21:00.439 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-20 22:21:00.475 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-20 22:21:01.576 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-20 22:21:02.455 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20 22:21:03.508 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-20 22:21:03.525 [main] [31mWARN [0;39m [36mo.s.b.a.s.s.UserDetailsServiceAutoConfiguration[0;39m - 
+
+Using generated security password: 7c744b68-3599-4a04-8724-c4ad9785a33b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-03-20 22:21:03.605 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-20 22:21:04.525 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70a9f4b7, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@488bf7cd, org.springframework.security.web.context.SecurityContextHolderFilter@70dbd79f, org.springframework.security.web.header.HeaderWriterFilter@2b3cbc2c, org.springframework.web.filter.CorsFilter@2fe6bcbb, org.springframework.security.web.authentication.logout.LogoutFilter@53af65eb, com.backend.superme.config.user.JwtTokenFilter@4e92c6c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a339bc1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7906de2f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@71a18feb, org.springframework.security.web.access.ExceptionTranslationFilter@3818609f, org.springframework.security.web.access.intercept.AuthorizationFilter@122557f8]
+2024-03-20 22:21:04.877 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-20 22:21:04.915 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-20 22:21:04.930 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 6.824 seconds (process running for 7.66)
+2024-03-20 22:21:24.162 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-20 22:21:24.162 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-20 22:21:24.164 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 2 ms
+2024-03-20 22:21:24.221 [http-nio-8080-exec-1] [34mINFO [0;39m [36mc.b.s.c.a.CategoryAdminController[0;39m - catregory 등록 요청이 들어왔습니다 CategoryRequest[categoryName=MAN'S]
+2024-03-20 22:35:38.827 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20 22:35:38.832 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-20 22:35:38.907 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 07:08:20.714 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 07:08:20.774 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 12816 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 07:08:20.776 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 07:08:21.721 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 07:08:21.809 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 81 ms. Found 15 JPA repository interfaces.
+2024-03-21 07:08:22.364 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 07:08:22.377 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 07:08:22.379 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 07:08:22.380 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 07:08:22.582 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 07:08:22.588 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 07:08:22.588 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1777 ms
+2024-03-21 07:08:22.742 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 07:08:22.842 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 07:08:22.878 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 07:08:23.157 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 07:08:23.185 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 07:08:23.340 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@8b89b3a
+2024-03-21 07:08:23.342 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 07:08:23.415 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 07:08:24.849 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 07:08:25.733 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 07:08:27.108 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 07:08:27.202 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 07:08:28.249 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2a0c76d6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a62384, org.springframework.security.web.context.SecurityContextHolderFilter@9d818b5, org.springframework.security.web.header.HeaderWriterFilter@5c934077, org.springframework.web.filter.CorsFilter@208bde64, org.springframework.security.web.authentication.logout.LogoutFilter@466fb9be, com.backend.superme.config.user.JwtTokenFilter@c4f6d5b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1a02063a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@29483d10, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@453c10c2, org.springframework.security.web.access.ExceptionTranslationFilter@6722f81a, org.springframework.security.web.access.intercept.AuthorizationFilter@2e50ca51]
+2024-03-21 07:08:28.566 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 07:08:28.595 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 07:08:28.604 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 8.434 seconds (process running for 9.379)
+2024-03-21 07:09:09.023 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 07:09:09.025 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 07:09:09.100 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:02:34.189 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:02:34.243 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 7092 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:02:34.243 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:02:35.249 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:02:35.348 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 93 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:02:36.054 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:02:36.064 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:02:36.066 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:02:36.067 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:02:36.243 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:02:36.248 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:02:36.248 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1958 ms
+2024-03-21 08:02:36.404 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:02:36.473 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:02:36.506 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:02:36.752 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:02:36.786 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:02:37.015 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@43b172e3
+2024-03-21 08:02:37.017 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:02:37.054 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:02:38.788 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:02:39.543 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:02:40.894 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:02:40.990 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:02:42.827 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@24a38ef3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4af32714, org.springframework.security.web.context.SecurityContextHolderFilter@7e32f76b, org.springframework.security.web.header.HeaderWriterFilter@7d461450, org.springframework.web.filter.CorsFilter@74efc394, org.springframework.security.web.authentication.logout.LogoutFilter@2a0c76d6, com.backend.superme.config.user.JwtTokenFilter@794fbf0d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@356c8c1b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6a7a8e1e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@41a372c1, org.springframework.security.web.access.ExceptionTranslationFilter@559d9517, org.springframework.security.web.access.intercept.AuthorizationFilter@62a193e0]
+2024-03-21 08:02:43.175 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:02:43.206 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:02:43.216 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 9.646 seconds (process running for 11.001)
+2024-03-21 08:03:07.390 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:03:07.392 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:03:07.393 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 1 ms
+2024-03-21 08:03:07.455 [http-nio-8080-exec-1] [34mINFO [0;39m [36mc.b.s.c.a.CategoryAdminController[0;39m - catregory 등록 요청이 들어왔습니다 CategoryRequest[categoryName=WOMAN'S]
+2024-03-21 08:05:00.715 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:05:00.717 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:05:00.784 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:05:27.464 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:05:27.650 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 10636 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:05:27.653 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:05:30.173 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:05:30.313 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 127 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:05:32.126 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:05:32.175 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:05:32.184 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:05:32.187 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:05:32.735 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:05:32.743 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:05:32.744 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 4874 ms
+2024-03-21 08:05:33.109 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:05:33.238 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:05:33.306 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:05:33.832 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:05:33.898 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:05:34.127 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@70169464
+2024-03-21 08:05:34.132 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:05:34.192 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:05:36.532 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:05:37.358 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:05:39.022 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:05:39.162 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:05:42.109 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@30a34f07, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71702d3f, org.springframework.security.web.context.SecurityContextHolderFilter@25699129, org.springframework.security.web.header.HeaderWriterFilter@12bb0322, org.springframework.web.filter.CorsFilter@6f9d1785, org.springframework.security.web.authentication.logout.LogoutFilter@201a84e1, com.backend.superme.config.user.JwtTokenFilter@f9b97dc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5498d2a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d280bab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25ea3a5f, org.springframework.security.web.access.ExceptionTranslationFilter@1e5e0e75, org.springframework.security.web.access.intercept.AuthorizationFilter@40a0364a]
+2024-03-21 08:05:42.988 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:05:43.061 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:05:43.082 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 16.79 seconds (process running for 19.517)
+2024-03-21 08:09:02.275 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:09:02.275 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:09:02.278 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 3 ms
+2024-03-21 08:09:03.104 [http-nio-8080-exec-3] [31mWARN [0;39m [36mcom.amazonaws.util.Base64[0;39m - JAXB is unavailable. Will fallback to SDK implementation which may be less performant.If you are using Java 9+, you will need to include javax.xml.bind:jaxb-api as a dependency.
+2024-03-21 08:13:50.948 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:13:50.950 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:13:51.145 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:14:00.314 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:14:00.349 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 18052 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:14:00.350 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:14:01.447 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:14:01.535 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 81 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:14:02.181 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:14:02.193 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:14:02.196 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:14:02.196 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:14:02.501 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:14:02.506 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:14:02.507 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 2113 ms
+2024-03-21 08:14:02.701 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:14:02.778 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:14:02.818 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:14:03.177 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:14:03.221 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:14:03.459 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@1dd44289
+2024-03-21 08:14:03.462 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:14:03.502 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:14:04.969 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:14:06.025 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:14:07.483 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:14:07.557 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:14:09.894 [main] [31mWARN [0;39m [36mo.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext[0;39m - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'filterChain' defined in class path resource [com/backend/superme/config/user/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: Can't configure anyRequest after itself
+2024-03-21 08:14:09.896 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:14:09.896 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:14:09.964 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:14:09.966 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Stopping service [Tomcat]
+2024-03-21 08:14:09.979 [main] [34mINFO [0;39m [36mo.s.b.a.l.ConditionEvaluationReportLogger[0;39m - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-21 08:14:10.014 [main] [1;31mERROR[0;39m [36mo.s.boot.SpringApplication[0;39m - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through method 'setFilterChains' parameter 0: Error creating bean with name 'filterChain' defined in class path resource [com/backend/superme/config/user/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: Can't configure anyRequest after itself
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:895)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.inject(AutowiredAnnotationBeanPostProcessor.java:848)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.backend.superme.SupermeApplication.main(SupermeApplication.java:10)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'filterChain' defined in class path resource [com/backend/superme/config/user/SecurityConfig.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: Can't configure anyRequest after itself
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:639)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1689)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1653)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeanCollection(DefaultListableBeanFactory.java:1543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1511)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1392)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredMethodElement.resolveMethodArguments(AutowiredAnnotationBeanPostProcessor.java:887)
+	... 20 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'filterChain' threw exception with message: Can't configure anyRequest after itself
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:177)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:647)
+	... 37 common frames omitted
+Caused by: java.lang.IllegalStateException: Can't configure anyRequest after itself
+	at org.springframework.util.Assert.state(Assert.java:76)
+	at org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry.anyRequest(AbstractRequestMatcherRegistry.java:99)
+	at com.backend.superme.config.user.SecurityConfig.lambda$filterChain$0(SecurityConfig.java:71)
+	at org.springframework.security.config.annotation.web.builders.HttpSecurity.authorizeHttpRequests(HttpSecurity.java:1467)
+	at com.backend.superme.config.user.SecurityConfig.filterChain(SecurityConfig.java:62)
+	at com.backend.superme.config.user.SecurityConfig$$SpringCGLIB$$0.CGLIB$filterChain$1(<generated>)
+	at com.backend.superme.config.user.SecurityConfig$$SpringCGLIB$$FastClass$$1.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:258)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.backend.superme.config.user.SecurityConfig$$SpringCGLIB$$0.filterChain(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+	... 38 common frames omitted
+2024-03-21 08:19:31.967 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:19:32.007 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 12032 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:19:32.008 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:19:32.887 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:19:32.990 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 98 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:19:33.559 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:19:33.569 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:19:33.571 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:19:33.572 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:19:33.755 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:19:33.759 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:19:33.762 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1716 ms
+2024-03-21 08:19:33.898 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:19:33.960 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:19:33.998 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:19:34.204 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:19:34.230 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:19:34.370 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@432a6a69
+2024-03-21 08:19:34.372 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:19:34.405 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:19:35.692 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:19:36.432 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:19:37.830 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:19:37.910 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:19:41.065 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1ad28f2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2044a11b, org.springframework.security.web.context.SecurityContextHolderFilter@30a34f07, org.springframework.security.web.header.HeaderWriterFilter@40a0364a, org.springframework.web.filter.CorsFilter@7d91e9c9, org.springframework.security.web.authentication.logout.LogoutFilter@31b9108b, com.backend.superme.config.user.JwtTokenFilter@1d9db780, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f9d1785, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f9b97dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@759fe679, org.springframework.security.web.access.ExceptionTranslationFilter@47620803, org.springframework.security.web.access.intercept.AuthorizationFilter@4398d]
+2024-03-21 08:19:41.509 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:19:41.553 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:19:41.566 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 10.057 seconds (process running for 11.323)
+2024-03-21 08:19:43.020 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:19:43.020 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:19:43.022 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 1 ms
+2024-03-21 08:19:43.056 [http-nio-8080-exec-1] [1;31mERROR[0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet][0;39m - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.boot.autoconfigure.h2.H2ConsoleProperties' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:343)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1249)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.getContext(ApplicationContextRequestMatcher.java:79)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.lambda$matches$0(ApplicationContextRequestMatcher.java:62)
+	at org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher.initialized(PathRequest.java:81)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.matches(ApplicationContextRequestMatcher.java:66)
+	at org.springframework.security.web.util.matcher.RequestMatcher.matcher(RequestMatcher.java:48)
+	at org.springframework.security.web.access.intercept.RequestMatcherDelegatingAuthorizationManager.check(RequestMatcherDelegatingAuthorizationManager.java:79)
+	at org.springframework.security.web.access.intercept.RequestMatcherDelegatingAuthorizationManager.check(RequestMatcherDelegatingAuthorizationManager.java:48)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:95)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.backend.superme.config.user.JwtTokenFilter.doFilterInternal(JwtTokenFilter.java:35)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-03-21 08:19:43.067 [http-nio-8080-exec-1] [1;31mERROR[0;39m [36mo.a.c.c.C.[.[.[.[dispatcherServlet][0;39m - Servlet.service() for servlet [dispatcherServlet] threw exception
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.boot.autoconfigure.h2.H2ConsoleProperties' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:343)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1249)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.getContext(ApplicationContextRequestMatcher.java:79)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.lambda$matches$0(ApplicationContextRequestMatcher.java:62)
+	at org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher.initialized(PathRequest.java:81)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.matches(ApplicationContextRequestMatcher.java:66)
+	at org.springframework.security.web.util.matcher.RequestMatcher.matcher(RequestMatcher.java:48)
+	at org.springframework.security.web.access.intercept.RequestMatcherDelegatingAuthorizationManager.check(RequestMatcherDelegatingAuthorizationManager.java:79)
+	at org.springframework.security.web.access.intercept.RequestMatcherDelegatingAuthorizationManager.check(RequestMatcherDelegatingAuthorizationManager.java:48)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:95)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:362)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:308)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-03-21 08:19:43.070 [http-nio-8080-exec-1] [1;31mERROR[0;39m [36mo.a.c.c.C.[Tomcat].[localhost][0;39m - Exception Processing [ErrorPage[errorCode=0, location=/error]]
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.boot.autoconfigure.h2.H2ConsoleProperties' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:343)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1249)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.getContext(ApplicationContextRequestMatcher.java:79)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.lambda$matches$0(ApplicationContextRequestMatcher.java:62)
+	at org.springframework.boot.autoconfigure.security.servlet.PathRequest$H2ConsoleRequestMatcher.initialized(PathRequest.java:81)
+	at org.springframework.boot.security.servlet.ApplicationContextRequestMatcher.matches(ApplicationContextRequestMatcher.java:66)
+	at org.springframework.security.web.util.matcher.RequestMatcher.matcher(RequestMatcher.java:48)
+	at org.springframework.security.web.access.intercept.RequestMatcherDelegatingAuthorizationManager.check(RequestMatcherDelegatingAuthorizationManager.java:79)
+	at org.springframework.security.web.access.intercept.RequestMatcherDelegatingAuthorizationManager.check(RequestMatcherDelegatingAuthorizationManager.java:48)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:95)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:101)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:642)
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:410)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:340)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:277)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:362)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:222)
+	at org.apache.catalina.core.StandardHostValve.throwable(StandardHostValve.java:308)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:149)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-03-21 08:20:44.588 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:20:44.601 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:20:44.712 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:20:54.463 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:20:54.498 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 7404 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:20:54.499 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:20:55.376 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:20:55.481 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 97 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:20:56.026 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:20:56.035 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:20:56.036 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:20:56.038 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:20:56.241 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:20:56.246 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:20:56.246 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1710 ms
+2024-03-21 08:20:56.413 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:20:56.514 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:20:56.552 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:20:56.794 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:20:56.849 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:20:56.995 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@54d60fa1
+2024-03-21 08:20:56.998 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:20:57.041 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:20:58.463 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:20:59.220 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:21:01.244 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:21:01.350 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:21:05.827 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@43aa9ccd, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40a0364a, org.springframework.security.web.context.SecurityContextHolderFilter@50fbb66a, org.springframework.security.web.header.HeaderWriterFilter@d69fd7a, org.springframework.web.filter.CorsFilter@708ddfd3, org.springframework.security.web.authentication.logout.LogoutFilter@461e9b31, com.backend.superme.config.user.JwtTokenFilter@2778f3d1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@466fb9be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@282c3aa0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@30a34f07, org.springframework.security.web.access.ExceptionTranslationFilter@4d87553b, org.springframework.security.web.access.intercept.AuthorizationFilter@1c93f349]
+2024-03-21 08:21:06.296 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:21:06.331 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:21:06.343 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 12.313 seconds (process running for 13.743)
+2024-03-21 08:21:17.506 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:21:17.507 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:21:17.508 [http-nio-8080-exec-8] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 1 ms
+2024-03-21 08:21:17.580 [http-nio-8080-exec-8] [34mINFO [0;39m [36mc.b.s.c.a.CategoryAdminController[0;39m - catregory 등록 요청이 들어왔습니다 CategoryRequest[categoryName=테스트입니다]
+2024-03-21 08:24:41.205 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:24:41.208 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:24:41.368 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:25:05.188 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:25:05.228 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 5448 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:25:05.231 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:25:06.076 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:25:06.174 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 92 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:25:06.789 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:25:06.801 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:25:06.803 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:25:06.804 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:25:06.978 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:25:06.982 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:25:06.983 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1711 ms
+2024-03-21 08:25:07.150 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:25:07.212 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:25:07.242 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:25:07.455 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:25:07.479 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:25:07.674 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@7dddfc35
+2024-03-21 08:25:07.678 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:25:07.727 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:25:09.019 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:25:09.740 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:25:11.232 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:25:11.315 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:25:14.095 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@68553e92, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45144fdf, org.springframework.security.web.context.SecurityContextHolderFilter@18c2b4c6, org.springframework.security.web.header.HeaderWriterFilter@794fbf0d, org.springframework.web.filter.CorsFilter@57cc7d9e, org.springframework.security.web.authentication.logout.LogoutFilter@564b221e, com.backend.superme.config.user.JwtTokenFilter@23c07745, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@461e9b31, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d5d9d92, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@62a07c01, org.springframework.security.web.access.ExceptionTranslationFilter@4af32714, org.springframework.security.web.access.intercept.AuthorizationFilter@582ea857]
+2024-03-21 08:25:14.429 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:25:14.472 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:25:14.484 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 9.689 seconds (process running for 11.018)
+2024-03-21 08:25:17.139 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:25:17.139 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:25:17.142 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 3 ms
+2024-03-21 08:26:57.005 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:26:57.007 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:26:57.076 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:27:09.193 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:27:09.249 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 17268 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:27:09.250 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:27:10.238 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:27:10.340 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 97 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:27:10.864 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:27:10.873 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:27:10.874 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:27:10.875 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:27:11.068 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:27:11.072 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:27:11.072 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1749 ms
+2024-03-21 08:27:11.225 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:27:11.351 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:27:11.392 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:27:11.604 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:27:11.626 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:27:11.781 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@900649e
+2024-03-21 08:27:11.784 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:27:11.821 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:27:13.035 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:27:13.788 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:27:15.018 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:27:15.099 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:27:18.363 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@12bb3666, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@18c2b4c6, org.springframework.security.web.context.SecurityContextHolderFilter@6cad2d5f, org.springframework.security.web.header.HeaderWriterFilter@356c8c1b, org.springframework.web.filter.CorsFilter@1c71d704, org.springframework.security.web.authentication.logout.LogoutFilter@76b5b1e2, com.backend.superme.config.user.JwtTokenFilter@461e9b31, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c41b4b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@55a4a0ab, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d5d9d92, org.springframework.security.web.access.ExceptionTranslationFilter@7e32f76b, org.springframework.security.web.access.intercept.AuthorizationFilter@74efc394]
+2024-03-21 08:27:18.811 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:27:18.859 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:27:18.874 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 10.102 seconds (process running for 11.355)
+2024-03-21 08:27:24.738 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:27:24.738 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:27:24.740 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 2 ms
+2024-03-21 08:27:52.229 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:27:52.230 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:27:52.345 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:28:01.784 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:28:01.817 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 14924 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:28:01.818 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:28:02.596 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:28:02.671 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 68 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:28:03.086 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:28:03.095 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:28:03.097 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:28:03.097 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:28:03.234 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:28:03.236 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:28:03.238 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1386 ms
+2024-03-21 08:28:03.356 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:28:03.401 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:28:03.422 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:28:03.601 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:28:03.621 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:28:03.766 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2d0f548a
+2024-03-21 08:28:03.768 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:28:03.800 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:28:04.749 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:28:05.481 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:28:06.523 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:28:06.601 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:28:08.949 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@74efc394, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@794fbf0d, org.springframework.security.web.context.SecurityContextHolderFilter@356c8c1b, org.springframework.security.web.header.HeaderWriterFilter@4c627575, org.springframework.web.filter.CorsFilter@41a372c1, org.springframework.security.web.authentication.logout.LogoutFilter@208bde64, com.backend.superme.config.user.JwtTokenFilter@12bb3666, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39aa595, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6cad2d5f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18c2b4c6, org.springframework.security.web.access.ExceptionTranslationFilter@7d461450, org.springframework.security.web.access.intercept.AuthorizationFilter@3597174b]
+2024-03-21 08:28:09.187 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:28:09.218 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:28:09.224 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 7.725 seconds (process running for 8.641)
+2024-03-21 08:28:14.651 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:28:14.651 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:28:14.654 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 3 ms
+2024-03-21 08:33:40.956 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:33:40.956 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:33:41.018 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:34:14.929 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:34:14.953 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 17924 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:34:14.953 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:34:15.568 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:34:15.631 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 58 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:34:15.979 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:34:15.985 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:34:15.986 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:34:15.986 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:34:16.119 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:34:16.122 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:34:16.122 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1138 ms
+2024-03-21 08:34:16.211 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:34:16.258 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:34:16.278 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:34:16.421 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:34:16.439 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:34:16.605 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@39695803
+2024-03-21 08:34:16.606 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:34:16.633 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:34:17.524 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:34:18.355 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:34:19.235 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:34:19.290 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:34:21.542 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@473ee461, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@47620803, org.springframework.security.web.context.SecurityContextHolderFilter@6987a0f3, org.springframework.security.web.header.HeaderWriterFilter@4d87553b, org.springframework.web.filter.CorsFilter@43aa9ccd, org.springframework.security.web.authentication.logout.LogoutFilter@18c2b4c6, com.backend.superme.config.user.JwtTokenFilter@40a0364a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50fbb66a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@12bb0322, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@708ddfd3, org.springframework.security.web.access.ExceptionTranslationFilter@11b5b1f2, org.springframework.security.web.access.intercept.AuthorizationFilter@6e5dc02d]
+2024-03-21 08:34:21.886 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:34:21.924 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:34:21.932 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 7.277 seconds (process running for 8.222)
+2024-03-21 08:34:24.234 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:34:24.234 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:34:24.235 [http-nio-8080-exec-2] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 1 ms
+2024-03-21 08:34:39.786 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:34:39.788 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:34:39.874 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:35:39.791 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:35:39.823 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 11248 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:35:39.823 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:35:40.411 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:35:40.470 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 55 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:35:40.946 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:35:40.957 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:35:40.959 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:35:40.959 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:35:41.133 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:35:41.136 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:35:41.136 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1284 ms
+2024-03-21 08:35:41.232 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:35:41.274 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:35:41.298 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:35:41.485 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:35:41.501 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:35:41.633 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@70592729
+2024-03-21 08:35:41.634 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:35:41.661 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:35:42.514 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:35:43.313 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:35:44.168 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:35:44.224 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:35:46.396 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7e4f5062, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c93f349, org.springframework.security.web.context.SecurityContextHolderFilter@31efe094, org.springframework.security.web.header.HeaderWriterFilter@11b5b1f2, org.springframework.web.filter.CorsFilter@473ee461, org.springframework.security.web.authentication.logout.LogoutFilter@41a372c1, com.backend.superme.config.user.JwtTokenFilter@47620803, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6987a0f3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e5e0e75, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@43aa9ccd, org.springframework.security.web.access.ExceptionTranslationFilter@58477355, org.springframework.security.web.access.intercept.AuthorizationFilter@aad1270]
+2024-03-21 08:35:46.624 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:35:46.659 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:35:46.668 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 7.183 seconds (process running for 8.072)
+2024-03-21 08:35:49.590 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:35:49.590 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:35:49.591 [http-nio-8080-exec-1] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 1 ms
+2024-03-21 08:36:43.024 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:36:43.025 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:36:43.116 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:36:50.209 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:36:50.238 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 18132 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:36:50.239 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:36:51.072 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:36:51.131 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 55 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:36:51.536 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:36:51.543 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:36:51.544 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:36:51.544 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:36:51.693 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:36:51.697 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:36:51.699 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1433 ms
+2024-03-21 08:36:51.824 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:36:51.870 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:36:51.891 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:36:52.059 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:36:52.082 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:36:52.216 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@1cb849b2
+2024-03-21 08:36:52.217 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:36:52.249 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:36:53.323 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:36:54.133 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:36:55.132 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:36:55.192 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:36:57.391 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@708ddfd3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2778f3d1, org.springframework.security.web.context.SecurityContextHolderFilter@466fb9be, org.springframework.security.web.header.HeaderWriterFilter@1e5e0e75, org.springframework.web.filter.CorsFilter@30a34f07, org.springframework.security.web.authentication.logout.LogoutFilter@347c7b, com.backend.superme.config.user.JwtTokenFilter@71702d3f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25699129, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f0124b5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6f9d1785, org.springframework.security.web.access.ExceptionTranslationFilter@d69fd7a, org.springframework.security.web.access.intercept.AuthorizationFilter@47620803]
+2024-03-21 08:36:57.612 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:36:57.650 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:36:57.656 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 7.707 seconds (process running for 8.574)
+2024-03-21 08:37:03.705 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:37:03.705 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:37:03.706 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 1 ms
+2024-03-21 08:42:21.725 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:42:21.727 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:42:21.825 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.
+2024-03-21 08:42:29.669 [background-preinit] [34mINFO [0;39m [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.1.Final
+2024-03-21 08:42:29.697 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Starting SupermeApplication using Java 17.0.10 with PID 24988 (C:\Users\jinsu\jinsung\out\production\classes started by local계정 in C:\Users\jinsu\jinsung)
+2024-03-21 08:42:29.699 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - The following 1 profile is active: "aws"
+2024-03-21 08:42:30.270 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-21 08:42:30.338 [main] [34mINFO [0;39m [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 63 ms. Found 15 JPA repository interfaces.
+2024-03-21 08:42:30.697 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 8080 (http)
+2024-03-21 08:42:30.703 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:42:30.704 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2024-03-21 08:42:30.705 [main] [34mINFO [0;39m [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-21 08:42:30.835 [main] [34mINFO [0;39m [36mo.apache.jasper.servlet.TldScanner[0;39m - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-03-21 08:42:30.839 [main] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2024-03-21 08:42:30.839 [main] [34mINFO [0;39m [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 1113 ms
+2024-03-21 08:42:30.935 [main] [34mINFO [0;39m [36mo.h.jpa.internal.util.LogHelper[0;39m - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-21 08:42:30.983 [main] [34mINFO [0;39m [36morg.hibernate.Version[0;39m - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-21 08:42:31.003 [main] [34mINFO [0;39m [36mo.h.c.i.RegionFactoryInitiator[0;39m - HHH000026: Second-level cache disabled
+2024-03-21 08:42:31.143 [main] [34mINFO [0;39m [36mo.s.o.j.p.SpringPersistenceUnitInfo[0;39m - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-21 08:42:31.162 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2024-03-21 08:42:31.333 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@2619cb76
+2024-03-21 08:42:31.334 [main] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2024-03-21 08:42:31.371 [main] [31mWARN [0;39m [36morg.hibernate.orm.deprecation[0;39m - HHH90000025: MariaDBDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-21 08:42:32.207 [main] [34mINFO [0;39m [36mo.h.e.t.j.p.i.JtaPlatformInitiator[0;39m - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-21 08:42:32.897 [main] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:42:33.797 [main] [31mWARN [0;39m [36mo.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration[0;39m - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-21 08:42:33.855 [main] [34mINFO [0;39m [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page template: index
+2024-03-21 08:42:36.872 [main] [34mINFO [0;39m [36mo.s.s.web.DefaultSecurityFilterChain[0;39m - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8b329ae, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7fe1a856, org.springframework.security.web.context.SecurityContextHolderFilter@561f982f, org.springframework.security.web.header.HeaderWriterFilter@29483d10, org.springframework.web.filter.CorsFilter@5a7e0d68, org.springframework.security.web.authentication.logout.LogoutFilter@74a121fe, com.backend.superme.config.user.JwtTokenFilter@11f8d64, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ae648d2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@559d9517, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@10f03ab0, org.springframework.security.web.access.ExceptionTranslationFilter@4f8e6101, org.springframework.security.web.access.intercept.AuthorizationFilter@c4f6d5b]
+2024-03-21 08:42:37.166 [main] [34mINFO [0;39m [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-21 08:42:37.201 [main] [34mINFO [0;39m [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 8080 (http) with context path ''
+2024-03-21 08:42:37.207 [main] [34mINFO [0;39m [36mc.backend.superme.SupermeApplication[0;39m - Started SupermeApplication in 7.823 seconds (process running for 8.755)
+2024-03-21 08:42:37.525 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-21 08:42:37.525 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2024-03-21 08:42:37.526 [http-nio-8080-exec-3] [34mINFO [0;39m [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 1 ms
+2024-03-21 08:55:47.161 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mo.s.o.j.LocalContainerEntityManagerFactoryBean[0;39m - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-21 08:55:47.162 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown initiated...
+2024-03-21 08:55:47.269 [SpringApplicationShutdownHook] [34mINFO [0;39m [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Shutdown completed.

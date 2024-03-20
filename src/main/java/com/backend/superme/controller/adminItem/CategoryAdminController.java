@@ -24,8 +24,8 @@ public class CategoryAdminController {
     @PostMapping("/categories")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "카테고리 등록 api", description = "관리자가 카테고리를 등록하는 api 입니다.")
-    public CategoryResponse create(@RequestBody @Valid CategoryRequest request,
-                                   @RequestHeader("Authorization") String user) {
+    public CategoryResponse create(@RequestBody @Valid CategoryRequest request
+                                   ) {
 
         log.info("catregory 등록 요청이 들어왔습니다 {}", request);
         if(request.categoryName().isEmpty()){

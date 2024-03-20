@@ -168,8 +168,7 @@ public class ImplItemService implements adminItemService {
         List<ItemResponse.Option> options = item.getItemStocks().stream().map(itemStock -> new ItemResponse.Option(
                 itemStock.getColor(),
                 itemStock.getSize(),
-                itemStock.getStockQty(),
-                item.getDescription()
+                itemStock.getStockQty()
         )).collect(Collectors.toList());
 
         return new ItemResponse(
@@ -199,7 +198,6 @@ public class ImplItemService implements adminItemService {
                         item.getId()
                         , item.getName()
                         , item.getPrice()
-                        , item.getDescription()
                 )).toList();
 
         long totalCount = items.getTotalElements();
