@@ -1,13 +1,12 @@
 package com.backend.superme.repository.adminRepository;
 
-import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.entity.view.Category;
 import com.backend.superme.entity.view.Item;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import java.util.Optional;
 
 @Repository

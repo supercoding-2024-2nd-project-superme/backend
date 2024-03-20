@@ -4,13 +4,10 @@ import com.backend.superme.dto.adminItemDto.category.CategoryRequest;
 import com.backend.superme.dto.adminItemDto.category.CategoryResponse;
 import com.backend.superme.service.adminService.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

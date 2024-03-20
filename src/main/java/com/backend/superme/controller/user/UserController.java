@@ -30,7 +30,6 @@ public class UserController {
     public ResponseEntity<?> index() {
         return ResponseEntity.ok().body("인덱스 페이지");
     }
-
     @GetMapping("/user/login")
     @Operation(summary = "index.html 로 이동하는 경로입니다.",description = "메인경로입니다.")
     public ResponseEntity<?> showLoginPage() {

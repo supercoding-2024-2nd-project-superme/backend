@@ -2,12 +2,6 @@ package com.backend.superme.dto.view;
 
 
 import com.backend.superme.constant.base.OrderStatus;
-import com.backend.superme.entity.user.UserEntity;
-import com.backend.superme.entity.view.Item;
-import jakarta.persistence.Column;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 import java.math.BigDecimal;

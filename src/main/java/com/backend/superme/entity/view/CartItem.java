@@ -8,8 +8,6 @@ import lombok.Setter;
 
 import java.util.Date;
 
-import static com.querydsl.core.types.dsl.Wildcard.count;
-
 
 @Getter
 @Setter

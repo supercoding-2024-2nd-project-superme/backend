@@ -69,7 +69,7 @@ public class UserPrincipal implements UserDetails {
 
     public static UserPrincipal create(UserEntity userEntity) {
         List<GrantedAuthority> authorities = Collections.singletonList(
-                new SimpleGrantedAuthority(userEntity.getRole())
+                new SimpleGrantedAuthority(userEntity.getRole().toString())
                 // UserEntity의 role 필드를 이용하여 사용자의 권한을 생성합니다.
                 // 이 예제에서는 간단히 하나의 권한만을 부여하고 있습니다.
         );

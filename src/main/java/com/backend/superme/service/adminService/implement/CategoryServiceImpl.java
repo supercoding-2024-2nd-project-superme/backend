@@ -6,10 +6,9 @@ import com.backend.superme.dto.adminItemDto.category.CategoryResponse;
 import com.backend.superme.entity.view.Category;
 import com.backend.superme.repository.adminRepository.CategoryRepository;
 import com.backend.superme.service.adminService.CategoryService;
-import org.springframework.transaction.annotation.Transactional;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;

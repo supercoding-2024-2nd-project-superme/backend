@@ -10,6 +10,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.Arrays;
 
 
 @EnableWebSecurity
@@ -36,9 +39,9 @@ public class SecurityConfig {
                                 .requestMatchers("/api/admin/categories", "/api/sales/items", "/", "/h2-console/**", "/user/login",
                                         "/user/signup/**", "/user/index", "/get-current-member", "/api/user",
                                         "/swagger-ui/index.html", "/swagger-ui/index.html/**", "/swagger-ui/**",
-                                        "/v3/api-docs/swagger-config", "/v3/api-docs","/api/items/**","/api/items").permitAll()
+                                        "/v3/api-docs/swagger-config", "/v3/api-docs","/items/all","/oauth2/authorization/google").permitAll()
+                                // 특정 경로에 대한 접근을 모든 사용자에게 허용합니다. 예를 들어, 홈페이지, 로그인 페이지, 회원가입 페이지 등이 여기에 해당됩니다.
 
-                                // 특정 경로에 대한 접근을 모든 사용자에게 허용합니다. 예를 들어, 홈페이지, 로그인 페이지                                             , 회원가입 페이지 등이 여기에 해당됩니다.
                                 .anyRequest().authenticated()
                         // 위에서 정의한 경로를 제외한 모든 경로에 대해서는 인증된 사용자만 접근할 수 있도록 합니다.
                 );
@@ -52,6 +55,17 @@ public class SecurityConfig {
         http.headers((headers) -> headers.frameOptions().disable());
         // clickjacking 공격을 방지하기 위한 HTTP 헤더인 X-Frame-Options를 비활성화합니다.
         // 특정 페이지가 <frame>, <iframe> 또는 <object> 내에서 렌더링되는 것을 방지하는 데 사용됩니다.
+
+
+        http.cors().configurationSource(request -> {
+            CorsConfiguration config = new CorsConfiguration();
+            config.setAllowedOrigins(Arrays.asList("http://localhost:4040","https://frontend-lvaynbmcp-yshs-projects-8341d6f4.vercel.app")); // 허용할 출처 설정
+            config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE")); // 허용할 HTTP 메서드 설정
+            config.setAllowedHeaders(Arrays.asList("*")); // 허용할 헤더 설정
+
+            return config;
+        });
+
 
         return http.build();
         // 최종적으로 HttpSecurity 설정을 기반으로 SecurityFilterChain을 생성합니다.

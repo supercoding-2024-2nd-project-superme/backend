@@ -3,8 +3,6 @@ package com.backend.superme.controller.view;
 import com.backend.superme.dto.view.ItemDetailDto;
 import com.backend.superme.dto.view.ItemDto;
 import com.backend.superme.service.view.ItemService;
-
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
