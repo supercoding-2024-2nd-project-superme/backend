@@ -5,13 +5,10 @@ import com.backend.superme.entity.view.CartItem;
 import com.backend.superme.service.user.UserService;
 import com.backend.superme.service.view.CartService;
 import com.backend.superme.service.view.CartItemService;
-<<<<<<<HEAD
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-=======
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
->>>>>>>develop
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -133,6 +130,4 @@ public class CartController {
         return ResponseEntity.ok(cartItems);
     }
 
-
 }
-
