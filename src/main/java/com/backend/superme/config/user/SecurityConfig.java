@@ -35,6 +35,7 @@ public class SecurityConfig {
                                 .requestMatchers("/api/admin/categories", "/api/sales/items", "/", "/h2-console/**", "/user/login",
                                         "/user/signup/**", "/user/index", "/get-current-member", "/api/user",
                                         "/swagger-ui/index.html", "/swagger-ui/index.html/**", "/swagger-ui/**",
+                                        "/api/items/", "/api/items/**",
                                         "/v3/api-docs/swagger-config", "/v3/api-docs").permitAll()
                                 // 특정 경로에 대한 접근을 모든 사용자에게 허용합니다. 예를 들어, 홈페이지, 로그인 페이지, 회원가입 페이지 등이 여기에 해당됩니다.
                                 .anyRequest().authenticated()
