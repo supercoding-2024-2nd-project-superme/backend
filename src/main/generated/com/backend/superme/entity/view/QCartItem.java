@@ -30,11 +30,13 @@ public class QCartItem extends EntityPathBase<CartItem> {
 
     public final QItem item;
 
-    public final NumberPath<Integer> ordered_qty = createNumber("ordered_qty", Integer.class);
-
     public final StringPath orderedColor = createString("orderedColor");
 
+    public final NumberPath<Integer> orderedQty = createNumber("orderedQty", Integer.class);
+
     public final StringPath orderedSize = createString("orderedSize");
+
+    public final com.backend.superme.entity.user.QUserEntity user;
 
     public QCartItem(String variable) {
         this(CartItem.class, forVariable(variable), INITS);
@@ -56,6 +58,7 @@ public class QCartItem extends EntityPathBase<CartItem> {
         super(type, metadata, inits);
         this.cart = inits.isInitialized("cart") ? new QCart(forProperty("cart"), inits.get("cart")) : null;
         this.item = inits.isInitialized("item") ? new QItem(forProperty("item"), inits.get("item")) : null;
+        this.user = inits.isInitialized("user") ? new com.backend.superme.entity.user.QUserEntity(forProperty("user")) : null;
     }
 
 }

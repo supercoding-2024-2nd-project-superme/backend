@@ -80,9 +80,6 @@ public class ItemController {
         return ResponseEntity.ok(sortedItems);
     }
 
-// 아래는 상품 등록, 수정, 삭제 API 등이 추가
-
-
 
 
 }

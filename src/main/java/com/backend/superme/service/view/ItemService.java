@@ -20,6 +20,8 @@ public interface ItemService {
     ItemDetailDto findItemById(Long id);
     Item saveItem(Item item);
     void deleteItem(Long id);
+    // 사용자 ID로 상품 조회
+    List<Item> findByUserId(Long userId);
 
 
     ItemDetailDto findItemDetailById(Long id);
@@ -47,5 +49,6 @@ public interface ItemService {
     // 판매 날짜 오래된 순으로 정렬된 상품 조회
     List<ItemDto> sortItemsByRegistrationDateDescending();
 
+    List<Item> findById(Long itemId);
 }
 

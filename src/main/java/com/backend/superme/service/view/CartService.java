@@ -1,6 +1,7 @@
 package com.backend.superme.service.view;
 
 import com.backend.superme.dto.view.CartItemDto;
+import com.backend.superme.dto.view.OrderCreateDto;
 import com.backend.superme.entity.view.*;
 import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.repository.user.UserRepository;
@@ -108,16 +109,16 @@ public class CartService {
         if (cartItemRepository.countByCart(cart) == 0) {
             throw new RuntimeException("장바구니가 비어있습니다.");
         }
-        // CartItem을 OrderItem으로 변환
-        List<OrderItem> orderItems = cart.getCartItems().stream()
-                .map(this::convertToOrderItem)
+        // CartItem을 OrderCreateDto로 변환
+        List<Long> itemIds = cart.getCartItems().stream()
+                .map(cartItem -> cartItem.getItem().getId())
                 .collect(Collectors.toList());
+        OrderCreateDto orderCreateDto = new OrderCreateDto();
+        orderCreateDto.setUserId(user.getId());
+        orderCreateDto.setItemIds(itemIds);
+        // 다른 필요한 필드도 설정
 
-        Order order = new Order();
-        order.setUser(user);
-        order.setOrderItems(orderItems);
-
-        orderService.saveOrder(order);
+        orderService.createOrder(orderCreateDto);
 
         cart.getCartItems().clear();
         cartRepository.save(cart);

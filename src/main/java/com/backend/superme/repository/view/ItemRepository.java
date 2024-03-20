@@ -1,15 +1,14 @@
 package com.backend.superme.repository.view;
 
 
+import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.entity.view.Category;
 import com.backend.superme.entity.view.Item;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Date;
+import java.util.Optional;
 
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Long> {
@@ -49,6 +48,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     // 판매 날짜 오래된 순으로 정렬된 상품 조회
     List<Item> findByOrderByRegistrationDateAsc();
 
-
-
+    //사용자가 조회
+    List<Item> findByUserId(Long userId);
 }

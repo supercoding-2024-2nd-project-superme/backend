@@ -2,11 +2,13 @@ package com.backend.superme.service.view;
 
 import com.backend.superme.dto.view.ItemDetailDto;
 import com.backend.superme.dto.view.ItemDto;
+import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.entity.view.Category;
 import com.backend.superme.entity.view.Item;
 import com.backend.superme.entity.view.ItemStock;
 import com.backend.superme.repository.adminRepository.CategoryRepository;
 import com.backend.superme.repository.view.ItemRepository;
+import com.backend.superme.service.user.UserService;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ public class ItemServiceImpl implements ItemService {
     private final ItemRepository itemRepository;
     private final CategoryRepository categoryRepository;
     private final EntityManager entityManager;
+    private UserService userService;
 
     @Autowired
     public ItemServiceImpl(ItemRepository itemRepository, CategoryRepository categoryRepository, EntityManager entityManager) {
@@ -30,6 +33,28 @@ public class ItemServiceImpl implements ItemService {
         this.categoryRepository = categoryRepository;
         this.entityManager = entityManager;
     }
+
+    @Override
+    public List<Item> findById(Long userId) {
+        // 유저 서비스를 사용하여 유저를 조회
+        Optional<UserEntity> user = userService.findById(userId);
+
+        // 유저가 존재하는 경우에만 해당 유저가 소유한 아이템을 조회
+        if (user != null) {
+            return itemRepository.findByUserId(userId);
+        } else {
+            // 유저가 존재하지 않는 경우에는 null을 반환하거나 적절한 예외 처리
+            return null;
+        }
+    }
+
+    @Override
+    public List<Item> findByUserId(Long userId) {
+        // 사용자 ID에 해당하는 상품 목록 조회 로직을 여기에 구현합니다.
+        // 예를 들어, 해당 사용자가 등록한 상품들을 조회하는 방식으로 구현할 수 있습니다.
+        return itemRepository.findByUserId(userId);
+    }
+
 
     @Override
     public List<Item> findItemsByStockId(Long itemId) {
@@ -75,6 +100,7 @@ public class ItemServiceImpl implements ItemService {
             throw new EntityNotFoundException("해당 ID의 상품을 찾을 수 없습니다.");
         }
     }
+
 
     //모든 상품 조회
     public List<ItemDto> findAllItems() {
@@ -173,7 +199,7 @@ public class ItemServiceImpl implements ItemService {
                 .collect(Collectors.toList());
     }
 
-    ;
+
 
     // 가격 높은 순으로 정렬된 상품 조회
     @Override
@@ -183,7 +209,6 @@ public class ItemServiceImpl implements ItemService {
                 .collect(Collectors.toList());
     }
 
-    ;
 
     // 가격 낮은 순으로 정렬된 상품 조회
     @Override
@@ -213,4 +238,4 @@ public class ItemServiceImpl implements ItemService {
                 .collect(Collectors.toList());
     }
 
-    };
+    }

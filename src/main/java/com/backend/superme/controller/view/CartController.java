@@ -23,26 +23,19 @@ import java.util.Objects;
 
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/cart")
 public class CartController {
+
     private final CartService cartService;
     private final CartItemService cartItemService;
 
-    @Autowired
-    private ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
 
-    @Qualifier("userService")
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
     public String convertObjectToJson(Object object) throws JsonProcessingException {
         return objectMapper.writeValueAsString(object);
-    }
-
-     @Autowired
-    public CartController(CartService cartService, CartItemService cartItemService) {
-        this.cartService = cartService;
-        this.cartItemService = cartItemService;
     }
 
     // 아이템 담기 API
@@ -66,12 +59,10 @@ public class CartController {
     }
 
 //     장바구니 조회 API
-    @GetMapping("/items")
-    public ResponseEntity<List<CartItemDto>> getCartItems(Principal principal) {
-        String email = principal.getName(); // 현재 사용자의 이메일 주소 가져오기
-        List<CartItemDto> cartItems = cartItemService.getCartItems(email); // 현재 사용자의 장바구니 아이템 조회
-        return ResponseEntity.ok(cartItems); // 조회된 장바구니 아이템 반환
-//        return null;
+    @GetMapping("/cart/{userId}")
+    public ResponseEntity<List<CartItem>> getCartItems(@PathVariable Long userId) {
+        List<CartItem> cartItems = cartService.getCartItemsByUserId(userId);// 현재 사용자의 장바구니 아이템 조회
+        return ResponseEntity.ok(cartItems);// 조회된 장바구니 아이템 반환
     }
 
     // 상품 수정 API
@@ -116,12 +107,14 @@ public class CartController {
             return ResponseEntity.badRequest().body(e.getMessage()); // 주문 실패 시 에러 메시지 반환
         }
     }
-    @GetMapping("/cart/{userId}")
-    public ResponseEntity<List<CartItem>> getCartItems(@PathVariable Long userId) {
-        List<CartItem> cartItems = cartService.getCartItemsByUserId(userId);
-        return ResponseEntity.ok(cartItems);
-    }
 
+//    @GetMapping("/items")
+//    public ResponseEntity<List<CartItemDto>> getCartItems(Principal principal) {
+//        String email = principal.getName(); // 현재 사용자의 이메일 주소 가져오기
+//        List<CartItemDto> cartItems = cartItemService.getCartItems(email);
+//        return ResponseEntity.ok(cartItems); // 조회된 장바구니 아이템 반환
+////        return null;
+//    }
 
 
 }

@@ -1,7 +1,9 @@
 package com.backend.superme.entity.view;
 
 
+import com.backend.superme.constant.base.DeliveryStatus;
 import com.backend.superme.constant.base.OrderStatus;
+import com.backend.superme.constant.base.PaymentMethod;
 import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,8 +11,6 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-
-import static com.backend.superme.entity.view.QOrderItem.orderItem;
 
 @Entity
 @Table(name = "orders")
@@ -36,7 +36,15 @@ public class Order {
 
     private String deliveryAddress; //배송 주소
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "payment_method")
+    private PaymentMethod paymentMethod; // 결제 방법
+
     private Date orderDate; //주문일
 
     private OrderStatus status = OrderStatus.CONFIRMED; //주문 상태
+
+    @Enumerated(EnumType.STRING)
+    private DeliveryStatus deliveryStatus;
+
 }

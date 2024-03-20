@@ -6,8 +6,11 @@ import com.querydsl.core.types.dsl.*;
 
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
+
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.dsl.PathInits;
+
+import java.math.BigDecimal;
 
 
 /**
@@ -24,9 +27,15 @@ public class QOrder extends EntityPathBase<Order> {
 
     public final StringPath deliveryAddress = createString("deliveryAddress");
 
+    public final EnumPath<com.backend.superme.constant.base.DeliveryStatus> deliveryStatus = createEnum("deliveryStatus", com.backend.superme.constant.base.DeliveryStatus.class);
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final DateTimePath<java.util.Date> orderDate = createDateTime("orderDate", java.util.Date.class);
+
+    public final ListPath<OrderItem, QOrderItem> orderItems = this.<OrderItem, QOrderItem>createList("orderItems", OrderItem.class, QOrderItem.class, PathInits.DIRECT2);
+
+    public final EnumPath<com.backend.superme.constant.base.PaymentMethod> paymentMethod = createEnum("paymentMethod", com.backend.superme.constant.base.PaymentMethod.class);
 
     public final EnumPath<com.backend.superme.constant.base.OrderStatus> status = createEnum("status", com.backend.superme.constant.base.OrderStatus.class);
 
@@ -55,5 +64,12 @@ public class QOrder extends EntityPathBase<Order> {
         this.user = inits.isInitialized("user") ? new com.backend.superme.entity.user.QUserEntity(forProperty("user")) : null;
     }
 
+    public com.backend.superme.entity.user.QUserEntity getUser() {
+        return user;
+    }
+
+    public NumberPath<BigDecimal> getTotalPrice() {
+        return totalPrice;
+    }
 }
 

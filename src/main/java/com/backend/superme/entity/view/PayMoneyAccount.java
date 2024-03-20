@@ -30,7 +30,7 @@ public class PayMoneyAccount {
 
     // 잔액
     @Column(nullable = false)
-    private Long balance;
+    private BigDecimal balance; //달러화
 
     // 카드 정보
     @Column(nullable = false)

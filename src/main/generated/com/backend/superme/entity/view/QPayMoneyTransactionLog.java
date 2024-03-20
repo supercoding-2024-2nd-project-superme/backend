@@ -22,7 +22,7 @@ public class QPayMoneyTransactionLog extends EntityPathBase<PayMoneyTransactionL
 
     public static final QPayMoneyTransactionLog payMoneyTransactionLog = new QPayMoneyTransactionLog("payMoneyTransactionLog");
 
-    public final NumberPath<Long> amount = createNumber("amount", Long.class);
+    public final NumberPath<java.math.BigDecimal> amount = createNumber("amount", java.math.BigDecimal.class);
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 

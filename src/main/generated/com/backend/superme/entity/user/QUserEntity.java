@@ -21,6 +21,8 @@ public class QUserEntity extends EntityPathBase<UserEntity> {
 
     public final StringPath address = createString("address");
 
+    public final NumberPath<java.math.BigDecimal> balance = createNumber("balance", java.math.BigDecimal.class);
+
     public final StringPath email = createString("email");
 
     public final EnumPath<com.backend.superme.constant.user.GenderEnum> gender = createEnum("gender", com.backend.superme.constant.user.GenderEnum.class);
