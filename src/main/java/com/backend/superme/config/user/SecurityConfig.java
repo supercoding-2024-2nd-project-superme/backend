@@ -28,20 +28,15 @@ public class SecurityConfig {
     private final JwtTokenProvider jwtTokenProvider;
     // JWT 토큰 생성 및 검증을 담당하는 JwtTokenProvider 빈을 주입받습니다. 이는 JWT 인증 필터에서 사용됩니다.
 
-    @Bean
+       @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((auth) -> auth
                                 .requestMatchers("/api/admin/categories", "/api/sales/items", "/", "/h2-console/**", "/user/login",
                                         "/user/signup/**", "/user/index", "/get-current-member", "/api/user",
                                         "/swagger-ui/index.html", "/swagger-ui/index.html/**", "/swagger-ui/**",
-<<<<<<< HEAD
                                         "/v3/api-docs/swagger-config", "/v3/api-docs","/api/items/**","/api/items").permitAll()
 
-
-=======
-                                        "/v3/api-docs/swagger-config", "/v3/api-docs","/items/all").permitAll()
->>>>>>> develop
                                 // 특정 경로에 대한 접근을 모든 사용자에게 허용합니다. 예를 들어, 홈페이지, 로그인 페이지, 회원가입 페이지 등이 여기에 해당됩니다.
                                 .anyRequest().authenticated()
                         // 위에서 정의한 경로를 제외한 모든 경로에 대해서는 인증된 사용자만 접근할 수 있도록 합니다.
