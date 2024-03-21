@@ -44,15 +44,6 @@ public class ItemSellerController {
 
 
 
-    @PostMapping(value = "/itemTest", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ItemRequest> add(@Valid @RequestBody ItemRequest itemRequest) {
-        return new ResponseEntity<>(itemRequest, HttpStatus.CREATED);
-    }
 
-
-    @PostMapping("/data")
-    public ResponseEntity<String> receiveData(@RequestBody String requestData) {
-        return ResponseEntity.ok(requestData);
-    }
 
 }

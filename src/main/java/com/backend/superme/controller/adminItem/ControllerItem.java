@@ -18,10 +18,11 @@ public class ControllerItem {
     private final ImplItemService itemService;
 
 
+
     //상품 단건 조회
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/items/{itemId}")
-    @Operation(summary = "상품 단건 조회" ,description = "상품을 하나씩 조회하는 api 입니다.")
+    @Operation(summary = "상품 단건 조회" ,description = "상품을 상세하게 조회하는 api 입니다.")
     public ItemResponse getItem(@PathVariable Long itemId) {
         return itemService.getOne(itemId);
     }
@@ -29,7 +30,7 @@ public class ControllerItem {
 //    카테고리 아이템으로 조회
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/items")
-    @Operation(summary = "상품 전체 조회", description = "상품을 전체 조회하는 api 입니다")
+    @Operation(summary = "카테고리 이름으로 조회", description = "카테고리 이름으로 조회하는 API 입니다")
     public ItemPageResponse getCategoryName(Pageable pageable,
                                         @RequestParam String categoryName) {
         return itemService.categoryNameAll(pageable, categoryName);

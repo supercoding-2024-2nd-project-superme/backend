@@ -39,8 +39,9 @@ public class SecurityConfig {
     private static final String[] PERMIT_ALL_PATHS = {
             "/api/admin/categories", "/api/sales/items", "/", "/user/login",
             "/user/signup/**", "/user/index", "/get-current-member", "/api/user",
+            "/api/items","/api/admin/categories","/api/admin/categories/**","/api/items/**",
             //상품 등록,조회
-            "/api/items/**", "/api/items/**", "/api/sales/data", "/api/sales/itemTest","/api/sales/items/**","/api/sales/items"
+            "/api/items/**", "/api/items/**", "/api/sales/data", "/api/sales/itemTest", "/api/sales/items/**", "/api/sales/items"
 
     };
     private static final String[] GOOGLE_OAUTH_PATHS = {"/oauth2/authorization/google"};
@@ -66,8 +67,6 @@ public class SecurityConfig {
         http.headers((headers) -> headers.frameOptions().disable());
         // clickjacking 공격을 방지하기 위한 HTTP 헤더인 X-Frame-Options를 비활성화합니다.
         // 특정 페이지가 <frame>, <iframe> 또는 <object> 내에서 렌더링되는 것을 방지하는 데 사용됩니다.
-
-
 
 
         return http.build();
