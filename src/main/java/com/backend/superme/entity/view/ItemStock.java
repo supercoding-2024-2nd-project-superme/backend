@@ -76,11 +76,12 @@ public class ItemStock {
         }
     }
     //재고 지우기
-    public void removeStock(int quantity) throws Exception {
-        if (this.stockQty < quantity) {
-            throw new Exception("재고 수량이 부족합니다.");
+    public void removeStock(int quantity) {
+        int restStock = this.stockQty - quantity;
+        if (restStock < 0) {
+            throw new RuntimeException("재고가 부족합니다.");
         }
-        this.stockQty -= quantity;
+        this.stockQty = restStock;
     }
 
 }

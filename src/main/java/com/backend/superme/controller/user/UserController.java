@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.Map;
 
-@Controller
-@Tag(name = "로그인, 회원가입 등 유저관련 api입니다", description = "사용자가 회원가입, 로그인을 할 수 있습니다.")
+@RestController
+@Tag(name = "로그인, 회원가입 등 유저관련 api입니다",description = "사용자가 회원가입, 로그인을 할 수 있습니다.")
 public class UserController {
 
     @Autowired
@@ -25,31 +25,16 @@ public class UserController {
     @Autowired
     private TokenBlacklistService tokenBlacklistService;
 
-//    @GetMapping("/")
-//    @Operation(summary = "index.html 로 이동하는 경로입니다.", description = "메인경로입니다.")
-//    public ResponseEntity<?> index() {
-//        return ResponseEntity.ok().body("인덱스 페이지");
-//    }
-
     @GetMapping("/")
-    public String index() {
-        return "index";
+    @Operation(summary = "index.html 로 이동하는 경로입니다.",description = "메인경로입니다.")
+    public ResponseEntity<?> index() {
+        return ResponseEntity.ok().body("인덱스 페이지");
     }
-
-
-
-//    @GetMapping("/user/login")
-//    @Operation(summary = "index.html 로 이동하는 경로입니다.", description = "메인경로입니다.")
-//    public ResponseEntity<?> showLoginPage() {
-//        return ResponseEntity.ok().body("로그인 페이지");
-//    }
-
     @GetMapping("/user/login")
-    public String showLoginPage() {
-        return "login";
+    @Operation(summary = "index.html 로 이동하는 경로입니다.",description = "메인경로입니다.")
+    public ResponseEntity<?> showLoginPage() {
+        return ResponseEntity.ok().body("로그인 페이지");
     }
-
-
 
     @PostMapping("/user/login")
     @Operation(summary = "로그인 API", description = "사용자가 로그인하는 api 입니다.")
@@ -67,17 +52,11 @@ public class UserController {
         }
     }
 
-//    @GetMapping("/user/signup")
-//    @Operation(summary = "회원가입 페이지로 이동합니다.", description = "회원가입 페이지로 이동합니다")
-//    public ResponseEntity<?> showSignupPage() {
-//        return ResponseEntity.ok().body("회원가입 페이지");
-//    }
-
     @GetMapping("/user/signup")
-    public String showSignupPage() {
-        return "signup";
+    @Operation(summary = "회원가입 페이지로 이동합니다.", description = "회원가입 페이지로 이동합니다")
+    public ResponseEntity<?> showSignupPage() {
+        return ResponseEntity.ok().body("회원가입 페이지");
     }
-
 
     @GetMapping("/user/signup/check/{email}")
     @Operation(summary = "이메일 중복을 체크합니다.", description = "중복회원을 확인합니다.")
@@ -91,10 +70,9 @@ public class UserController {
             return ResponseEntity.ok().body("사용 가능한 이메일입니다.");
         }
     }
-
     @PostMapping("/user/signup")
     @Operation(summary = "회원가입 API", description = "사용자가 회원가입하는 API 입니다.")
-    public ResponseEntity<?> signup(UserDto userDto) {
+    public ResponseEntity<?> signup(@RequestBody UserDto userDto) {
         try {
             userService.signupUser(userDto);
             Map<String, Object> response = new HashMap<>();

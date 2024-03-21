@@ -6,11 +6,8 @@ import com.querydsl.core.types.dsl.*;
 
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
-
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.dsl.PathInits;
-
-import java.math.BigDecimal;
 
 
 /**
@@ -64,12 +61,5 @@ public class QOrder extends EntityPathBase<Order> {
         this.user = inits.isInitialized("user") ? new com.backend.superme.entity.user.QUserEntity(forProperty("user")) : null;
     }
 
-    public com.backend.superme.entity.user.QUserEntity getUser() {
-        return user;
-    }
-
-    public NumberPath<BigDecimal> getTotalPrice() {
-        return totalPrice;
-    }
 }
 

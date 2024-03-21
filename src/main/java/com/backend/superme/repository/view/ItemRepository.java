@@ -47,7 +47,4 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     // 판매 날짜 오래된 순으로 정렬된 상품 조회
     List<Item> findByOrderByRegistrationDateAsc();
-
-    //사용자가 조회
-    List<Item> findByUserId(Long userId);
 }
