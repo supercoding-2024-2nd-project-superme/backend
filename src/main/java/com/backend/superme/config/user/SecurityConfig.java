@@ -1,8 +1,10 @@
 package com.backend.superme.config.user;
 
 
+import com.backend.superme.service.user.GoogleOAuth2UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.reactive.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -29,6 +31,13 @@ import java.util.Arrays;
 
 public class SecurityConfig {
 
+    @Autowired
+    private final GoogleOAuth2UserService googleOAuth2UserService;
+
+    @Autowired
+    private final OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
+
+    @Autowired
     private final JwtTokenProvider jwtTokenProvider;
     // JWT 토큰 생성 및 검증을 담당하는 JwtTokenProvider 빈을 주입받습니다. 이는 JWT 인증 필터에서 사용됩니다.
     private static final String[] H2_CONSOLE_PATHS = {"/h2-console/**"};
@@ -49,7 +58,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll() //정적 리소스 모두허용
+//                        .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll() //정적 리소스 모두허용
                         .requestMatchers(H2_CONSOLE_PATHS).permitAll() //h2
                         .requestMatchers(PERMIT_ALL_PATHS).permitAll() //허용하고 싶은 경로
                         .requestMatchers(SWAGGER_PATHS).permitAll() //swagger 경로
@@ -67,10 +76,15 @@ public class SecurityConfig {
         // clickjacking 공격을 방지하기 위한 HTTP 헤더인 X-Frame-Options를 비활성화합니다.
         // 특정 페이지가 <frame>, <iframe> 또는 <object> 내에서 렌더링되는 것을 방지하는 데 사용됩니다.
 
+        http.oauth2Login()
+                .successHandler(oAuth2AuthenticationSuccessHandler)
+                .userInfoEndpoint()
+                .userService(googleOAuth2UserService);
+
 
         http.cors().configurationSource(request -> {
             CorsConfiguration config = new CorsConfiguration();
-            config.setAllowedOrigins(Arrays.asList("http://localhost:4040", "https://frontend-lvaynbmcp-yshs-projects-8341d6f4.vercel.app")); // 허용할 출처 설정
+            config.setAllowedOrigins(Arrays.asList("http://localhost:4040","https://frontend-lvaynbmcp-yshs-projects-8341d6f4.vercel.app")); // 허용할 출처 설정
             config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE")); // 허용할 HTTP 메서드 설정
             config.setAllowedHeaders(Arrays.asList("*")); // 허용할 헤더 설정
 
