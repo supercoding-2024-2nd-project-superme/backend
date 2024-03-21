@@ -2,10 +2,7 @@ package com.backend.superme.entity.view;
 
 import com.backend.superme.constant.item.StockStatus;
 import jakarta.persistence.*;
-import com.backend.superme.entity.view.Item;
 import lombok.*;
-
-import java.util.List;
 
 @Builder
 @AllArgsConstructor

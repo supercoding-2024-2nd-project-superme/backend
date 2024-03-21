@@ -2,7 +2,6 @@ package com.backend.superme.service.adminService;
 
 import com.backend.superme.dto.adminItemDto.category.CategoryRequest;
 import com.backend.superme.dto.adminItemDto.category.CategoryResponse;
-import com.backend.superme.entity.view.Category;
 
 import java.util.List;
 

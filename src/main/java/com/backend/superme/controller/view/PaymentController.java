@@ -5,6 +5,8 @@ import com.backend.superme.dto.view.PaymentInfoDto;
 import com.backend.superme.entity.view.Order;
 import com.backend.superme.service.view.OrderService;
 import com.backend.superme.service.view.PaymentService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "결제 API")
 @RestController("/payment")
 public class PaymentController {
 
@@ -25,6 +28,7 @@ public class PaymentController {
     }
 
     @PostMapping("/pay/{orderId}")
+    @Operation(summary = "결제 확인입니다.", description = "결제 확인을 하는 api 입니다.")
     public ResponseEntity<String> pay(@PathVariable Long orderId, @RequestBody PaymentInfoDto payment) {
         Order order = orderService.getOrder(orderId);
         boolean ret = paymentService.processPayment(order, payment);

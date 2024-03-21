@@ -2,7 +2,6 @@ package com.backend.superme.constant.item;
 
 
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
 public enum StockStatus {
