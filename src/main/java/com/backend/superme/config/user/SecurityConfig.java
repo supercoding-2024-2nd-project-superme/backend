@@ -40,7 +40,7 @@ public class SecurityConfig {
             "/api/admin/categories", "/api/sales/items", "/", "/user/login",
             "/user/signup/**", "/user/index", "/get-current-member", "/api/user",
             //상품 등록,조회
-            "/api/items/**", "/api/items/**"
+            "/api/items/**", "/api/items/**", "/api/sales/data", "/api/sales/itemTest","/api/sales/items/**","/api/sales/items"
 
     };
     private static final String[] GOOGLE_OAUTH_PATHS = {"/oauth2/authorization/google"};
@@ -68,14 +68,6 @@ public class SecurityConfig {
         // 특정 페이지가 <frame>, <iframe> 또는 <object> 내에서 렌더링되는 것을 방지하는 데 사용됩니다.
 
 
-        http.cors().configurationSource(request -> {
-            CorsConfiguration config = new CorsConfiguration();
-            config.setAllowedOrigins(Arrays.asList("http://localhost:4040", "https://frontend-lvaynbmcp-yshs-projects-8341d6f4.vercel.app")); // 허용할 출처 설정
-            config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE")); // 허용할 HTTP 메서드 설정
-            config.setAllowedHeaders(Arrays.asList("*")); // 허용할 헤더 설정
-
-            return config;
-        });
 
 
         return http.build();

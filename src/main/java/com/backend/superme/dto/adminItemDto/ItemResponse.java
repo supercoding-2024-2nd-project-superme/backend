@@ -13,6 +13,7 @@ import java.util.List;
 public record ItemResponse(
         @Schema(description = "상품 id", example = "1")
         Long itemId,
+
         @Schema(description = "상품 이름", example = "노트북")
         String itemName,
         @Schema(description = "카테고리 id", example = "1")
