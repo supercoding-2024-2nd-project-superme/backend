@@ -94,7 +94,7 @@ public class UserController {
 
     @PostMapping("/user/signup")
     @Operation(summary = "회원가입 API", description = "사용자가 회원가입하는 API 입니다.")
-    public ResponseEntity<?> signup(@RequestBody UserDto userDto) {
+    public ResponseEntity<?> signup(UserDto userDto) {
         try {
             userService.signupUser(userDto);
             Map<String, Object> response = new HashMap<>();

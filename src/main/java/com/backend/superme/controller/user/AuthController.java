@@ -37,4 +37,9 @@ public class AuthController {
     }
 
 
+    @GetMapping("/google/login")
+    public String googleLogin() {
+        return "redirect:/oauth2/authorization/google";
+    }
+
 }
