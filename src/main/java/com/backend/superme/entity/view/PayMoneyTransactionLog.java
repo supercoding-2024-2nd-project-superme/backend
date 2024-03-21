@@ -4,7 +4,10 @@ import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.util.Date;
+
+import static com.backend.superme.entity.view.QOrder.order;
 
 @Entity
 @Getter
@@ -40,7 +43,7 @@ public class PayMoneyTransactionLog {
 
     // 보낸 금액
     @Column(nullable = false)
-    private Long amount;
+    private BigDecimal amount;
 
     // 보낸 시간
     @Column(nullable = false)
@@ -51,4 +54,14 @@ public class PayMoneyTransactionLog {
     @Column(nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date processTime = new Date();
+
+
+    // 생성자 또는 메서드 내에서 해당 객체 생성
+    public PayMoneyTransactionLog createPayMoneyTransactionLog(PayMoneyAccount senderPayMoneyAccount, BigDecimal amount) {
+        return PayMoneyTransactionLog.builder()
+                .senderPayMoneyAccount(senderPayMoneyAccount)
+                .amount(amount)
+                .build();
+    }
+
 }

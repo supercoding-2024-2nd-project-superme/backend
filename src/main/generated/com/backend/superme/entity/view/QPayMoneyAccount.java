@@ -24,7 +24,7 @@ public class QPayMoneyAccount extends EntityPathBase<PayMoneyAccount> {
 
     public final StringPath active = createString("active");
 
-    public final NumberPath<Long> balance = createNumber("balance", Long.class);
+    public final NumberPath<java.math.BigDecimal> balance = createNumber("balance", java.math.BigDecimal.class);
 
     public final StringPath bank = createString("bank");
 

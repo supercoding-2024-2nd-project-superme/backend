@@ -24,11 +24,15 @@ public class QOrder extends EntityPathBase<Order> {
 
     public final StringPath deliveryAddress = createString("deliveryAddress");
 
+    public final EnumPath<com.backend.superme.constant.base.DeliveryStatus> deliveryStatus = createEnum("deliveryStatus", com.backend.superme.constant.base.DeliveryStatus.class);
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final DateTimePath<java.util.Date> orderDate = createDateTime("orderDate", java.util.Date.class);
 
     public final ListPath<OrderItem, QOrderItem> orderItems = this.<OrderItem, QOrderItem>createList("orderItems", OrderItem.class, QOrderItem.class, PathInits.DIRECT2);
+
+    public final EnumPath<com.backend.superme.constant.base.PaymentMethod> paymentMethod = createEnum("paymentMethod", com.backend.superme.constant.base.PaymentMethod.class);
 
     public final EnumPath<com.backend.superme.constant.base.OrderStatus> status = createEnum("status", com.backend.superme.constant.base.OrderStatus.class);
 

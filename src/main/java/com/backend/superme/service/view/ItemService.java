@@ -15,10 +15,9 @@ public interface ItemService {
 
     void processOrder(Long itemId, int quantity);
     List<ItemDto> findAllItems();
-    ItemDetailDto findItemById(Long id);
+
     Item saveItem(Item item);
     void deleteItem(Long id);
-
 
     ItemDetailDto findItemDetailById(Long id);
 

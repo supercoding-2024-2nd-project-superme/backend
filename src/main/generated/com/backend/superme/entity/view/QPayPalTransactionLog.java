@@ -19,6 +19,8 @@ public class QPayPalTransactionLog extends EntityPathBase<PayPalTransactionLog> 
 
     public static final QPayPalTransactionLog payPalTransactionLog = new QPayPalTransactionLog("payPalTransactionLog");
 
+    public final NumberPath<java.math.BigDecimal> amount = createNumber("amount", java.math.BigDecimal.class);
+
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public QPayPalTransactionLog(String variable) {

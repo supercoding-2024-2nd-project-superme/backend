@@ -24,6 +24,7 @@ public class ItemServiceImpl implements ItemService {
     private final CategoryRepository categoryRepository;
     private final EntityManager entityManager;
 
+
     @Autowired
     public ItemServiceImpl(ItemRepository itemRepository, CategoryRepository categoryRepository, EntityManager entityManager) {
         this.itemRepository = itemRepository;
@@ -76,6 +77,7 @@ public class ItemServiceImpl implements ItemService {
         }
     }
 
+
     //모든 상품 조회
     public List<ItemDto> findAllItems() {
         return itemRepository.findAll().stream()
@@ -88,19 +90,6 @@ public class ItemServiceImpl implements ItemService {
         return itemRepository.findById(id)
                 .map(entity -> new ItemDetailDto(entity.getId(), entity.getName(), entity.getPrice(), entity.getDescription()))
                 .orElseThrow(() -> new EntityNotFoundException("Item not found"));
-    }
-
-    @Override
-    public ItemDetailDto findItemById(Long id) {
-        // 아이템 ID로 아이템을 조회
-        Optional<Item> itemOptional = itemRepository.findById(id);
-        if (itemOptional.isPresent()) {
-            Item item = itemOptional.get();
-            // ItemDetailDto에 필요한 정보로 매핑하여 반환
-            return new ItemDetailDto(item.getId(), item.getName(), item.getPrice(), item.getDescription());
-        } else {
-            throw new EntityNotFoundException("Item not found");
-        }
     }
 
     @Override
@@ -173,7 +162,7 @@ public class ItemServiceImpl implements ItemService {
                 .collect(Collectors.toList());
     }
 
-    ;
+
 
     // 가격 높은 순으로 정렬된 상품 조회
     @Override
@@ -183,7 +172,6 @@ public class ItemServiceImpl implements ItemService {
                 .collect(Collectors.toList());
     }
 
-    ;
 
     // 가격 낮은 순으로 정렬된 상품 조회
     @Override
@@ -213,4 +201,4 @@ public class ItemServiceImpl implements ItemService {
                 .collect(Collectors.toList());
     }
 
-    };
+    }

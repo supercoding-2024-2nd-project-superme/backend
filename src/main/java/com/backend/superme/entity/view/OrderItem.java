@@ -49,7 +49,7 @@ public class OrderItem {
                 .build();
 
         try {
-            item.removeStock(count); // 주문 수량만큼 재고 감소
+//            item.removeStock(count); // 주문 수량만큼 재고 감소
         } catch (Exception e) {
             throw new RuntimeException("재고 수량이 부족하여 주문을 처리할 수 없습니다.", e);
         }

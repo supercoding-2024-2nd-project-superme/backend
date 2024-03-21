@@ -30,12 +30,11 @@ public class ItemController {
     }
 
     // 상세 물품 조회 API
-    @GetMapping("/{id}")
+    @GetMapping("/{itemId}")
     @Operation(summary = "상세 물품을 조회 API", description = "상세 물품을 볼 수 있습니다.")
-    public ResponseEntity<ItemDetailDto> getItemDetail(@PathVariable Long id){
+    public ResponseEntity<ItemDetailDto> getItemDetail(@PathVariable("itemId") Long id) { // 변수 이름 명시
         return ResponseEntity.ok(itemService.findItemDetailById(id));
     }
-
 
     // 특정 조건에 따른 물품 검색 API
     @GetMapping("/search")
@@ -85,9 +84,6 @@ public class ItemController {
         }
         return ResponseEntity.ok(sortedItems);
     }
-
-// 아래는 상품 등록, 수정, 삭제 API 등이 추가
-
 
 
 
