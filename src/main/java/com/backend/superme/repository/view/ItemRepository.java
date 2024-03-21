@@ -3,13 +3,10 @@ package com.backend.superme.repository.view;
 
 import com.backend.superme.entity.view.Category;
 import com.backend.superme.entity.view.Item;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Date;
 
 @Repository
 public interface ItemRepository extends JpaRepository<Item, Long> {

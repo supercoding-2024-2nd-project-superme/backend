@@ -2,6 +2,8 @@ package com.backend.superme.service.user;
 
 import com.backend.superme.config.user.JwtTokenProvider;
 import com.backend.superme.config.user.UserPrincipal;
+import com.backend.superme.constant.user.GenderEnum;
+import com.backend.superme.constant.user.RoleEnum;
 import com.backend.superme.constant.user.StatusEnum;
 import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.entity.user.UserEntity;
@@ -56,10 +58,10 @@ public class UserServiceImpl implements UserService {
         userEntity.setUsername(userDto.getUsername());
         userEntity.setAddress(userDto.getAddress());
         userEntity.setPhone(userDto.getPhone());
-        userEntity.setGender(userDto.getGender());
+        userEntity.setGender(GenderEnum.valueOf(userDto.getGender()));
 
 
-        userEntity.setRole("USER");
+        userEntity.setRole(RoleEnum.USER);
 
         userRepository.save(userEntity);
 

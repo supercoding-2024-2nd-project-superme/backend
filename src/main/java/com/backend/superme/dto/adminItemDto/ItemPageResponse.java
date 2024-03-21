@@ -16,8 +16,8 @@ public record ItemPageResponse(
         @Schema(description = "현재 페이지 번호", example = "1")
         int pageNumber,
 
-        @Schema(description = "아이템 상세", example = "이건 남자옷입니다")
-        int itemDescription,
+        @Schema(description = "아이템 갯수", example = "16")
+        int itemCount,
 
         @Schema(description = "상품 목록")
         List<ItemList> itemList
@@ -31,10 +31,8 @@ public record ItemPageResponse(
             String itemName,
 
             @Schema(description = "상품 가격", example = "897000")
-            BigDecimal price,
+            BigDecimal price
 
-            @Schema(description = "상품 설명", example = "")
-            String itemDescription
     ) {
     }
 }
