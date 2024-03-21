@@ -5,11 +5,13 @@ import com.backend.superme.dto.view.ItemDto;
 import com.backend.superme.entity.view.Category;
 import com.backend.superme.entity.view.Item;
 import com.backend.superme.entity.view.ItemStock;
+import com.backend.superme.repository.adminRepository.AdminItemRepository;
 import com.backend.superme.repository.adminRepository.CategoryRepository;
 import com.backend.superme.repository.view.ItemRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,12 +26,14 @@ public class ItemServiceImpl implements ItemService {
     private final CategoryRepository categoryRepository;
     private final EntityManager entityManager;
 
+
     @Autowired
     public ItemServiceImpl(ItemRepository itemRepository, CategoryRepository categoryRepository, EntityManager entityManager) {
         this.itemRepository = itemRepository;
         this.categoryRepository = categoryRepository;
         this.entityManager = entityManager;
     }
+
 
     @Override
     public List<Item> findItemsByStockId(Long itemId) {

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 @Service("userService")
@@ -25,6 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
+
 
     Boolean duplicateEmail = false;
 
@@ -115,4 +117,44 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("해당 이메일을 가진 사용자를 찾을 수 없습니다.");
         }
     }
+    @Override
+    public BigDecimal getUserBalance(Long userId) {
+        Optional<UserEntity> userOptional = userRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            // 사용자 정보가 존재하면 해당 사용자의 잔액을 반환
+            return userOptional.get().getBalance();
+        } else {
+            throw new RuntimeException("사용자를 찾을 수 없습니다.");
+        }
+    }
+
+    public void deductBalance(Long userId, BigDecimal totalPrice) {
+        Optional<UserEntity> userOptional = userRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            UserEntity user = userOptional.get();
+            BigDecimal currentBalance = user.getBalance();
+            if(currentBalance.compareTo(totalPrice) < 0) {
+                throw new RuntimeException("잔액이 부족합니다.");
+            }
+            BigDecimal newBalance = currentBalance.subtract(totalPrice);
+            user.setBalance(newBalance); // 사용자의 잔액 업데이트
+            userRepository.save(user);
+        } else {
+            throw new RuntimeException("사용자를 찾을 수 없습니다.");
+        }
+    }
+
+    // 사용자의 페이머니 잔액 업데이트 메서드
+    public void updateUserBalance(Long userId, BigDecimal newBalance) {
+        Optional<UserEntity> userOptional = userRepository.findById(userId);
+        if (userOptional.isPresent()) {
+            UserEntity user = userOptional.get();
+            user.setBalance(newBalance);
+            userRepository.save(user);
+        } else {
+            throw new RuntimeException("사용자를 찾을 수 없습니다.");
+        }
+    }
+
+
 }

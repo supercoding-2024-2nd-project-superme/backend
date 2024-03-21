@@ -9,6 +9,8 @@ import com.backend.superme.repository.view.PayMoneyAccountRepository;
 import com.backend.superme.repository.view.PayMoneyTransactionLogRepository;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class PayMoneyService {
     // 페이머니 결제 처리 메서드

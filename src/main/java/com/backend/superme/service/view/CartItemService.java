@@ -1,8 +1,10 @@
 package com.backend.superme.service.view;
 
 import com.backend.superme.dto.view.CartItemDto;
+import com.backend.superme.dto.view.CartItemUpdateDto;
 import com.backend.superme.entity.view.CartItem;
 import com.backend.superme.repository.view.CartItemRepository;
+import jakarta.validation.Valid;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,10 +25,10 @@ public class CartItemService {
     }
 
     //상품 정보 수정 메서드
-    public void updateCartItem(Long cartItemId, CartItemDto cartItemDto, String email) {      //특정 사용자의 특정 카트 아이템을 수정하는 메서드
+    public void updateCartItem(Long cartItemId, @Valid CartItemUpdateDto cartItemaddDto, Long userId) {      //특정 사용자의 특정 카트 아이템을 수정하는 메서드
         CartItem cartItem = cartItemRepository.findById(cartItemId).orElse(null);
         if (cartItem != null) {
-            cartItem.setId(cartItemDto.getItemId());
+            cartItem.setId(cartItemaddDto.getItemId());
             cartItemRepository.save(cartItem);
         }
     }

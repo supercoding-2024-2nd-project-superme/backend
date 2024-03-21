@@ -3,6 +3,8 @@ package com.backend.superme.service.user;
 import com.backend.superme.dto.user.UserDto;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public interface UserService {
     void signupUser(UserDto userDto);
@@ -15,6 +17,7 @@ public interface UserService {
 
     void withdrawUser(String email);
 
+    BigDecimal getUserBalance(Long userId);
 }
 
 //UserService 인터페이스는 사용자 관련 서비스를 정의하고 있습니다.

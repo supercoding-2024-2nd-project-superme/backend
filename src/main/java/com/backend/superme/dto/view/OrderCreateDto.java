@@ -16,7 +16,7 @@ import java.util.List;
 public class OrderCreateDto {
    private Long userId;
    private List<Long> itemIds; // 주문한 상품
-   private BigDecimal totalPrice;
+   private BigDecimal totalAmount;
    private String deliveryAddress;
    private Date orderDate = new Date(); // 주문일
    private OrderStatus status = OrderStatus.CONFIRMED; // 주문 상태

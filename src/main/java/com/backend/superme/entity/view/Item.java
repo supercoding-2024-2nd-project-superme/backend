@@ -76,10 +76,6 @@ public class Item {
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
-    public void removeStock(int count) {
-        //재고 감소 로직 Todo
-
-    }
 
     @Builder
     public Item(String name, BigDecimal price, String description, Category category, UserEntity seller,

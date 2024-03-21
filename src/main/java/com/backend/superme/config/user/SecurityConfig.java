@@ -49,7 +49,11 @@ public class SecurityConfig {
             "/api/admin/categories", "/api/sales/items", "/", "/user/login",
             "/user/signup/**", "/user/index", "/get-current-member", "/api/user",
             //상품 등록,조회
-            "/api/items/**", "/api/items/**"
+            "/api/items/**", "/api/items/**","/items/**",
+            //상품 장바구니 추가, 조회 및 주문
+            "/api/carts/**","/api/orders/**","/orders/**","/carts/**",
+            //결제사항
+            "/payments/**"
 
     };
     private static final String[] GOOGLE_OAUTH_PATHS = {"/oauth2/authorization/google"};

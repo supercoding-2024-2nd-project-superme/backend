@@ -10,4 +10,6 @@ import java.util.List;
 public interface AdminItemImageRepository extends JpaRepository<AdminItemImageEntity, Long> {
 
     List<AdminItemImageEntity> findByItem(Item adminItemImageEntity);
+
+    AdminItemImageEntity findByImageUrl(String firstImgUrl);
 }

@@ -6,10 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ItemSearchDto {
-    private String keyword;
-
-    //특정 물품명 검색
-
-    //특정 카테고리 검색
+    private String keyword;//검색 키워드
+    private String type;//검색 유형 ("아이템명" 또는 "카테고리"
 
 }
