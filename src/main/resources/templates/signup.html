@@ -10,8 +10,7 @@
     <div>
         <label for="email">이메일:</label>
         <input type="email" id="email" name="email" required>
-        <button type="button" onclick="checkDuplicate()">중복확인</button>
-        <span id="emailMessage"></span> <!-- 이메일 중복 메시지를 표시할 곳 -->
+        <span id="emailMessage"></span>
     </div>
     <div>
         <label for="password">비밀번호:</label>
@@ -49,31 +48,31 @@
     <button type="submit">가입하기</button>
 </form>
 
-<!-- 중복확인 버튼을 눌렀을 때 실행할 JavaScript 함수 -->
 <script>
-    async function checkDuplicate() {
-        let email = document.getElementById("email").value; // 입력된 이메일 가져오기
+    async function signup() {
+        event.preventDefault(); // 폼 제출 방지
+
+        const emailInput = document.getElementById("email");
+        const emailMessage = document.getElementById("emailMessage");
+        const email = emailInput.value.trim(); // 입력된 이메일 가져오기 (앞뒤 공백 제거)
+
         try {
             const response = await fetch("/user/signup/check/" + email); // 서버로 요청 보내고 응답 받기
             if (response.ok) {
                 const data = await response.text(); // 응답 데이터 가져오기
-                document.getElementById("emailMessage").innerText = data; // 응답 메시지 출력
+                if (data === "사용 가능한 이메일입니다.") {
+                    emailMessage.textContent = ""; // 메시지 초기화
+                    document.getElementById("signupForm").submit(); // 폼 제출
+                } else {
+                    emailMessage.textContent = data; // 중복된 이메일인 경우 메시지 표시
+                }
             } else {
-                throw new Error('Network response was not ok.'); // 네트워크 오류 처리
+                emailMessage.textContent = "네트워크 오류가 발생했습니다."; // 네트워크 오류 처리
             }
         } catch (error) {
-            console.error('There was a problem with the fetch operation:', error); // 오류 처리
+            emailMessage.textContent = "서버 요청 중 오류가 발생했습니다."; // 오류 처리
+            console.error(error); // 에러 로깅
         }
-    }
-
-    function signup() {
-        let emailMessage = document.getElementById("emailMessage").innerText;
-        if (emailMessage !== "사용 가능한 이메일입니다.") {
-            alert("이메일 중복을 확인해주세요.");
-            return false; // 회원가입을 중지하고 페이지를 새로고침하지 않음
-        }
-        // 회원가입 처리 로직 추가
-        return true; // 폼을 제출하고 페이지를 새로고침
     }
 </script>
 </body>

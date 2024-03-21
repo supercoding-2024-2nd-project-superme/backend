@@ -1,6 +1,5 @@
 package com.backend.superme.controller.user;
 
-
 import com.backend.superme.config.global.ErrorCode;
 import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.service.user.TokenBlacklistService;
@@ -10,13 +9,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController
-@Tag(name = "로그인, 회원가입 등 유저관련 api입니다",description = "사용자가 회원가입, 로그인을 할 수 있습니다.")
+@Controller
+@Tag(name = "로그인, 회원가입 등 유저관련 api입니다", description = "사용자가 회원가입, 로그인을 할 수 있습니다.")
 public class UserController {
 
     @Autowired
@@ -25,16 +25,31 @@ public class UserController {
     @Autowired
     private TokenBlacklistService tokenBlacklistService;
 
+//    @GetMapping("/")
+//    @Operation(summary = "index.html 로 이동하는 경로입니다.", description = "메인경로입니다.")
+//    public ResponseEntity<?> index() {
+//        return ResponseEntity.ok().body("인덱스 페이지");
+//    }
+
     @GetMapping("/")
-    @Operation(summary = "index.html 로 이동하는 경로입니다.",description = "메인경로입니다.")
-    public ResponseEntity<?> index() {
-        return ResponseEntity.ok().body("인덱스 페이지");
+    public String index() {
+        return "index";
     }
+
+
+
+//    @GetMapping("/user/login")
+//    @Operation(summary = "index.html 로 이동하는 경로입니다.", description = "메인경로입니다.")
+//    public ResponseEntity<?> showLoginPage() {
+//        return ResponseEntity.ok().body("로그인 페이지");
+//    }
+
     @GetMapping("/user/login")
-    @Operation(summary = "index.html 로 이동하는 경로입니다.",description = "메인경로입니다.")
-    public ResponseEntity<?> showLoginPage() {
-        return ResponseEntity.ok().body("로그인 페이지");
+    public String showLoginPage() {
+        return "login";
     }
+
+
 
     @PostMapping("/user/login")
     @Operation(summary = "로그인 API", description = "사용자가 로그인하는 api 입니다.")
@@ -52,11 +67,17 @@ public class UserController {
         }
     }
 
+//    @GetMapping("/user/signup")
+//    @Operation(summary = "회원가입 페이지로 이동합니다.", description = "회원가입 페이지로 이동합니다")
+//    public ResponseEntity<?> showSignupPage() {
+//        return ResponseEntity.ok().body("회원가입 페이지");
+//    }
+
     @GetMapping("/user/signup")
-    @Operation(summary = "회원가입 페이지로 이동합니다.", description = "회원가입 페이지로 이동합니다")
-    public ResponseEntity<?> showSignupPage() {
-        return ResponseEntity.ok().body("회원가입 페이지");
+    public String showSignupPage() {
+        return "signup";
     }
+
 
     @GetMapping("/user/signup/check/{email}")
     @Operation(summary = "이메일 중복을 체크합니다.", description = "중복회원을 확인합니다.")
@@ -70,6 +91,7 @@ public class UserController {
             return ResponseEntity.ok().body("사용 가능한 이메일입니다.");
         }
     }
+
     @PostMapping("/user/signup")
     @Operation(summary = "회원가입 API", description = "사용자가 회원가입하는 API 입니다.")
     public ResponseEntity<?> signup(@RequestBody UserDto userDto) {
