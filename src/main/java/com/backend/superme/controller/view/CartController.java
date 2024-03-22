@@ -53,7 +53,7 @@ public class CartController {
     }
 
         //첫번째 링크 넣기
-        public void addItemToCart(CartItemDto cartItemDto, List<String> imageUrls) {
+        public void addItemToCart(CartItemDto cartItemDto, @RequestParam("profileImage") List<String> imageUrls) {
             try {
                 if (imageUrls.isEmpty()) {
                     throw new IllegalArgumentException("이미지 링크가 비어 있습니다.");
@@ -94,9 +94,9 @@ public class CartController {
                 }
                 return ResponseEntity.badRequest().body(-1L); // 유효성 검사 오류가 있는 경우 -1 반환
             }
-            Long userId = Long.valueOf(principal.getName()); // 현재 사용자의 이메일 주소 가져오기
+            String email = String.valueOf(Long.valueOf(principal.getName())); // 현재 사용자의 이메일 주소 가져오기
             try {
-                Long cartItemId = cartService.addToCart(cartItemAddDto, userId); // 장바구니에 물품 추가
+                Long cartItemId = cartService.addToCart(cartItemAddDto, email); // 장바구니에 물품 추가
                 return ResponseEntity.ok(cartItemId); // 성공적으로 추가된 경우 해당 카트 아이템의 ID 반환
             } catch (Exception e) {
                 return ResponseEntity.badRequest().body(-1L); // 추가 실패 시 -1 반환
@@ -129,8 +129,8 @@ public class CartController {
         //사용자 카트 조회
         @GetMapping("/cart/{userId}")
         @Operation(summary = "해당 유저의 보관하고 있는 장바구니",description = "")
-        public ResponseEntity<List<CartItem>> getCartItems(@PathVariable Long userId) {
-            List<CartItem> cartItems = cartService.getCartItemsByUserId(userId);
+        public ResponseEntity<List<CartItem>> getCartItems(@PathVariable String email) {
+            List<CartItem> cartItems = cartService.getCartItemsByUserEmail(email);
             return ResponseEntity.ok(cartItems);
         }
 
@@ -147,8 +147,8 @@ public class CartController {
                 return ResponseEntity.badRequest().body(sb.toString()); // 유효성 검사 오류가 있는 경우 오류 메시지 반환
             }
             try {
-                Long userId = Long.valueOf(principal.getName()); // 현재 사용자의 ID 가져오기
-                cartItemService.updateCartItem(cartItemId, cartItemUpdateDto, userId); // 장바구니 아이템 수정
+                String email = principal.getName(); // 현재 사용자의 ID 가져오기
+                cartItemService.updateCartItem(cartItemId, cartItemUpdateDto, email); // 장바구니 아이템 수정
                 return ResponseEntity.ok("Cart item updated successfully"); // 수정 성공 메시지 반환
             } catch (Exception e) {
                 return ResponseEntity.badRequest().body(e.getMessage()); // 수정 실패 시 에러 메시지 반환
@@ -171,9 +171,9 @@ public class CartController {
         @PostMapping("/order")
         @Operation(summary = "상품을 주문하는 API 입니다.", description = "상품을 주문할 수 있습니다.")
         public ResponseEntity<String> order(Principal principal) {
-            Long userId = Long.valueOf(principal.getName()); // 현재 사용자의 userId 가져오기
+            String email = principal.getName(); // 현재 사용자의 이메일 주소 가져오기
             try {
-                cartService.order(userId); // 주문 처리를 userId를 사용하여 처리
+                cartService.order(email);  // 주문 처리를 userId를 사용하여 처리
                 return ResponseEntity.ok("Order placed successfully"); // 주문 성공 메시지 반환
             } catch (Exception e) {
                 return ResponseEntity.badRequest().body(e.getMessage()); // 주문 실패 시 에러 메시지 반환

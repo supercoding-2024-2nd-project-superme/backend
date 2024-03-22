@@ -41,7 +41,7 @@ public class CartItemService {
 
 
     //상품 정보 수정 메서드
-    public void updateCartItem(Long cartItemId, @Valid CartItemUpdateDto cartItemaddDto, Long userId) {      //특정 사용자의 특정 카트 아이템을 수정하는 메서드
+    public void updateCartItem(Long cartItemId, @Valid CartItemUpdateDto cartItemaddDto, String email) {      //특정 사용자의 특정 카트 아이템을 수정하는 메서드
         CartItem cartItem = cartItemRepository.findById(cartItemId).orElse(null);
         if (cartItem != null) {
             cartItem.setId(cartItemaddDto.getItemId());
@@ -59,9 +59,9 @@ public class CartItemService {
 
 
     //사용자 장바구니 조회 메서드
-    public List<CartItemDto> getCartItems(String userId) {
+    public List<CartItemDto> getCartItems(String email) {
         // 특정 사용자의 장바구니에 담긴 상품 목록을 조회하는 메서드
-        List<CartItem> cartItems = cartItemRepository.findByUserId(Long.valueOf(userId));
+        List<CartItem> cartItems = cartItemRepository.findByUserEmail(email);
         return cartItems.stream()
                 .map(cartItem -> modelMapper.map(cartItem, CartItemDto.class))
                 .collect(Collectors.toList());

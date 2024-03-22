@@ -14,7 +14,6 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -31,13 +30,15 @@ public class CartService {
     private final CartItemRepository cartItemRepository;
     private final OrderService orderService;
 
-    public List<CartItem> getCartItemsByUserId(Long userId) {
-        return cartItemRepository.findByUserId(userId);
+    public List<CartItem> getCartItemsByUserEmail(String email) {
+        return cartItemRepository.findByUserEmail(email);
     }
 
     // 물품을 장바구니에 추가하는 메서드
-    public Long addToCart(@Valid CartItemAddDto cartItemDto, Long userId) {
-        UserEntity user = getUserById(userId); // userId로부터 사용자 정보 가져오기
+    public Long addToCart(@Valid CartItemAddDto cartItemDto, String email) {
+        UserEntity user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with email: " + email));
+
         Item item = getItemById(cartItemDto.getItemId()); // 상품 아이디로부터 상품 정보 가져오기
         Cart cart = getOrCreateCart(user); // 사용자의 장바구니 가져오거나 생성하기
 
@@ -63,6 +64,7 @@ public class CartService {
         cartItem.setOrderedQty(newQty); // 수량 수정
     }
 
+
     // 장바구니에서 상품을 제거하는 메서드
     public void removeCartItem(Long cartItemId) {
         cartItemRepository.deleteById(cartItemId); // 장바구니 아이템 삭제
@@ -72,6 +74,12 @@ public class CartService {
     private UserEntity getUserById(Long userId) {
         return userRepository.findById(Long.parseLong(String.valueOf(userId)))
                 .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+    }
+
+    // 사용자 정보 가져오는 메서드
+    private UserEntity getUserByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with email: " + email));
     }
 
 
@@ -104,8 +112,8 @@ public class CartService {
                 .orElseThrow(() -> new EntityNotFoundException("Cart item not found with ID: " + cartItemId));
     }
 
-    public void order(Long userId) { // 수정된 부분
-        UserEntity user = getUserById(userId); // userId로부터 사용자 정보 가져오기
+    public void order(String email) { // 수정된 부분
+        UserEntity user = getUserByEmail(email); // 이메일로부터 사용자 정보 가져오기
         Cart cart = getOrCreateCart(user); // 사용자의 장바구니 가져오거나 생성하기
 
         if (cartItemRepository.countByCart(cart) == 0) {

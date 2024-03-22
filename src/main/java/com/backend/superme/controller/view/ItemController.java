@@ -26,6 +26,12 @@ public class ItemController {
     @GetMapping("/all")
     @Operation(summary = "전체 물품을 조회하는 API 입니다.", description = "전체 물품을 조회합니다.")
     public ResponseEntity<List<ItemDto>> getAllItems() {
+        List<ItemDto> itemList = itemService.findAllItems();
+        if (itemList.isEmpty()) {
+            System.out.println("리스트가 비어있습니다.");
+        } else {
+            System.out.println("리스트에 데이터가 있습니다.");
+        }
         return ResponseEntity.ok(itemService.findAllItems());
     }
 

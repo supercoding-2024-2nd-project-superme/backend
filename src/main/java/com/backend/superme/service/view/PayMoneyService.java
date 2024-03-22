@@ -44,7 +44,7 @@ public class PayMoneyService {
 
         // 6. 결제 트랜잭션을 저장 (payMoneyTransactionLogRepository를 사용합니다.)
         PayMoneyTransactionLog payMoneyTransactionLog = PayMoneyTransactionLog.builder()
-                .sender(new UserEntity(order.getUser().getId())) // UserEntity 객체를 생성하여 넘겨줍니다.
+                .sender(new UserEntity(order.getUser().getEmail())) // 이메일을 넘겨줍니다.
                 .senderPayMoneyAccount(myAccount) // PayMoneyAccount 객체를 전달합니다.
                 .amount(order.getTotalPrice())
                 .build();
