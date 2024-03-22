@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>회원가입</h1>
-<form id="signupForm" action="/user/signup" method="post" onsubmit="return signup()">
+<form id="signupForm" action="/user/signup" method="post">
     <div>
         <label for="email">이메일:</label>
         <input type="email" id="email" name="email" required>
@@ -47,32 +47,18 @@
     <button type="submit">가입하기</button>
 </form>
 
+<div id="duplicateEmailMessage"></div>
+
 <script>
-    async function signup() {
+
+    async function handleSignup(event) {
         event.preventDefault(); // 폼 제출 방지
 
         const emailInput = document.getElementById("email");
-        const emailMessage = document.getElementById("emailMessage");
-        const email = emailInput.value.trim(); // 입력된 이메일 가져오기 (앞뒤 공백 제거)
-
-        try {
-            const response = await fetch("/user/signup/check/" + email); // 서버로 요청 보내고 응답 받기
-            if (response.ok) {
-                const data = await response.text(); // 응답 데이터 가져오기
-                if (data === "사용 가능한 이메일입니다.") {
-                    emailMessage.textContent = ""; // 메시지 초기화
-                    document.getElementById("signupForm").submit(); // 폼 제출
-                } else {
-                    emailMessage.textContent = data; // 중복된 이메일인 경우 메시지 표시
-                }
-            } else {
-                emailMessage.textContent = "네트워크 오류가 발생했습니다."; // 네트워크 오류 처리
-            }
-        } catch (error) {
-            emailMessage.textContent = "서버 요청 중 오류가 발생했습니다."; // 오류 처리
-            console.error(error); // 에러 로깅
-        }
+        document.getElementById("signupForm").submit(); // 폼 제출
     }
+
+    document.getElementById("signupForm").addEventListener("submit", handleSignup);
 </script>
 </body>
 </html>

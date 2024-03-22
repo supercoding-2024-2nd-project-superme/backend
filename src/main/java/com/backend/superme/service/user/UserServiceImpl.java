@@ -9,11 +9,16 @@ import com.backend.superme.dto.user.UserDto;
 import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.repository.user.UserRepository;
 import com.backend.superme.repository.view.ItemRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.Optional;
 
 import static com.backend.superme.entity.view.QOrder.order;
@@ -107,9 +112,9 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    public String emailFromToken(String token) {
+    public String emailFromToken (String token) {
         //토큰 검증
-        if (!jwtTokenProvider.validateJwtToken(token)) {
+        if(!jwtTokenProvider.validateJwtToken(token)) {
             throw new RuntimeException("Token is not valid");
         }
 
@@ -172,7 +177,15 @@ public class UserServiceImpl implements UserService {
     }
 
 
-
+    @GetMapping("/api/auth/token")
+    public ResponseEntity<?> provideJwtToken(HttpServletRequest request) {
+        System.out.println("안 오는데?");
+        String token = (String) request.getSession().getAttribute("USER_TOKEN");
+        if (token != null) {
+            return ResponseEntity.ok(Collections.singletonMap("jwtToken", token));
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+    }
 
 
 }

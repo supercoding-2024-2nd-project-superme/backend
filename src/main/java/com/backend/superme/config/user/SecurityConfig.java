@@ -1,12 +1,12 @@
 package com.backend.superme.config.user;
 
 
-import com.backend.superme.service.user.GoogleOAuth2UserService;
+import com.backend.superme.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.reactive.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -31,14 +31,14 @@ import java.util.Arrays;
 
 public class SecurityConfig {
 
-    @Autowired
-    private final GoogleOAuth2UserService googleOAuth2UserService;
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
+    }
 
-    @Autowired
-    private final OAuth2AuthenticationSuccessHandler oAuth2AuthenticationSuccessHandler;
-
-    @Autowired
     private final JwtTokenProvider jwtTokenProvider;
+
+
     // JWT 토큰 생성 및 검증을 담당하는 JwtTokenProvider 빈을 주입받습니다. 이는 JWT 인증 필터에서 사용됩니다.
     private static final String[] H2_CONSOLE_PATHS = {"/h2-console/**"};
     private static final String[] SWAGGER_PATHS = {
@@ -56,8 +56,10 @@ public class SecurityConfig {
             "/payments/**"
 
     };
-    private static final String[] GOOGLE_OAUTH_PATHS = {"/oauth2/authorization/google"};
+//    private static final String[] GOOGLE_OAUTH_PATHS = {"/oauth2/authorization/google"};
 
+
+    private final OAuth2LoginSuccessHandler  oAuth2LoginSuccessHandler;
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -66,7 +68,7 @@ public class SecurityConfig {
                         .requestMatchers(H2_CONSOLE_PATHS).permitAll() //h2
                         .requestMatchers(PERMIT_ALL_PATHS).permitAll() //허용하고 싶은 경로
                         .requestMatchers(SWAGGER_PATHS).permitAll() //swagger 경로
-                        .requestMatchers(GOOGLE_OAUTH_PATHS).permitAll()// 구글
+//                        .requestMatchers(GOOGLE_OAUTH_PATHS).permitAll()// 구글
                         .anyRequest().authenticated()
                 );
 
@@ -80,17 +82,16 @@ public class SecurityConfig {
         // clickjacking 공격을 방지하기 위한 HTTP 헤더인 X-Frame-Options를 비활성화합니다.
         // 특정 페이지가 <frame>, <iframe> 또는 <object> 내에서 렌더링되는 것을 방지하는 데 사용됩니다.
 
-        http.oauth2Login()
-                .successHandler(oAuth2AuthenticationSuccessHandler)
-                .userInfoEndpoint()
-                .userService(googleOAuth2UserService);
+//        http  .oauth2Login()
+//                .successHandler(oAuth2LoginSuccessHandler);
 
 
         http.cors().configurationSource(request -> {
             CorsConfiguration config = new CorsConfiguration();
-            config.setAllowedOrigins(Arrays.asList("http://localhost:4040","https://frontend-lvaynbmcp-yshs-projects-8341d6f4.vercel.app")); // 허용할 출처 설정
+            config.setAllowedOrigins(Arrays.asList("http://localhost:4040","https://frontend-lvaynbmcp-yshs-projects-8341d6f4.vercel.app", "*")); // 허용할 출처 설정
             config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE")); // 허용할 HTTP 메서드 설정
             config.setAllowedHeaders(Arrays.asList("*")); // 허용할 헤더 설정
+
 
             return config;
         });
@@ -106,6 +107,7 @@ public class SecurityConfig {
         // 비밀번호 인코딩에 사용할 PasswordEncoder의 구현체를 빈으로 등록합니다.
         // BCrypt 알고리즘을 사용하는 BCryptPasswordEncoder를 사용합니다.
     }
+
 }
 
 
