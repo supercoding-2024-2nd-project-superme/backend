@@ -1,11 +1,13 @@
 package com.backend.superme.entity.view;
 
+import com.backend.superme.entity.ItemImgEntity.AdminItemImageEntity;
 import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 
@@ -16,7 +18,7 @@ import java.util.Date;
 @Table(name = "cart_items")
 public class CartItem {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -24,24 +26,33 @@ public class CartItem {
     private UserEntity user;
 
     @ManyToOne
-    @JoinColumn(name="item_id", nullable = false)
+    @JoinColumn(name = "item_id", nullable = false)
     private Item item; // Item 엔티티 참조
 
+    private String ItemName;
+
     @ManyToOne
-    @JoinColumn(name="cart_id", nullable = false)
+    @JoinColumn(name = "cart_id", nullable = false)
     private Cart cart; // Cart 엔티티 참조
 
-    @Column(name="ordered_qty", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "admin_item_image_id", nullable = false)
+    private AdminItemImageEntity adminItemImage; // AdminItemImage 엔티티 참조
+
+    @Column(name = "ordered_qty", nullable = false)
     private int orderedQty;
 
-    @Column(name="ordered_color")
+    @Column(name = "ordered_color")
     private String orderedColor;
 
-    @Column(name="ordered_size")
+    @Column(name = "ordered_size")
     private String orderedSize;
 
+    @Column(name = "price", nullable = false)
+    private BigDecimal price; // 가격 정보 추가
+
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="added_at")
+    @Column(name = "added_at")
     private Date addedAt;
 
     @PrePersist
@@ -49,3 +60,5 @@ public class CartItem {
         addedAt = new Date(); // 엔티티가 생성되기 전에 현재 날짜와 시간으로 초기화
     }
 }
+
+

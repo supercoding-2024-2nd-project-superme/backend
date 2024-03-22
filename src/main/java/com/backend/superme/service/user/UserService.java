@@ -1,7 +1,11 @@
 package com.backend.superme.service.user;
 
 import com.backend.superme.dto.user.UserDto;
+import com.backend.superme.entity.user.UserEntity;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.Optional;
 
 @Service
 public interface UserService {
@@ -14,6 +18,15 @@ public interface UserService {
     String emailFromToken(String token);
 
     void withdrawUser(String email);
+
+    Optional<UserEntity> findById(Long userId);
+    BigDecimal getUserBalance(Long userId);
+
+    void deductBalance(Long userId, BigDecimal amount);
+
+    void updateUserBalance(Long userId, BigDecimal newBalance);
+
+
 
 }
 

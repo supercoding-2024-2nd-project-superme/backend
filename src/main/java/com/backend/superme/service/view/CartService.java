@@ -1,14 +1,18 @@
 package com.backend.superme.service.view;
 
+import com.backend.superme.dto.view.CartItemAddDto;
 import com.backend.superme.dto.view.CartItemDto;
-import com.backend.superme.entity.user.UserEntity;
+import com.backend.superme.dto.view.OrderCreateDto;
 import com.backend.superme.entity.view.*;
+import com.backend.superme.entity.user.UserEntity;
 import com.backend.superme.repository.user.UserRepository;
 import com.backend.superme.repository.view.CartItemRepository;
 import com.backend.superme.repository.view.CartRepository;
 import com.backend.superme.repository.view.ItemRepository;
+
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,13 +30,15 @@ public class CartService {
     private final CartItemRepository cartItemRepository;
     private final OrderService orderService;
 
-    public List<CartItem> getCartItemsByUserId(Long userId) {
-        return cartItemRepository.findByUserId(userId);
+    public List<CartItem> getCartItemsByUserEmail(String email) {
+        return cartItemRepository.findByUserEmail(email);
     }
 
     // 물품을 장바구니에 추가하는 메서드
-    public Long addToCart(CartItemDto cartItemDto, Long userId) {
-        UserEntity user = getUserById(userId); // userId로부터 사용자 정보 가져오기
+    public Long addToCart(@Valid CartItemAddDto cartItemDto, String email) {
+        UserEntity user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with email: " + email));
+
         Item item = getItemById(cartItemDto.getItemId()); // 상품 아이디로부터 상품 정보 가져오기
         Cart cart = getOrCreateCart(user); // 사용자의 장바구니 가져오거나 생성하기
 
@@ -58,6 +64,7 @@ public class CartService {
         cartItem.setOrderedQty(newQty); // 수량 수정
     }
 
+
     // 장바구니에서 상품을 제거하는 메서드
     public void removeCartItem(Long cartItemId) {
         cartItemRepository.deleteById(cartItemId); // 장바구니 아이템 삭제
@@ -67,6 +74,12 @@ public class CartService {
     private UserEntity getUserById(Long userId) {
         return userRepository.findById(Long.parseLong(String.valueOf(userId)))
                 .orElseThrow(() -> new EntityNotFoundException("User not found with ID: " + userId));
+    }
+
+    // 사용자 정보 가져오는 메서드
+    private UserEntity getUserByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new EntityNotFoundException("User not found with email: " + email));
     }
 
 
@@ -99,23 +112,23 @@ public class CartService {
                 .orElseThrow(() -> new EntityNotFoundException("Cart item not found with ID: " + cartItemId));
     }
 
-    public void order(Long userId) { // 수정된 부분
-        UserEntity user = getUserById(userId); // userId로부터 사용자 정보 가져오기
+    public void order(String email) { // 수정된 부분
+        UserEntity user = getUserByEmail(email); // 이메일로부터 사용자 정보 가져오기
         Cart cart = getOrCreateCart(user); // 사용자의 장바구니 가져오거나 생성하기
 
         if (cartItemRepository.countByCart(cart) == 0) {
             throw new RuntimeException("장바구니가 비어있습니다.");
         }
-        // CartItem을 OrderItem으로 변환
-        List<OrderItem> orderItems = cart.getCartItems().stream()
-                .map(this::convertToOrderItem)
+        // CartItem을 OrderCreateDto로 변환
+        List<Long> itemIds = cart.getCartItems().stream()
+                .map(cartItem -> cartItem.getItem().getId())
                 .collect(Collectors.toList());
+        OrderCreateDto orderCreateDto = new OrderCreateDto();
+        orderCreateDto.setUserId(user.getId());
+        orderCreateDto.setItemIds(itemIds);
+        // 다른 필요한 필드도 설정
 
-        Order order = new Order();
-        order.setUser(user);
-        order.setOrderItems(orderItems);
-
-        orderService.saveOrder(order);
+        orderService.createOrder(orderCreateDto);
 
         cart.getCartItems().clear();
         cartRepository.save(cart);
@@ -131,5 +144,17 @@ public class CartService {
         orderItem.setRegTime(new Date());
         orderItem.setUpdateTime(new Date());
         return orderItem;
+    }
+    public void addItemToCart(CartItemDto cartItemDto, String firstImgUrl) {
+        // 첫 번째 이미지 URL을 사용하여 처리
+        // 여기에서는 단순히 예시로 작성하였습니다
+        System.out.println("First Image URL: " + firstImgUrl);
+        // 나머지 로직 추가
+    }
+
+
+    public List<CartItem> getCartItems() {
+        // 장바구니에 있는 모든 장바구니 아이템을 가져와서 반환
+        return cartItemRepository.findAll();
     }
 }

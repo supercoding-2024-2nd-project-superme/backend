@@ -1,10 +1,12 @@
 package com.backend.superme.config.user;
 
 
+import com.backend.superme.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -29,7 +31,14 @@ import java.util.Arrays;
 
 public class SecurityConfig {
 
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
+    }
+
     private final JwtTokenProvider jwtTokenProvider;
+
+
     // JWT 토큰 생성 및 검증을 담당하는 JwtTokenProvider 빈을 주입받습니다. 이는 JWT 인증 필터에서 사용됩니다.
     private static final String[] H2_CONSOLE_PATHS = {"/h2-console/**"};
     private static final String[] SWAGGER_PATHS = {
@@ -41,20 +50,29 @@ public class SecurityConfig {
             "/user/signup/**", "/user/index", "/get-current-member", "/api/user",
             "/api/items","/api/admin/categories","/api/admin/categories/**","/api/items/**","/api/sales/all",
             //상품 등록,조회
-            "/api/items/**", "/api/items/**", "/api/sales/data", "/api/sales/itemTest", "/api/sales/items/**", "/api/sales/all/**"
+
+            "/api/items/**", "/api/items/**", "/api/sales/data", "/api/sales/itemTest", "/api/sales/items/**", "/api/sales/all/**",
+
+            "/api/items/**", "/api/items/**","/items/**",
+            //상품 장바구니 추가, 조회 및 주문
+            "/api/carts/**","/api/orders/**","/orders/**","/carts/**",
+            //결제사항
+            "/payments/**"
 
     };
-    private static final String[] GOOGLE_OAUTH_PATHS = {"/oauth2/authorization/google"};
+//    private static final String[] GOOGLE_OAUTH_PATHS = {"/oauth2/authorization/google"};
 
+
+    private final OAuth2LoginSuccessHandler  oAuth2LoginSuccessHandler;
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((auth) -> auth
-                        .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll() //정적 리소스 모두허용
+//                        .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll() //정적 리소스 모두허용
                         .requestMatchers(H2_CONSOLE_PATHS).permitAll() //h2
                         .requestMatchers(PERMIT_ALL_PATHS).permitAll() //허용하고 싶은 경로
                         .requestMatchers(SWAGGER_PATHS).permitAll() //swagger 경로
-                        .requestMatchers(GOOGLE_OAUTH_PATHS).permitAll()// 구글
+//                        .requestMatchers(GOOGLE_OAUTH_PATHS).permitAll()// 구글
                         .anyRequest().authenticated()
                 );
 
@@ -68,7 +86,6 @@ public class SecurityConfig {
         // clickjacking 공격을 방지하기 위한 HTTP 헤더인 X-Frame-Options를 비활성화합니다.
         // 특정 페이지가 <frame>, <iframe> 또는 <object> 내에서 렌더링되는 것을 방지하는 데 사용됩니다.
 
-
         return http.build();
         // 최종적으로 HttpSecurity 설정을 기반으로 SecurityFilterChain을 생성합니다.
     }
@@ -79,6 +96,7 @@ public class SecurityConfig {
         // 비밀번호 인코딩에 사용할 PasswordEncoder의 구현체를 빈으로 등록합니다.
         // BCrypt 알고리즘을 사용하는 BCryptPasswordEncoder를 사용합니다.
     }
+
 }
 
 
