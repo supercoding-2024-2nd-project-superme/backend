@@ -39,9 +39,9 @@ public class SecurityConfig {
     private static final String[] PERMIT_ALL_PATHS = {
             "/api/admin/categories", "/api/sales/items", "/", "/user/login",
             "/user/signup/**", "/user/index", "/get-current-member", "/api/user",
-            "/api/items","/api/admin/categories","/api/admin/categories/**","/api/items/**",
+            "/api/items","/api/admin/categories","/api/admin/categories/**","/api/items/**","/api/sales/all",
             //상품 등록,조회
-            "/api/items/**", "/api/items/**", "/api/sales/data", "/api/sales/itemTest", "/api/sales/items/**", "/api/sales/items"
+            "/api/items/**", "/api/items/**", "/api/sales/data", "/api/sales/itemTest", "/api/sales/items/**", "/api/sales/all/**"
 
     };
     private static final String[] GOOGLE_OAUTH_PATHS = {"/oauth2/authorization/google"};

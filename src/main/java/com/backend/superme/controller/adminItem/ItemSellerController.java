@@ -4,7 +4,9 @@ import com.backend.superme.config.user.UserPrincipal;
 import com.backend.superme.dto.adminItemDto.CreateItemResponse;
 import com.backend.superme.dto.adminItemDto.ItemRequest;
 import com.backend.superme.dto.adminItemDto.ItemResponse;
+import com.backend.superme.dto.adminItemDto.category.ItemFullInfoDTO;
 import com.backend.superme.service.adminService.implement.ImplItemService;
+import com.backend.superme.service.adminService.implement.ItemServiceAll;
 import com.backend.superme.service.adminService.implement.S3Service;
 import com.backend.superme.service.user.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -28,6 +30,7 @@ import java.util.List;
 public class ItemSellerController {
 
     private final ImplItemService itemService;
+    private final ItemServiceAll itemServiceAll;
     private final S3Service s3Service;
     private final UserService userService;
     private UserPrincipal userPrincipal;
@@ -40,6 +43,11 @@ public class ItemSellerController {
     public CreateItemResponse addItem(@RequestPart ItemRequest itemRequest, @RequestPart(value = "file", required = false) List<MultipartFile> multipartFiles
     ) {
         return itemService.create(itemRequest, multipartFiles);
+    }
+
+    @GetMapping("/all")
+    public List<ItemFullInfoDTO> getAllItemsFullInfo() {
+        return itemServiceAll.getAllItemsFullInfo();
     }
 
 }
