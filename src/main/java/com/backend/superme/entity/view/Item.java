@@ -2,6 +2,7 @@ package com.backend.superme.entity.view;
 
 import com.backend.superme.constant.item.StockStatus;
 import com.backend.superme.dto.view.ItemDto;
+import com.backend.superme.entity.ItemImgEntity.AdminItemImageEntity;
 import com.backend.superme.entity.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -53,7 +54,8 @@ public class Item {
     @Column(name = "stock_status")
     private StockStatus stockStatus;
 
-
+    @OneToMany(mappedBy = "item")
+    private List<AdminItemImageEntity> images;
 
     @Column(name = "price", precision = 10, scale = 2)
     private BigDecimal price;
@@ -75,6 +77,7 @@ public class Item {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cart_id")
     private Cart cart;
+
 
     public void removeStock(int count) {
         //재고 감소 로직 Todo

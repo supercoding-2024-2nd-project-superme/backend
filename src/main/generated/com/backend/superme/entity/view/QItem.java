@@ -32,6 +32,8 @@ public class QItem extends EntityPathBase<Item> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
+    public final ListPath<com.backend.superme.entity.ItemImgEntity.AdminItemImageEntity, com.backend.superme.entity.ItemImgEntity.QAdminItemImageEntity> images = this.<com.backend.superme.entity.ItemImgEntity.AdminItemImageEntity, com.backend.superme.entity.ItemImgEntity.QAdminItemImageEntity>createList("images", com.backend.superme.entity.ItemImgEntity.AdminItemImageEntity.class, com.backend.superme.entity.ItemImgEntity.QAdminItemImageEntity.class, PathInits.DIRECT2);
+
     public final StringPath imgId = createString("imgId");
 
     public final ListPath<ItemStock, QItemStock> itemStocks = this.<ItemStock, QItemStock>createList("itemStocks", ItemStock.class, QItemStock.class, PathInits.DIRECT2);

@@ -195,10 +195,12 @@ public class ImplItemService implements adminItemService {
 
         List<ItemPageResponse.ItemList> itemLists = items.stream()
                 .map(item -> new ItemPageResponse.ItemList(
-                        item.getId()
-                        , item.getName()
-                        , item.getPrice()
-                )).toList();
+                        item.getId(),
+                        item.getName(),
+                        item.getPrice(),
+                        item.getImages().get(0).getImageUrl() // getImgId() assumes to return the image URL.
+                ))
+                .collect(Collectors.toList());
 
         long totalCount = items.getTotalElements();
 

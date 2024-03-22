@@ -22,6 +22,7 @@ public record ItemPageResponse(
         @Schema(description = "상품 목록")
         List<ItemList> itemList
 
+
 ) {
     public record ItemList(
             @Schema(description = "상품 id", example = "1")
@@ -31,7 +32,11 @@ public record ItemPageResponse(
             String itemName,
 
             @Schema(description = "상품 가격", example = "897000")
-            BigDecimal price
+            BigDecimal price,
+
+            @Schema(description = "이미지 URL", example = "https://example.com/image.jpg")
+            String imageUrl
+
 
     ) {
     }

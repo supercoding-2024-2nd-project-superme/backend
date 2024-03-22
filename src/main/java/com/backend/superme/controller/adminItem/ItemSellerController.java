@@ -42,8 +42,4 @@ public class ItemSellerController {
         return itemService.create(itemRequest, multipartFiles);
     }
 
-
-
-
-
 }
