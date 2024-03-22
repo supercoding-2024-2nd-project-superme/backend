@@ -117,7 +117,8 @@ public class UserController {
 
     @PostMapping("/user/signup")
     @Operation(summary = "회원가입 API", description = "사용자가 회원가입하는 API 입니다.")
-    public ResponseEntity<?> signup(@RequestBody UserDto userDto, @RequestParam("profileImage") MultipartFile profileImage) {
+//    , @RequestParam("profileImage") MultipartFile profileImage
+    public ResponseEntity<?> signup(@RequestBody UserDto userDto) {
         String email = userDto.getEmail();
 
         // 이메일 중복 확인
@@ -129,13 +130,13 @@ public class UserController {
         }
 
         try {
-            // 프로필 이미지 업로드
-            List<String> imgUrlList = s3Service.upload(Collections.singletonList(profileImage));
-            // 업로드된 이미지의 URL을 가져옴 (이 예제에서는 하나의 이미지만 업로드하므로 리스트의 첫 번째 요소만 가져옴)
-            String profileImageUrl = imgUrlList.get(0);
-
-            // 회원가입 처리
-            userDto.setProfile(profileImageUrl); // 유저 정보에 프로필 이미지 URL 설정
+//            // 프로필 이미지 업로드
+//            List<String> imgUrlList = s3Service.upload(Collections.singletonList(profileImage));
+//            // 업로드된 이미지의 URL을 가져옴 (이 예제에서는 하나의 이미지만 업로드하므로 리스트의 첫 번째 요소만 가져옴)
+//            String profileImageUrl = imgUrlList.get(0);
+//
+//            // 회원가입 처리
+//            userDto.setProfile(profileImageUrl); // 유저 정보에 프로필 이미지 URL 설정
             userService.signupUser(userDto);
 
             Map<String, Object> response = new HashMap<>();
@@ -187,7 +188,3 @@ public class UserController {
         }
     }
 }
-
-
-
-

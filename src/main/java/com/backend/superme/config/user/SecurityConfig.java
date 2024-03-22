@@ -86,6 +86,13 @@ public class SecurityConfig {
         // clickjacking 공격을 방지하기 위한 HTTP 헤더인 X-Frame-Options를 비활성화합니다.
         // 특정 페이지가 <frame>, <iframe> 또는 <object> 내에서 렌더링되는 것을 방지하는 데 사용됩니다.
 
+
+
+
+
+
+
+
         return http.build();
         // 최종적으로 HttpSecurity 설정을 기반으로 SecurityFilterChain을 생성합니다.
     }
