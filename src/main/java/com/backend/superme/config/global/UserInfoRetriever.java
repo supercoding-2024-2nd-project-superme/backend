@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-
 // 컨트롤러에서 사용 예시
 //@RestController
 //@RequestMapping("/api/users")

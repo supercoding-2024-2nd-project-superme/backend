@@ -15,7 +15,7 @@
     // 로그인 상태를 확인하고 UI를 업데이트하는 함수
     function updateAuthUI() {
         const authContainer = document.getElementById('auth-container');
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('authToken');
 
         if (token) {
             // 로그인 상태일 때 로그아웃 버튼 표시
@@ -32,13 +32,25 @@
         }
     }
 
+    window.addEventListener('load', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        if (token) {
+            localStorage.setItem('authToken', token);
+            updateAuthUI(); // UI 업데이트
+        } else {
+            updateAuthUI(); // UI 업데이트
+        }
+    });
+
     function logout() {
-        localStorage.removeItem('token'); // 로컬 스토리지에서 JWT 토큰 삭제
-        window.location.href = '/'; // 메인 페이지
+        localStorage.removeItem('authToken'); // 로컬 스토리지에서 JWT 토큰 삭제
+        updateAuthUI(); // UI 업데이트
     }
 
     // 페이지 로드 시 UI 업데이트
     updateAuthUI();
+
 </script>
 </body>
 </html>

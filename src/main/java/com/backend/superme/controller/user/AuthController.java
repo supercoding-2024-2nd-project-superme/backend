@@ -1,26 +1,34 @@
 package com.backend.superme.controller.user;
 
 
+import com.backend.superme.config.user.JwtTokenProvider;
 import com.backend.superme.config.user.UserPrincipal;
 import com.backend.superme.service.user.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Collections;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
 @Tag(name = "토큰으로 이메일을 확인합니다")
 public class AuthController {
 
-
-    private UserService userService;
-
+    private final JwtTokenProvider jwtTokenProvider;
+    private final UserService userService;
 
     private UserPrincipal userPrincipal;
+
 
     @GetMapping("/api/user")
     @Operation(summary = "토큰으로 유저 이메일을 추출합니다")
@@ -37,9 +45,15 @@ public class AuthController {
     }
 
 
-    @GetMapping("/google/login")
-    public String googleLogin() {
-        return "redirect:/oauth2/authorization/google";
-    }
+
+//    @GetMapping("/login/google")
+//    public ResponseEntity<String> getUser(@AuthenticationPrincipal OAuth2User oAuth2User){
+//
+////        return ResponseEntity.ok("welcome to my page" + oAuth2User.getName());
+//        return ResponseEntity.ok("welcome to my page" + oAuth2User.getAttributes());
+//    }
+
+    // 백엔드에서 토큰 반환을 위한 엔드포인트 구현 예시
+
 
 }
