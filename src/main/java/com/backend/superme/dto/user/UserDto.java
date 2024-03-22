@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 @Data
@@ -28,6 +29,7 @@ public class UserDto {
     private String provider;
     private String status;
     private Date signupDate;
+    private BigDecimal balance;
 
     // 이메일을 받아들이는 생성자
     public UserDto(String email) {
@@ -49,6 +51,7 @@ public class UserDto {
                 .provider(userEntity.getProvider())
                 .status(userEntity.getStatus().toString())
                 .signupDate(userEntity.getSignupDate())
+                .balance(userEntity.getBalance())
                 .build();
     }
 }
