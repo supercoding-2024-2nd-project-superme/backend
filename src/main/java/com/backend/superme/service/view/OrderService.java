@@ -54,10 +54,11 @@ public class OrderService {
             }
         } else if (orderCreateDto.getPaymentMethod().equals(PaymentMethod.PAYMONEY)) {
             // 페이머니 결제 방법 처리
-            if (orderCreateDto.getPaymoneyStatus().equals("None")) {
+            BigDecimal paymoneyStatus = orderCreateDto.getPaymoneyStatus();
+            if (paymoneyStatus == null || paymoneyStatus.compareTo(BigDecimal.ZERO) == 0) {
                 // 페이머니를 사용하지 않은 경우 주문을 정상 처리
                 return createOrderAndSave(orderCreateDto, totalPrice);
-            } else if (orderCreateDto.getPaymoneyStatus().startsWith("NNN")) {
+            } else if (paymoneyStatus.compareTo(BigDecimal.ZERO) > 0) {
                 // 페이머니를 사용한 경우 주문을 정상 처리
                 return processWalletPayment(orderCreateDto, totalPrice);
             } else {

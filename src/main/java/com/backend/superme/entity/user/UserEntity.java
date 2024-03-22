@@ -4,10 +4,7 @@ import com.backend.superme.constant.user.GenderEnum;
 import com.backend.superme.constant.user.RoleEnum;
 import com.backend.superme.constant.user.StatusEnum;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
@@ -15,6 +12,7 @@ import java.sql.Date;
 
 @Entity
 @Data
+@Getter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -48,8 +46,8 @@ public class UserEntity {
     private Date signupDate;
 
     private BigDecimal balance;
-    public UserEntity(Long id) {
-        this.id = id;
+    public UserEntity(String email) {
+        this.email = email;
     }
 
 }
